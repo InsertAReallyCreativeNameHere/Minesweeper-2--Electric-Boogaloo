@@ -1,23 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace MinesweeperAdvance.Behaviours
 {
     enum InputType
     {
-        
+
     }
     public static class Game
     {
         public static Form mainForm;
 
         public static SolidBrush mainTileBrush;
-        public static SolidBrush secondaryTilebrush;
 
         public static TileMap tileMap;
 
@@ -28,24 +23,27 @@ namespace MinesweeperAdvance.Behaviours
         /// </summary>
         public static void Start()
         {
-            Game.mainForm.FormBorderStyle = FormBorderStyle.FixedDialog;
-            Game.mainForm.MaximizeBox = false;
-
-            Game.mainTileBrush = new SolidBrush(Color.FromArgb(255, 80, 80, 80));
-            Game.secondaryTilebrush = new SolidBrush(Color.FromArgb(255, 120, 120, 120));
-
-            Game.tileMap = new TileMap();
-            Game.tileMap.size = (10, 10);
-            Game.tileMap.tiles = new Tile[100];
+            Game.tileMap = new TileMap
+            {
+                size = (10, 10),
+                tiles = new Tile[100]
+            };
             for (ushort i = 0; i < tileMap.size.Item1; i++)
             {
                 for (ushort j = 0; j < tileMap.size.Item2; j++)
                 {
-                    var tile = tileMap.tiles[j * tileMap.size.Item1 + i];
-                    tile = new Tile();
-                    tile.position = (i, j);
+                    tileMap.tiles[j * tileMap.size.Item1 + i] = new Tile
+                    {
+                        position = (i, j)
+                    };
                 }
             }
+
+            Game.mainForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            Game.mainForm.MaximizeBox = false;
+            Game.mainForm.ClientSize = new Size { Width = Game.tileMap.size.Item1 * 36 + 10, Height = Game.tileMap.size.Item2 * 36 + 10 };
+
+            Game.mainTileBrush = new SolidBrush(Color.FromArgb(255, 80, 80, 80));
         }
         public static void Update()
         {
@@ -62,9 +60,7 @@ namespace MinesweeperAdvance.Behaviours
             {
                 for (ushort j = 0; j < tileMap.size.Item2; j++)
                 {
-                    var tile = tileMap.tiles[j * tileMap.size.Item1 + i];
-                    if (tile != null)
-                        tile.Clear(ref graphics);
+                    tileMap.tiles[j * tileMap.size.Item1 + i].Clear(ref graphics);
                 }
             }
         }
@@ -76,7 +72,7 @@ namespace MinesweeperAdvance.Behaviours
 
         public void Clear(ref Graphics graphics)
         {
-            graphics.FillRectangle(Game.mainTileBrush, 6 + position.Item1 * 16, 6 + position.Item2 * 16, 16, 16);
+            graphics.FillRectangle(Game.mainTileBrush, 6 + position.Item1 * 36, 6 + position.Item2 * 36, 34, 34);
         }
 
         #region Dispose
@@ -107,7 +103,10 @@ namespace MinesweeperAdvance.Behaviours
 
         public void InitBackdrop(ref Graphics graphics)
         {
-            graphics.FillRectangle(Game.secondaryTilebrush, 4, 4, size.Item1 * 16 + 4, size.Item2 * 16 + 4);
+            using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 40, 40, 40)))
+                graphics.FillRectangle(brush, graphics.VisibleClipBounds.X, graphics.VisibleClipBounds.Y, graphics.VisibleClipBounds.Width, graphics.VisibleClipBounds.Height);
+            using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 120, 120, 120)))
+                graphics.FillRectangle(brush, 4, 4, size.Item1 * 36 + 2, size.Item2 * 36 + 2);
         }
 
         #region Dispose
