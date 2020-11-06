@@ -39,6 +39,7 @@ namespace MinesweeperAdvance.Behaviours
             var graphics = args.Graphics;
             using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 40, 40, 40)))
             {
+                // Clear screen.
                 graphics.FillRectangle(brush, new Rectangle(args.ClipRectangle.X, args.ClipRectangle.Y, args.ClipRectangle.Width, args.ClipRectangle.Height));
             }
             using (Pen is_ = new Pen(Color.Blue, 2))
