@@ -11,7 +11,9 @@ Partial Public Class Minesweeper
         Game.canUpdate = True
     End Sub
     Private Sub Minesweeper_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
-        Game.GraphicsUpdate(e)
+        If Game.canUpdate Then
+            Game.GraphicsUpdate(e)
+        End If
     End Sub
 
 End Class

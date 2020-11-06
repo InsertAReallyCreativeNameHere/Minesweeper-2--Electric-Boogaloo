@@ -15,6 +15,12 @@ namespace MinesweeperAdvance.Behaviours
     public static class Game
     {
         public static Form mainForm;
+
+        public static SolidBrush mainTileBrush;
+        public static SolidBrush secondaryTilebrush;
+
+        public static TileMap tileMap;
+
         public static bool canUpdate; // .NET primitive types should be atomic...
 
         /// <summary>
@@ -24,11 +30,25 @@ namespace MinesweeperAdvance.Behaviours
         {
             Game.mainForm.FormBorderStyle = FormBorderStyle.FixedDialog;
             Game.mainForm.MaximizeBox = false;
-        }
-        public static async void Update()
-        {
-            await Task.Yield(); // Force asynchronicity.
 
+            Game.mainTileBrush = new SolidBrush(Color.FromArgb(255, 80, 80, 80));
+            Game.secondaryTilebrush = new SolidBrush(Color.FromArgb(255, 120, 120, 120));
+
+            Game.tileMap = new TileMap();
+            Game.tileMap.size = (10, 10);
+            Game.tileMap.tiles = new Tile[100];
+            for (ushort i = 0; i < tileMap.size.Item1; i++)
+            {
+                for (ushort j = 0; j < tileMap.size.Item2; j++)
+                {
+                    var tile = tileMap.tiles[j * tileMap.size.Item1 + i];
+                    tile = new Tile();
+                    tile.position = (i, j);
+                }
+            }
+        }
+        public static void Update()
+        {
             // Logic
 
             // Graphics Update.
@@ -37,20 +57,27 @@ namespace MinesweeperAdvance.Behaviours
         public static void GraphicsUpdate(ref PaintEventArgs args)
         {
             var graphics = args.Graphics;
-            using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 40, 40, 40)))
+            Game.tileMap.InitBackdrop(ref graphics);
+            for (ushort i = 0; i < tileMap.size.Item1; i++)
             {
-                graphics.FillRectangle(brush, new Rectangle(args.ClipRectangle.X, args.ClipRectangle.Y, args.ClipRectangle.Width, args.ClipRectangle.Height));
-            }
-            using (Pen is_ = new Pen(Color.Blue, 2))
-            {
-                graphics.DrawLine(is_, 20, 10, 200, 200);
+                for (ushort j = 0; j < tileMap.size.Item2; j++)
+                {
+                    var tile = tileMap.tiles[j * tileMap.size.Item1 + i];
+                    if (tile != null)
+                        tile.Clear(ref graphics);
+                }
             }
         }
     }
 
     public class Tile : IDisposable
     {
-        public (uint, uint) position;
+        public (ushort, ushort) position;
+
+        public void Clear(ref Graphics graphics)
+        {
+            graphics.FillRectangle(Game.mainTileBrush, 6 + position.Item1 * 16, 6 + position.Item2 * 16, 16, 16);
+        }
 
         #region Dispose
         private bool disposedValue;
@@ -75,8 +102,13 @@ namespace MinesweeperAdvance.Behaviours
     }
     public class TileMap : IDisposable
     {
-        public (uint, uint) size;
+        public (ushort, ushort) size;
         public Tile[] tiles;
+
+        public void InitBackdrop(ref Graphics graphics)
+        {
+            graphics.FillRectangle(Game.secondaryTilebrush, 4, 4, size.Item1 * 16 + 4, size.Item2 * 16 + 4);
+        }
 
         #region Dispose
         private bool disposedValue;
