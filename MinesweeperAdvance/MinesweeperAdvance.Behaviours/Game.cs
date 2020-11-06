@@ -8,20 +8,43 @@ using System.Drawing;
 
 namespace MinesweeperAdvance.Behaviours
 {
+    enum InputType
+    {
+        
+    }
     public static class Game
     {
-        public static Graphics graphics;
-        public static int Test(int i)
+        public static Form mainForm;
+        public static bool canUpdate; // .NET primitive types should be atomic...
+
+        /// <summary>
+        /// Don't put any graphics update stuff here. I will f*cking kill you.
+        /// </summary>
+        public static void Start()
         {
-            using (SolidBrush brush = new SolidBrush(Color.Red))
+            Game.mainForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            Game.mainForm.MaximizeBox = false;
+        }
+        public static async void Update()
+        {
+            await Task.Yield(); // Force asynchronicity.
+
+            // Logic
+
+            // Graphics Update.
+            Game.mainForm.Invalidate(); // Resends a WM_PAINT event natively so the .NET stuff will repaint.
+        }
+        public static void GraphicsUpdate(ref PaintEventArgs args)
+        {
+            var graphics = args.Graphics;
+            using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 40, 40, 40)))
             {
-                graphics.FillRectangle(brush, new Rectangle(0, 0, 1000, 1000));
+                graphics.FillRectangle(brush, new Rectangle(args.ClipRectangle.X, args.ClipRectangle.Y, args.ClipRectangle.Width, args.ClipRectangle.Height));
             }
-            using (Pen is_ = new Pen(Color.Blue, 5))
+            using (Pen is_ = new Pen(Color.Blue, 2))
             {
                 graphics.DrawLine(is_, 20, 10, 200, 200);
             }
-            return i;
         }
     }
 
