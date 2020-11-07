@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MinesweeperAdvance.Behaviours
@@ -12,11 +14,12 @@ namespace MinesweeperAdvance.Behaviours
     {
         public static bool ready = false;
         public static bool done = false;
+        public static bool firstGraphicsUpdate = true;
 
         public static Form mainForm;
+        public static Graphics mainGraphics;
 
         public static SolidBrush mainTileBrush;
-
         public static TileMap tileMap;
 
         /// <summary>
@@ -24,42 +27,74 @@ namespace MinesweeperAdvance.Behaviours
         /// </summary>
         public static void Start()
         {
+            Game.mainTileBrush = new SolidBrush(Color.FromArgb(255, 80, 80, 80));
             Game.tileMap = new TileMap
             {
                 size = (10, 10),
                 tiles = new Tile[100]
             };
+            Game.mainForm.ClientSize = new Size { Width = Game.tileMap.size.Item1 * 36 + 10, Height = Game.tileMap.size.Item2 * 36 + 10 };
+            //Game.tileMap.InitBackdrop(ref Game.mainGraphics);
             for (ushort i = 0; i < tileMap.size.Item1; i++)
             {
                 for (ushort j = 0; j < tileMap.size.Item2; j++)
                 {
-                    tileMap.tiles[j * tileMap.size.Item1 + i] = new Tile
+                    var index = j * tileMap.size.Item1 + i;
+                    tileMap.tiles[index] = new Tile
                     {
                         position = (i, j)
                     };
                 }
             }
 
-            Game.mainForm.ClientSize = new Size { Width = Game.tileMap.size.Item1 * 36 + 10, Height = Game.tileMap.size.Item2 * 36 + 10 };
-            Game.mainTileBrush = new SolidBrush(Color.FromArgb(255, 80, 80, 80));
+            Task.Run(Update);
         }
-        public static void Update()
+        public static async void Update()
         {
+            await Task.Yield();
+
             // Logic
 
             // Graphics Update.
-            Game.mainForm.Invalidate(); // Resends a WM_PAINT event natively so the .NET stuff will repaint.
+            Game.mainForm.Invalidate();
+
+            System.Threading.Thread.Sleep(80);
+            Update();
         }
         public static void GraphicsUpdate(ref PaintEventArgs args)
         {
-            var graphics = args.Graphics;
-            Game.tileMap.InitBackdrop(ref graphics);
+            Game.mainGraphics = args.Graphics;
+            Game.tileMap.InitBackdrop();
             for (ushort i = 0; i < tileMap.size.Item1; i++)
             {
                 for (ushort j = 0; j < tileMap.size.Item2; j++)
                 {
-                    tileMap.tiles[j * tileMap.size.Item1 + i].Clear(ref graphics);
+                    var index = j * tileMap.size.Item1 + i;
+                    tileMap.tiles[index].Clear();
+                    if (tileMap.tiles[index].drawFlag)
+                        tileMap.tiles[index].DrawFlag();
+                    else tileMap.tiles[index].Clear();
                 }
+            }
+        }
+        public static void HandleMouseEvent(ref MouseEventArgs args)
+        {
+            switch (args.Button)
+            {
+                case MouseButtons.Left:
+                    {
+
+                    }
+                    break;
+                case MouseButtons.Right:
+                    {
+                        ushort x = (ushort)((args.X - 6) / 36);
+                        ushort y = (ushort)((args.Y - 6) / 36);
+                        var index = y * tileMap.size.Item2 + x;
+                        if (x < Game.tileMap.size.Item1 && y < Game.tileMap.size.Item2)
+                            Game.tileMap.tiles[index].drawFlag = !Game.tileMap.tiles[index].drawFlag;
+                    }
+                    break;
             }
         }
     }
@@ -67,10 +102,17 @@ namespace MinesweeperAdvance.Behaviours
     public class Tile : IDisposable
     {
         public (ushort, ushort) position;
+        public bool drawFlag = false;
 
-        public void Clear(ref Graphics graphics)
+        public void Clear()
         {
-            graphics.FillRectangle(Game.mainTileBrush, 6 + position.Item1 * 36, 6 + position.Item2 * 36, 34, 34);
+            Game.mainGraphics.FillRectangle(Game.mainTileBrush, 6 + position.Item1 * 36, 6 + position.Item2 * 36, 34, 34);
+        }
+        public void DrawFlag()
+        {
+            // Temporary flag thing.
+            using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 220, 220, 220)))
+                Game.mainGraphics.FillRectangle(brush, 10 + position.Item1 * 36, 10 + position.Item2 * 36, 26, 26);
         }
 
         #region Dispose
@@ -99,12 +141,12 @@ namespace MinesweeperAdvance.Behaviours
         public (ushort, ushort) size;
         public Tile[] tiles;
 
-        public void InitBackdrop(ref Graphics graphics)
+        public void InitBackdrop()
         {
             using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 40, 40, 40)))
-                graphics.FillRectangle(brush, graphics.VisibleClipBounds.X, graphics.VisibleClipBounds.Y, graphics.VisibleClipBounds.Width, graphics.VisibleClipBounds.Height);
+                Game.mainGraphics.FillRectangle(brush, Game.mainGraphics.VisibleClipBounds.X, Game.mainGraphics.VisibleClipBounds.Y, Game.mainGraphics.VisibleClipBounds.Width, Game.mainGraphics.VisibleClipBounds.Height);
             using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 120, 120, 120)))
-                graphics.FillRectangle(brush, 4, 4, size.Item1 * 36 + 2, size.Item2 * 36 + 2);
+                Game.mainGraphics.FillRectangle(brush, 4, 4, size.Item1 * 36 + 2, size.Item2 * 36 + 2);
         }
 
         #region Dispose

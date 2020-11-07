@@ -13,6 +13,11 @@ Partial Public Class Minesweeper
     Private Sub Minesweeper_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         Game.GraphicsUpdate(e)
     End Sub
+    Private Sub Minesweeper_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
+        Game.HandleMouseEvent(e)
+    End Sub
+    Private Sub Minesweeper_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
+    End Sub
 
 End Class
 
@@ -22,23 +27,6 @@ Namespace MinesweeperAdvance
             Application.EnableVisualStyles()
             Application.SetCompatibleTextRenderingDefault(True)
             Application.Run(New Minesweeper())
-GameLoop:
-            While True
-                If Game.ready Then
-                    Exit While
-                End If
-            End While
-
-            While True
-                Game.Update()
-                Threading.Thread.Sleep(17)
-                If Game.done Then
-                    Game.ready = False
-                    Exit While
-                End If
-            End While
-
-            GoTo GameLoop
         End Sub
     End Class
 End Namespace
