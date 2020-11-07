@@ -10,8 +10,8 @@ namespace MinesweeperAdvance.Behaviours
     }
     public static class Game
     {
-        public static bool ready;
-        public static bool done;
+        public static bool ready = false;
+        public static bool done = false;
 
         public static Form mainForm;
 
@@ -40,10 +40,7 @@ namespace MinesweeperAdvance.Behaviours
                 }
             }
 
-            Game.mainForm.FormBorderStyle = FormBorderStyle.FixedDialog;
-            Game.mainForm.MaximizeBox = false;
             Game.mainForm.ClientSize = new Size { Width = Game.tileMap.size.Item1 * 36 + 10, Height = Game.tileMap.size.Item2 * 36 + 10 };
-
             Game.mainTileBrush = new SolidBrush(Color.FromArgb(255, 80, 80, 80));
         }
         public static void Update()

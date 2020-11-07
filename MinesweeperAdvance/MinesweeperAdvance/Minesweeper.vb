@@ -22,7 +22,6 @@ Namespace MinesweeperAdvance
             Application.EnableVisualStyles()
             Application.SetCompatibleTextRenderingDefault(True)
             Application.Run(New Minesweeper())
-
 GameLoop:
             While True
                 If Game.ready Then
@@ -38,6 +37,7 @@ GameLoop:
                     Exit While
                 End If
             End While
+
             GoTo GameLoop
         End Sub
     End Class
