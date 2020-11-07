@@ -8,7 +8,7 @@ Partial Public Class Minesweeper
     Private Sub Minesweeper_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Game.mainForm = Me
         Game.Start()
-        Game.canUpdate = True
+        Game.ready = True
     End Sub
     Private Sub Minesweeper_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         Game.GraphicsUpdate(e)
@@ -23,8 +23,9 @@ Namespace MinesweeperAdvance
             Application.SetCompatibleTextRenderingDefault(True)
             Application.Run(New Minesweeper())
 
+GameLoop:
             While True
-                If Game.canUpdate Then
+                If Game.ready Then
                     Exit While
                 End If
             End While
@@ -32,7 +33,12 @@ Namespace MinesweeperAdvance
             While True
                 Game.Update()
                 Threading.Thread.Sleep(17)
+                If Game.done Then
+                    Game.ready = False
+                    Exit While
+                End If
             End While
+            GoTo GameLoop
         End Sub
     End Class
 End Namespace

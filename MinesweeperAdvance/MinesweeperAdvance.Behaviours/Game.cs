@@ -10,13 +10,14 @@ namespace MinesweeperAdvance.Behaviours
     }
     public static class Game
     {
+        public static bool ready;
+        public static bool done;
+
         public static Form mainForm;
 
         public static SolidBrush mainTileBrush;
 
         public static TileMap tileMap;
-
-        public static bool canUpdate; // .NET primitive types should be atomic...
 
         /// <summary>
         /// Don't put any graphics update stuff here. I will f*cking kill you.
