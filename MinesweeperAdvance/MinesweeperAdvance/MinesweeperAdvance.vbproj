@@ -80,10 +80,17 @@
       <DependentUpon>Minesweeper.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmTitleScreen.Designer.vb">
+      <DependentUpon>frmTitleScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTitleScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -97,6 +104,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmTitleScreen.resx">
+      <DependentUpon>frmTitleScreen.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -121,6 +131,18 @@
       <Project>{3eacecf9-2c0f-4875-9033-541b7a35a390}</Project>
       <Name>MinesweeperAdvance.Behaviours</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PngItem_5620292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mine_Standard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
