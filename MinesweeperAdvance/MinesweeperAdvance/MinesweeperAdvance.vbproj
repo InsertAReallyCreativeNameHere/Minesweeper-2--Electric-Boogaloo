@@ -104,8 +104,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmTitleScreen.resx">
-      <DependentUpon>frmTitleScreen.vb</DependentUpon>
+    <EmbeddedResource Include="Minesweeper.resx">
+      <DependentUpon>Minesweeper.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

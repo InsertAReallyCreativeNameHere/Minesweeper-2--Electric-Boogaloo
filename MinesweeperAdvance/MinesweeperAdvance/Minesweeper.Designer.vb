@@ -22,10 +22,20 @@ Partial Class Minesweeper
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
+        Me.SuspendLayout()
+        '
+        'Minesweeper
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "Form1"
+        Me.ClientSize = New System.Drawing.Size(796, 446)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.Name = "Minesweeper"
+        Me.ShowIcon = False
+        Me.Text = "MinesweeperAdvance"
+        Me.ResumeLayout(False)
+
     End Sub
 
 End Class
