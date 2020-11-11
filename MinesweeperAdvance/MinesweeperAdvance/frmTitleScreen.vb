@@ -1,4 +1,10 @@
-﻿Public Class frmTitleScreen
+﻿Imports MinesweeperAdvance.Behaviours
+
+Public Class frmTitleScreen
+    Private Sub frmTitleScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
     Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
         End
     End Sub

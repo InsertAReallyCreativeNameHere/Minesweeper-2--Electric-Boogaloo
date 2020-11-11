@@ -8,7 +8,8 @@ Partial Public Class Minesweeper
     Private Sub Minesweeper_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Game.mainForm = Me
         Game.Start()
-        Game.ready = True
+    End Sub
+    Private Sub Minesweeper_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
     End Sub
     Private Sub Minesweeper_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         Game.GraphicsUpdate(e)
@@ -20,13 +21,3 @@ Partial Public Class Minesweeper
     End Sub
 
 End Class
-
-Namespace MinesweeperAdvance
-    Class Entry
-        Sub Main()
-            Application.EnableVisualStyles()
-            Application.SetCompatibleTextRenderingDefault(True)
-            Application.Run(New Minesweeper())
-        End Sub
-    End Class
-End Namespace
