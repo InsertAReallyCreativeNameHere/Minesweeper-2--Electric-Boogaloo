@@ -12,10 +12,6 @@ namespace MinesweeperAdvance.Behaviours
     }
     public static class Game
     {
-        public static bool ready = false;
-        public static bool done = false;
-        public static bool firstGraphicsUpdate = true;
-
         public static Form mainForm;
         public static Graphics mainGraphics;
 
