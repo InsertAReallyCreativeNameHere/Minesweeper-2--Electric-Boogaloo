@@ -76,11 +76,15 @@
     <Compile Include="frmAchievements.Designer.vb">
       <DependentUpon>frmAchievements.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAchievements.vb" />
+    <Compile Include="frmAchievements.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmGameSelection.Designer.vb">
       <DependentUpon>frmGameSelection.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmGameSelection.vb" />
+    <Compile Include="frmGameSelection.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Minesweeper.vb">
       <SubType>Form</SubType>
     </Compile>
