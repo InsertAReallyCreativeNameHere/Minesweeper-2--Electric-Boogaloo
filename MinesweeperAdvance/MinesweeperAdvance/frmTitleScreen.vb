@@ -23,6 +23,9 @@ Public Class frmTitleScreen
         Me.Hide()
     End Sub
 End Class
-Friend NotInheritable Class DB
+Friend NotInheritable Class AA
     Public Shared Achievements1 As Integer = 0
+End Class
+Friend NotInheritable Class BA
+    Public Shared Constant1 As Integer = 0
 End Class
