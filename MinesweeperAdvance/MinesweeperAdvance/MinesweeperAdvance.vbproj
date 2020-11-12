@@ -73,14 +73,20 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="frmAchievements.Designer.vb">
       <DependentUpon>frmAchievements.vb</DependentUpon>
     </Compile>
     <Compile Include="frmAchievements.vb">
+=======
+    <Compile Include="frmGameSelection.Designer.vb">
+      <DependentUpon>frmGameSelection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGameSelection.vb">
+	    <DependentUpon>frmGameSelecion.vb</DependentUpon>
+		   >>>>>>> b0fe2ae3450a9b184a213430d9d5c37ca3edd64b
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Minesweeper.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Minesweeper.Designer.vb">
       <DependentUpon>Minesweeper.vb</DependentUpon>
@@ -110,11 +116,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <EmbeddedResource Include="frmAchievements.resx">
       <DependentUpon>frmAchievements.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTitleScreen.resx">
       <DependentUpon>frmTitleScreen.vb</DependentUpon>
+=======
+    <EmbeddedResource Include="frmGameSelection.resx">
+      <DependentUpon>frmGameSelection.vb</DependentUpon>
+>>>>>>> b0fe2ae3450a9b184a213430d9d5c37ca3edd64b
     </EmbeddedResource>
     <EmbeddedResource Include="Minesweeper.resx">
       <DependentUpon>Minesweeper.vb</DependentUpon>
