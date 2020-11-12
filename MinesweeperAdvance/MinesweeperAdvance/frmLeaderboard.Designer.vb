@@ -77,6 +77,7 @@ Partial Class frmLeaderboard
         Me.Controls.Add(Me.btnReturnFromLeaderboard)
         Me.Controls.Add(Me.lstLeaderboard)
         Me.Name = "frmLeaderboard"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmLeaderboard"
         Me.ResumeLayout(False)
         Me.PerformLayout()
