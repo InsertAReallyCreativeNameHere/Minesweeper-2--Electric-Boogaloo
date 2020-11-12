@@ -85,6 +85,12 @@
     <Compile Include="frmGameSelection.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmLeaderboard.Designer.vb">
+      <DependentUpon>frmLeaderboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLeaderboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Minesweeper.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGameSelection.resx">
       <DependentUpon>frmGameSelection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLeaderboard.resx">
+      <DependentUpon>frmLeaderboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTitleScreen.resx">
       <DependentUpon>frmTitleScreen.vb</DependentUpon>
