@@ -23,34 +23,36 @@ Partial Class frmGameSelection
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmGameSelection))
-        Me.TrackBar1 = New System.Windows.Forms.TrackBar()
+        Me.trbDifficulty = New System.Windows.Forms.TrackBar()
         Me.lblDifficullty = New System.Windows.Forms.Label()
         Me.lblEasy = New System.Windows.Forms.Label()
         Me.lblMedium = New System.Windows.Forms.Label()
         Me.lblHard = New System.Windows.Forms.Label()
         Me.lblInsane = New System.Windows.Forms.Label()
         Me.lblSelectSkin = New System.Windows.Forms.Label()
-        Me.picFlag1 = New System.Windows.Forms.PictureBox()
-        Me.picFlag2 = New System.Windows.Forms.PictureBox()
-        Me.picFlag3 = New System.Windows.Forms.PictureBox()
-        Me.picMine1 = New System.Windows.Forms.PictureBox()
         Me.lblFlagSelect = New System.Windows.Forms.Label()
         Me.lblMineSelect = New System.Windows.Forms.Label()
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picFlag1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picFlag2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picFlag3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnStartGame = New System.Windows.Forms.Button()
+        Me.btnBackToTitleScreen = New System.Windows.Forms.Button()
+        Me.picMine1 = New System.Windows.Forms.PictureBox()
+        Me.picFlag3 = New System.Windows.Forms.PictureBox()
+        Me.picFlag2 = New System.Windows.Forms.PictureBox()
+        Me.picFlag1 = New System.Windows.Forms.PictureBox()
+        CType(Me.trbDifficulty, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picMine1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picFlag3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picFlag2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picFlag1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TrackBar1
+        'trbDifficulty
         '
-        Me.TrackBar1.LargeChange = 3
-        Me.TrackBar1.Location = New System.Drawing.Point(96, 50)
-        Me.TrackBar1.Maximum = 3
-        Me.TrackBar1.Name = "TrackBar1"
-        Me.TrackBar1.Size = New System.Drawing.Size(183, 45)
-        Me.TrackBar1.TabIndex = 1
+        Me.trbDifficulty.LargeChange = 3
+        Me.trbDifficulty.Location = New System.Drawing.Point(96, 50)
+        Me.trbDifficulty.Maximum = 3
+        Me.trbDifficulty.Name = "trbDifficulty"
+        Me.trbDifficulty.Size = New System.Drawing.Size(183, 45)
+        Me.trbDifficulty.TabIndex = 1
         '
         'lblDifficullty
         '
@@ -106,48 +108,6 @@ Partial Class frmGameSelection
         Me.lblSelectSkin.TabIndex = 7
         Me.lblSelectSkin.Text = "Select Skins"
         '
-        'picFlag1
-        '
-        Me.picFlag1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picFlag1.Image = Global.MinesweeperAdvance.My.Resources.Resources.Flag_Red
-        Me.picFlag1.Location = New System.Drawing.Point(38, 168)
-        Me.picFlag1.Name = "picFlag1"
-        Me.picFlag1.Size = New System.Drawing.Size(50, 50)
-        Me.picFlag1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picFlag1.TabIndex = 8
-        Me.picFlag1.TabStop = False
-        '
-        'picFlag2
-        '
-        Me.picFlag2.Image = CType(resources.GetObject("picFlag2.Image"), System.Drawing.Image)
-        Me.picFlag2.Location = New System.Drawing.Point(94, 168)
-        Me.picFlag2.Name = "picFlag2"
-        Me.picFlag2.Size = New System.Drawing.Size(50, 50)
-        Me.picFlag2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picFlag2.TabIndex = 9
-        Me.picFlag2.TabStop = False
-        '
-        'picFlag3
-        '
-        Me.picFlag3.Image = CType(resources.GetObject("picFlag3.Image"), System.Drawing.Image)
-        Me.picFlag3.Location = New System.Drawing.Point(150, 168)
-        Me.picFlag3.Name = "picFlag3"
-        Me.picFlag3.Size = New System.Drawing.Size(50, 50)
-        Me.picFlag3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picFlag3.TabIndex = 10
-        Me.picFlag3.TabStop = False
-        '
-        'picMine1
-        '
-        Me.picMine1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picMine1.Image = CType(resources.GetObject("picMine1.Image"), System.Drawing.Image)
-        Me.picMine1.Location = New System.Drawing.Point(38, 224)
-        Me.picMine1.Name = "picMine1"
-        Me.picMine1.Size = New System.Drawing.Size(50, 50)
-        Me.picMine1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picMine1.TabIndex = 14
-        Me.picMine1.TabStop = False
-        '
         'lblFlagSelect
         '
         Me.lblFlagSelect.AutoSize = True
@@ -166,11 +126,75 @@ Partial Class frmGameSelection
         Me.lblMineSelect.TabIndex = 17
         Me.lblMineSelect.Text = "Mine"
         '
+        'btnStartGame
+        '
+        Me.btnStartGame.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
+        Me.btnStartGame.Location = New System.Drawing.Point(194, 280)
+        Me.btnStartGame.Name = "btnStartGame"
+        Me.btnStartGame.Size = New System.Drawing.Size(124, 70)
+        Me.btnStartGame.TabIndex = 18
+        Me.btnStartGame.Text = "Start"
+        Me.btnStartGame.UseVisualStyleBackColor = True
+        '
+        'btnBackToTitleScreen
+        '
+        Me.btnBackToTitleScreen.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
+        Me.btnBackToTitleScreen.Location = New System.Drawing.Point(64, 280)
+        Me.btnBackToTitleScreen.Name = "btnBackToTitleScreen"
+        Me.btnBackToTitleScreen.Size = New System.Drawing.Size(124, 70)
+        Me.btnBackToTitleScreen.TabIndex = 19
+        Me.btnBackToTitleScreen.Text = "Back"
+        Me.btnBackToTitleScreen.UseVisualStyleBackColor = True
+        '
+        'picMine1
+        '
+        Me.picMine1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picMine1.Image = CType(resources.GetObject("picMine1.Image"), System.Drawing.Image)
+        Me.picMine1.Location = New System.Drawing.Point(38, 224)
+        Me.picMine1.Name = "picMine1"
+        Me.picMine1.Size = New System.Drawing.Size(50, 50)
+        Me.picMine1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picMine1.TabIndex = 14
+        Me.picMine1.TabStop = False
+        '
+        'picFlag3
+        '
+        Me.picFlag3.Image = CType(resources.GetObject("picFlag3.Image"), System.Drawing.Image)
+        Me.picFlag3.Location = New System.Drawing.Point(150, 168)
+        Me.picFlag3.Name = "picFlag3"
+        Me.picFlag3.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picFlag3.TabIndex = 10
+        Me.picFlag3.TabStop = False
+        '
+        'picFlag2
+        '
+        Me.picFlag2.Image = CType(resources.GetObject("picFlag2.Image"), System.Drawing.Image)
+        Me.picFlag2.Location = New System.Drawing.Point(94, 168)
+        Me.picFlag2.Name = "picFlag2"
+        Me.picFlag2.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picFlag2.TabIndex = 9
+        Me.picFlag2.TabStop = False
+        '
+        'picFlag1
+        '
+        Me.picFlag1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picFlag1.Image = Global.MinesweeperAdvance.My.Resources.Resources.Flag_Red
+        Me.picFlag1.Location = New System.Drawing.Point(38, 168)
+        Me.picFlag1.Name = "picFlag1"
+        Me.picFlag1.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picFlag1.TabIndex = 8
+        Me.picFlag1.TabStop = False
+        '
         'frmGameSelection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(384, 361)
+        Me.Controls.Add(Me.btnBackToTitleScreen)
+        Me.Controls.Add(Me.btnStartGame)
         Me.Controls.Add(Me.lblMineSelect)
         Me.Controls.Add(Me.lblFlagSelect)
         Me.Controls.Add(Me.picMine1)
@@ -183,20 +207,21 @@ Partial Class frmGameSelection
         Me.Controls.Add(Me.lblMedium)
         Me.Controls.Add(Me.lblEasy)
         Me.Controls.Add(Me.lblDifficullty)
-        Me.Controls.Add(Me.TrackBar1)
+        Me.Controls.Add(Me.trbDifficulty)
         Me.Name = "frmGameSelection"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmGameSelection"
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picFlag1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picFlag2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picFlag3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.trbDifficulty, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picMine1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picFlag3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picFlag2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picFlag1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents TrackBar1 As TrackBar
+    Friend WithEvents trbDifficulty As TrackBar
     Friend WithEvents lblDifficullty As Label
     Friend WithEvents lblEasy As Label
     Friend WithEvents lblMedium As Label
@@ -209,4 +234,6 @@ Partial Class frmGameSelection
     Friend WithEvents picMine1 As PictureBox
     Friend WithEvents lblFlagSelect As Label
     Friend WithEvents lblMineSelect As Label
+    Friend WithEvents btnStartGame As Button
+    Friend WithEvents btnBackToTitleScreen As Button
 End Class

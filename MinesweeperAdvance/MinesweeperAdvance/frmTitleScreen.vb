@@ -1,6 +1,9 @@
 ﻿Imports MinesweeperAdvance.Behaviours
 
+
+
 Public Class frmTitleScreen
+
     Private Sub frmTitleScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -10,7 +13,7 @@ Public Class frmTitleScreen
     End Sub
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
-        Minesweeper.Show()
+        frmGameSelection.Show()
         Me.Hide()
     End Sub
 
@@ -76,4 +79,7 @@ Friend NotInheritable Class AI
 End Class
 Friend NotInheritable Class BI
     Public Shared Constant9 As Integer = 1
+End Class
+Friend NotInheritable Class DB
+    Public Shared Difficulty As Integer = 0
 End Class

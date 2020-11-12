@@ -122,6 +122,9 @@
     <EmbeddedResource Include="frmGameSelection.resx">
       <DependentUpon>frmGameSelection.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTitleScreen.resx">
+      <DependentUpon>frmTitleScreen.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Minesweeper.resx">
       <DependentUpon>Minesweeper.vb</DependentUpon>
     </EmbeddedResource>

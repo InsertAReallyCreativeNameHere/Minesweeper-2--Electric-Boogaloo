@@ -33,6 +33,7 @@ Partial Class Minesweeper
         Me.MaximizeBox = False
         Me.Name = "Minesweeper"
         Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MinesweeperAdvance"
         Me.ResumeLayout(False)
 
