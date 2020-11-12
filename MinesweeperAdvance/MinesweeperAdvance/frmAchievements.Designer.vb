@@ -67,6 +67,7 @@ Partial Class frmAchievements
         Me.lblAchievements1.Size = New System.Drawing.Size(128, 30)
         Me.lblAchievements1.TabIndex = 9
         Me.lblAchievements1.Text = "Label1"
+        Me.lblAchievements1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements2
         '
@@ -75,6 +76,7 @@ Partial Class frmAchievements
         Me.lblAchievements2.Size = New System.Drawing.Size(128, 30)
         Me.lblAchievements2.TabIndex = 10
         Me.lblAchievements2.Text = "Label2"
+        Me.lblAchievements2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements3
         '
@@ -83,6 +85,7 @@ Partial Class frmAchievements
         Me.lblAchievements3.Size = New System.Drawing.Size(128, 30)
         Me.lblAchievements3.TabIndex = 11
         Me.lblAchievements3.Text = "Label3"
+        Me.lblAchievements3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements6
         '
@@ -91,6 +94,7 @@ Partial Class frmAchievements
         Me.lblAchievements6.Size = New System.Drawing.Size(128, 30)
         Me.lblAchievements6.TabIndex = 14
         Me.lblAchievements6.Text = "Label4"
+        Me.lblAchievements6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements5
         '
@@ -99,6 +103,7 @@ Partial Class frmAchievements
         Me.lblAchievements5.Size = New System.Drawing.Size(128, 30)
         Me.lblAchievements5.TabIndex = 13
         Me.lblAchievements5.Text = "Label5"
+        Me.lblAchievements5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements4
         '
@@ -107,6 +112,7 @@ Partial Class frmAchievements
         Me.lblAchievements4.Size = New System.Drawing.Size(128, 30)
         Me.lblAchievements4.TabIndex = 12
         Me.lblAchievements4.Text = "Label6"
+        Me.lblAchievements4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements9
         '
@@ -115,6 +121,7 @@ Partial Class frmAchievements
         Me.lblAchievements9.Size = New System.Drawing.Size(128, 30)
         Me.lblAchievements9.TabIndex = 17
         Me.lblAchievements9.Text = "Label7"
+        Me.lblAchievements9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements8
         '
@@ -123,6 +130,7 @@ Partial Class frmAchievements
         Me.lblAchievements8.Size = New System.Drawing.Size(128, 30)
         Me.lblAchievements8.TabIndex = 16
         Me.lblAchievements8.Text = "Label8"
+        Me.lblAchievements8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements7
         '
@@ -131,6 +139,7 @@ Partial Class frmAchievements
         Me.lblAchievements7.Size = New System.Drawing.Size(128, 30)
         Me.lblAchievements7.TabIndex = 15
         Me.lblAchievements7.Text = "Label9"
+        Me.lblAchievements7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'picAchievements9
         '
