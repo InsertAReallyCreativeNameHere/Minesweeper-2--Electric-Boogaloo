@@ -1,30 +1,30 @@
 ﻿Public Class frmAchievements
-    Dim Ach1 As Integer = AA.Achievements1
-    Dim Cons1 As Integer = BA.Constant1
+    Dim Ach1 As Integer = 0
+    Dim Cons1 As Integer = 1
 
-    Dim Ach2 As Integer = AB.Achievements2
-    Dim Cons2 As Integer = BB.Constant2
+    Dim Ach2 As Integer = 0
+    Dim Cons2 As Integer = 1
 
-    Dim Ach3 As Integer = AC.Achievements3
-    Dim Cons3 As Integer = BC.Constant3
+    Dim Ach3 As Integer = 0
+    Dim Cons3 As Integer = 1
 
-    Dim Ach4 As Integer = AD.Achievements4
-    Dim Cons4 As Integer = BD.Constant4
+    Dim Ach4 As Integer = 0
+    Dim Cons4 As Integer = 1
 
-    Dim Ach5 As Integer = AE.Achievements5
-    Dim Cons5 As Integer = BE.Constant5
+    Dim Ach5 As Integer = 0
+    Dim Cons5 As Integer = 1
 
-    Dim Ach6 As Integer = AF.Achievements6
-    Dim Cons6 As Integer = BF.Constant6
+    Dim Ach6 As Integer = 0
+    Dim Cons6 As Integer = 1
 
-    Dim Ach7 As Integer = AG.Achievements7
-    Dim Cons7 As Integer = BG.Constant7
+    Dim Ach7 As Integer = 0
+    Dim Cons7 As Integer = 1
 
-    Dim Ach8 As Integer = AH.Achievements8
-    Dim Cons8 As Integer = BH.Constant8
+    Dim Ach8 As Integer = 0
+    Dim Cons8 As Integer = 1
 
-    Dim Ach9 As Integer = AI.Achievements9
-    Dim Cons9 As Integer = BI.Constant9
+    Dim Ach9 As Integer = 0
+    Dim Cons9 As Integer = 1
 
     Private Sub btnBackAchievements_Click(sender As Object, e As EventArgs) Handles btnBackAchievements.Click
         Me.Hide()
@@ -36,21 +36,21 @@
 
         lblAchievements1.Text = Ach1 & " / " & Cons1
 
-        lblAchievements2.Text = Ach1 & " / " & Cons1
+        lblAchievements2.Text = Ach2 & " / " & Cons2
 
-        lblAchievements3.Text = Ach1 & " / " & Cons1
+        lblAchievements3.Text = Ach3 & " / " & Cons3
 
-        lblAchievements4.Text = Ach1 & " / " & Cons1
+        lblAchievements4.Text = Ach4 & " / " & Cons4
 
-        lblAchievements5.Text = Ach1 & " / " & Cons1
+        lblAchievements5.Text = Ach5 & " / " & Cons5
 
-        lblAchievements6.Text = Ach1 & " / " & Cons1
+        lblAchievements6.Text = Ach6 & " / " & Cons6
 
-        lblAchievements7.Text = Ach1 & " / " & Cons1
+        lblAchievements7.Text = Ach7 & " / " & Cons7
 
-        lblAchievements8.Text = Ach1 & " / " & Cons1
+        lblAchievements8.Text = Ach8 & " / " & Cons8
 
-        lblAchievements9.Text = Ach1 & " / " & Cons1
+        lblAchievements9.Text = Ach9 & " / " & Cons9
     End Sub
 End Class
 
