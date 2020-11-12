@@ -17,4 +17,12 @@ Public Class frmTitleScreen
     Private Sub picTitle2_Click(sender As Object, e As EventArgs) Handles picTitle2.Click
 
     End Sub
+
+    Private Sub btnAchievements_Click(sender As Object, e As EventArgs) Handles btnAchievements.Click
+        frmAchievements.Show()
+        Me.Hide()
+    End Sub
+End Class
+Friend NotInheritable Class DB
+    Public Shared Achievements1 As Integer = 0
 End Class

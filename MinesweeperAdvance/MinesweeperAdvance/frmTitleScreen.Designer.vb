@@ -39,18 +39,20 @@ Partial Class frmTitleScreen
         'btnStart
         '
         Me.btnStart.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.btnStart.Location = New System.Drawing.Point(80, 166)
+        Me.btnStart.Location = New System.Drawing.Point(120, 255)
+        Me.btnStart.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnStart.Name = "btnStart"
-        Me.btnStart.Size = New System.Drawing.Size(189, 70)
+        Me.btnStart.Size = New System.Drawing.Size(284, 108)
         Me.btnStart.TabIndex = 0
         Me.btnStart.Text = "Start"
         Me.btnStart.UseVisualStyleBackColor = True
         '
         'btnLeaderboard
         '
-        Me.btnLeaderboard.Location = New System.Drawing.Point(275, 166)
+        Me.btnLeaderboard.Location = New System.Drawing.Point(412, 255)
+        Me.btnLeaderboard.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnLeaderboard.Name = "btnLeaderboard"
-        Me.btnLeaderboard.Size = New System.Drawing.Size(189, 70)
+        Me.btnLeaderboard.Size = New System.Drawing.Size(284, 108)
         Me.btnLeaderboard.TabIndex = 1
         Me.btnLeaderboard.Text = "Leaderboard (not implemented yet)"
         Me.btnLeaderboard.UseVisualStyleBackColor = True
@@ -58,9 +60,10 @@ Partial Class frmTitleScreen
         'btnQuit
         '
         Me.btnQuit.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.btnQuit.Location = New System.Drawing.Point(80, 239)
+        Me.btnQuit.Location = New System.Drawing.Point(120, 368)
+        Me.btnQuit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnQuit.Name = "btnQuit"
-        Me.btnQuit.Size = New System.Drawing.Size(189, 70)
+        Me.btnQuit.Size = New System.Drawing.Size(284, 108)
         Me.btnQuit.TabIndex = 2
         Me.btnQuit.Text = "Quit"
         Me.btnQuit.UseVisualStyleBackColor = True
@@ -68,37 +71,41 @@ Partial Class frmTitleScreen
         'btnAchievements
         '
         Me.btnAchievements.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.btnAchievements.Location = New System.Drawing.Point(275, 239)
+        Me.btnAchievements.Location = New System.Drawing.Point(412, 368)
+        Me.btnAchievements.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnAchievements.Name = "btnAchievements"
-        Me.btnAchievements.Size = New System.Drawing.Size(189, 70)
+        Me.btnAchievements.Size = New System.Drawing.Size(284, 108)
         Me.btnAchievements.TabIndex = 3
         Me.btnAchievements.Text = "Achievments(not implemented yet)"
         Me.btnAchievements.UseVisualStyleBackColor = True
         '
         'lblTitle
         '
-        Me.lblTitle.Font = New System.Drawing.Font("Andy", 48.0!, System.Drawing.FontStyle.Bold)
-        Me.lblTitle.Location = New System.Drawing.Point(77, 9)
+        Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Bold)
+        Me.lblTitle.Location = New System.Drawing.Point(116, 14)
+        Me.lblTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(409, 59)
+        Me.lblTitle.Size = New System.Drawing.Size(614, 91)
         Me.lblTitle.TabIndex = 4
         Me.lblTitle.Text = "Minesweeper 2"
         '
         'lblTitle2
         '
         Me.lblTitle2.Font = New System.Drawing.Font("Arial", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle2.Location = New System.Drawing.Point(115, 65)
+        Me.lblTitle2.Location = New System.Drawing.Point(172, 100)
+        Me.lblTitle2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTitle2.Name = "lblTitle2"
-        Me.lblTitle2.Size = New System.Drawing.Size(330, 46)
+        Me.lblTitle2.Size = New System.Drawing.Size(495, 71)
         Me.lblTitle2.TabIndex = 5
         Me.lblTitle2.Text = "Electric    Boogaloo"
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.MinesweeperAdvance.My.Resources.Resources.Mine_Standard
-        Me.PictureBox1.Location = New System.Drawing.Point(451, 18)
+        Me.PictureBox1.Location = New System.Drawing.Point(676, 28)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox1.Size = New System.Drawing.Size(75, 77)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
@@ -106,9 +113,10 @@ Partial Class frmTitleScreen
         'picTitle2
         '
         Me.picTitle2.Image = Global.MinesweeperAdvance.My.Resources.Resources.Flag_Red
-        Me.picTitle2.Location = New System.Drawing.Point(36, 18)
+        Me.picTitle2.Location = New System.Drawing.Point(54, 28)
+        Me.picTitle2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.picTitle2.Name = "picTitle2"
-        Me.picTitle2.Size = New System.Drawing.Size(50, 50)
+        Me.picTitle2.Size = New System.Drawing.Size(75, 77)
         Me.picTitle2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picTitle2.TabIndex = 7
         Me.picTitle2.TabStop = False
@@ -117,19 +125,20 @@ Partial Class frmTitleScreen
         '
         Me.picTitle.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.picTitle.Image = Global.MinesweeperAdvance.My.Resources.Resources.PngItem_5620292
-        Me.picTitle.Location = New System.Drawing.Point(241, 68)
+        Me.picTitle.Location = New System.Drawing.Point(362, 105)
+        Me.picTitle.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.picTitle.Name = "picTitle"
-        Me.picTitle.Size = New System.Drawing.Size(31, 34)
+        Me.picTitle.Size = New System.Drawing.Size(46, 52)
         Me.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picTitle.TabIndex = 6
         Me.picTitle.TabStop = False
         '
         'frmTitleScreen
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.ClientSize = New System.Drawing.Size(537, 337)
+        Me.ClientSize = New System.Drawing.Size(806, 518)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.picTitle2)
         Me.Controls.Add(Me.picTitle)
@@ -139,6 +148,7 @@ Partial Class frmTitleScreen
         Me.Controls.Add(Me.btnQuit)
         Me.Controls.Add(Me.btnLeaderboard)
         Me.Controls.Add(Me.btnStart)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "frmTitleScreen"
         Me.Text = "Minesweeper 2: Electric Boogaloo"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

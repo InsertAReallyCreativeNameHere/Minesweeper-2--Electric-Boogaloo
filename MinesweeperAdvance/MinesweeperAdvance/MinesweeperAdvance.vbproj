@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAchievements.Designer.vb">
+      <DependentUpon>frmAchievements.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAchievements.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Minesweeper.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAchievements.resx">
+      <DependentUpon>frmAchievements.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTitleScreen.resx">
+      <DependentUpon>frmTitleScreen.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Minesweeper.resx">
       <DependentUpon>Minesweeper.vb</DependentUpon>
     </EmbeddedResource>
