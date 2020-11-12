@@ -22,7 +22,7 @@
     End Sub
 
     Private Sub trbDifficulty_Scroll(sender As Object, e As EventArgs) Handles trbDifficulty.Scroll
-        Dim difficulty As Integer = DB.Difficulty
+        Dim difficulty As Integer = D.Difficulty
         difficulty = trbDifficulty.Value
         Console.WriteLine(difficulty)
         Console.ReadLine()
@@ -36,5 +36,9 @@
     Private Sub btnBackToTitleScreen_Click(sender As Object, e As EventArgs) Handles btnBackToTitleScreen.Click
         Me.Hide()
         frmTitleScreen.Show()
+    End Sub
+
+    Private Sub frmGameSelection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

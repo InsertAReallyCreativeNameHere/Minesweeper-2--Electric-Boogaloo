@@ -48,90 +48,100 @@ Partial Class frmGameSelection
         'trbDifficulty
         '
         Me.trbDifficulty.LargeChange = 3
-        Me.trbDifficulty.Location = New System.Drawing.Point(96, 50)
+        Me.trbDifficulty.Location = New System.Drawing.Point(144, 77)
+        Me.trbDifficulty.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.trbDifficulty.Maximum = 3
         Me.trbDifficulty.Name = "trbDifficulty"
-        Me.trbDifficulty.Size = New System.Drawing.Size(183, 45)
+        Me.trbDifficulty.Size = New System.Drawing.Size(274, 69)
         Me.trbDifficulty.TabIndex = 1
         '
         'lblDifficullty
         '
         Me.lblDifficullty.AutoSize = True
-        Me.lblDifficullty.Location = New System.Drawing.Point(144, 20)
+        Me.lblDifficullty.Location = New System.Drawing.Point(216, 31)
+        Me.lblDifficullty.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDifficullty.Name = "lblDifficullty"
-        Me.lblDifficullty.Size = New System.Drawing.Size(80, 13)
+        Me.lblDifficullty.Size = New System.Drawing.Size(118, 20)
         Me.lblDifficullty.TabIndex = 2
         Me.lblDifficullty.Text = "Select Difficulty"
         '
         'lblEasy
         '
         Me.lblEasy.AutoSize = True
-        Me.lblEasy.Location = New System.Drawing.Point(91, 77)
+        Me.lblEasy.Location = New System.Drawing.Point(136, 118)
+        Me.lblEasy.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblEasy.Name = "lblEasy"
-        Me.lblEasy.Size = New System.Drawing.Size(30, 13)
+        Me.lblEasy.Size = New System.Drawing.Size(44, 20)
         Me.lblEasy.TabIndex = 3
         Me.lblEasy.Text = "Easy"
         '
         'lblMedium
         '
         Me.lblMedium.AutoSize = True
-        Me.lblMedium.Location = New System.Drawing.Point(144, 77)
+        Me.lblMedium.Location = New System.Drawing.Point(216, 118)
+        Me.lblMedium.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblMedium.Name = "lblMedium"
-        Me.lblMedium.Size = New System.Drawing.Size(44, 13)
+        Me.lblMedium.Size = New System.Drawing.Size(65, 20)
         Me.lblMedium.TabIndex = 4
         Me.lblMedium.Text = "Medium"
         '
         'lblHard
         '
         Me.lblHard.AutoSize = True
-        Me.lblHard.Location = New System.Drawing.Point(199, 77)
+        Me.lblHard.Location = New System.Drawing.Point(298, 118)
+        Me.lblHard.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblHard.Name = "lblHard"
-        Me.lblHard.Size = New System.Drawing.Size(30, 13)
+        Me.lblHard.Size = New System.Drawing.Size(44, 20)
         Me.lblHard.TabIndex = 5
         Me.lblHard.Text = "Hard"
         '
         'lblInsane
         '
         Me.lblInsane.AutoSize = True
-        Me.lblInsane.Location = New System.Drawing.Point(249, 77)
+        Me.lblInsane.Location = New System.Drawing.Point(374, 118)
+        Me.lblInsane.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblInsane.Name = "lblInsane"
-        Me.lblInsane.Size = New System.Drawing.Size(39, 13)
+        Me.lblInsane.Size = New System.Drawing.Size(58, 20)
         Me.lblInsane.TabIndex = 6
         Me.lblInsane.Text = "Insane"
         '
         'lblSelectSkin
         '
         Me.lblSelectSkin.AutoSize = True
-        Me.lblSelectSkin.Location = New System.Drawing.Point(144, 124)
+        Me.lblSelectSkin.Location = New System.Drawing.Point(216, 191)
+        Me.lblSelectSkin.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSelectSkin.Name = "lblSelectSkin"
-        Me.lblSelectSkin.Size = New System.Drawing.Size(66, 13)
+        Me.lblSelectSkin.Size = New System.Drawing.Size(97, 20)
         Me.lblSelectSkin.TabIndex = 7
         Me.lblSelectSkin.Text = "Select Skins"
         '
         'lblFlagSelect
         '
         Me.lblFlagSelect.AutoSize = True
-        Me.lblFlagSelect.Location = New System.Drawing.Point(5, 187)
+        Me.lblFlagSelect.Location = New System.Drawing.Point(8, 288)
+        Me.lblFlagSelect.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFlagSelect.Name = "lblFlagSelect"
-        Me.lblFlagSelect.Size = New System.Drawing.Size(27, 13)
+        Me.lblFlagSelect.Size = New System.Drawing.Size(40, 20)
         Me.lblFlagSelect.TabIndex = 16
         Me.lblFlagSelect.Text = "Flag"
         '
         'lblMineSelect
         '
         Me.lblMineSelect.AutoSize = True
-        Me.lblMineSelect.Location = New System.Drawing.Point(5, 244)
+        Me.lblMineSelect.Location = New System.Drawing.Point(8, 375)
+        Me.lblMineSelect.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblMineSelect.Name = "lblMineSelect"
-        Me.lblMineSelect.Size = New System.Drawing.Size(30, 13)
+        Me.lblMineSelect.Size = New System.Drawing.Size(43, 20)
         Me.lblMineSelect.TabIndex = 17
         Me.lblMineSelect.Text = "Mine"
         '
         'btnStartGame
         '
         Me.btnStartGame.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.btnStartGame.Location = New System.Drawing.Point(194, 280)
+        Me.btnStartGame.Location = New System.Drawing.Point(291, 431)
+        Me.btnStartGame.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnStartGame.Name = "btnStartGame"
-        Me.btnStartGame.Size = New System.Drawing.Size(124, 70)
+        Me.btnStartGame.Size = New System.Drawing.Size(186, 108)
         Me.btnStartGame.TabIndex = 18
         Me.btnStartGame.Text = "Start"
         Me.btnStartGame.UseVisualStyleBackColor = True
@@ -139,9 +149,10 @@ Partial Class frmGameSelection
         'btnBackToTitleScreen
         '
         Me.btnBackToTitleScreen.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.btnBackToTitleScreen.Location = New System.Drawing.Point(64, 280)
+        Me.btnBackToTitleScreen.Location = New System.Drawing.Point(96, 431)
+        Me.btnBackToTitleScreen.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnBackToTitleScreen.Name = "btnBackToTitleScreen"
-        Me.btnBackToTitleScreen.Size = New System.Drawing.Size(124, 70)
+        Me.btnBackToTitleScreen.Size = New System.Drawing.Size(186, 108)
         Me.btnBackToTitleScreen.TabIndex = 19
         Me.btnBackToTitleScreen.Text = "Back"
         Me.btnBackToTitleScreen.UseVisualStyleBackColor = True
@@ -150,9 +161,10 @@ Partial Class frmGameSelection
         '
         Me.picMine1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.picMine1.Image = CType(resources.GetObject("picMine1.Image"), System.Drawing.Image)
-        Me.picMine1.Location = New System.Drawing.Point(38, 224)
+        Me.picMine1.Location = New System.Drawing.Point(57, 345)
+        Me.picMine1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.picMine1.Name = "picMine1"
-        Me.picMine1.Size = New System.Drawing.Size(50, 50)
+        Me.picMine1.Size = New System.Drawing.Size(74, 76)
         Me.picMine1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picMine1.TabIndex = 14
         Me.picMine1.TabStop = False
@@ -160,9 +172,10 @@ Partial Class frmGameSelection
         'picFlag3
         '
         Me.picFlag3.Image = CType(resources.GetObject("picFlag3.Image"), System.Drawing.Image)
-        Me.picFlag3.Location = New System.Drawing.Point(150, 168)
+        Me.picFlag3.Location = New System.Drawing.Point(225, 258)
+        Me.picFlag3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.picFlag3.Name = "picFlag3"
-        Me.picFlag3.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag3.Size = New System.Drawing.Size(75, 77)
         Me.picFlag3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picFlag3.TabIndex = 10
         Me.picFlag3.TabStop = False
@@ -170,9 +183,10 @@ Partial Class frmGameSelection
         'picFlag2
         '
         Me.picFlag2.Image = CType(resources.GetObject("picFlag2.Image"), System.Drawing.Image)
-        Me.picFlag2.Location = New System.Drawing.Point(94, 168)
+        Me.picFlag2.Location = New System.Drawing.Point(141, 258)
+        Me.picFlag2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.picFlag2.Name = "picFlag2"
-        Me.picFlag2.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag2.Size = New System.Drawing.Size(75, 77)
         Me.picFlag2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picFlag2.TabIndex = 9
         Me.picFlag2.TabStop = False
@@ -181,18 +195,19 @@ Partial Class frmGameSelection
         '
         Me.picFlag1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.picFlag1.Image = Global.MinesweeperAdvance.My.Resources.Resources.Flag_Red
-        Me.picFlag1.Location = New System.Drawing.Point(38, 168)
+        Me.picFlag1.Location = New System.Drawing.Point(57, 258)
+        Me.picFlag1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.picFlag1.Name = "picFlag1"
-        Me.picFlag1.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag1.Size = New System.Drawing.Size(74, 76)
         Me.picFlag1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picFlag1.TabIndex = 8
         Me.picFlag1.TabStop = False
         '
         'frmGameSelection
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(384, 361)
+        Me.ClientSize = New System.Drawing.Size(576, 555)
         Me.Controls.Add(Me.btnBackToTitleScreen)
         Me.Controls.Add(Me.btnStartGame)
         Me.Controls.Add(Me.lblMineSelect)
@@ -208,6 +223,7 @@ Partial Class frmGameSelection
         Me.Controls.Add(Me.lblEasy)
         Me.Controls.Add(Me.lblDifficullty)
         Me.Controls.Add(Me.trbDifficulty)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "frmGameSelection"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmGameSelection"

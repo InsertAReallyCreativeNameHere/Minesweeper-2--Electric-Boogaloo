@@ -29,8 +29,14 @@ End Class
 Friend NotInheritable Class A
     Public Shared TilesFlagged As Integer = 0
 End Class
+Friend NotInheritable Class B
+    Public Shared BarsFilled As Integer = 0
+End Class
 Friend NotInheritable Class C
-    Public Shared Constant1 As Integer = 1
+    Public Shared DifficultyEasy As Integer = 0
+    Public Shared DifficultyMedium As Integer = 0
+    Public Shared DifficultyHard As Integer = 0
+    Public Shared DifficultyInsane As Integer = 0
 End Class
 
 Friend NotInheritable Class D
