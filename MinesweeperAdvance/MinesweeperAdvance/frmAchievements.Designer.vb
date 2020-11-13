@@ -50,45 +50,50 @@ Partial Class frmAchievements
         '
         'lblAchievements1
         '
+        Me.lblAchievements1.AutoSize = True
         Me.lblAchievements1.Location = New System.Drawing.Point(52, 155)
         Me.lblAchievements1.Name = "lblAchievements1"
-        Me.lblAchievements1.Size = New System.Drawing.Size(128, 29)
+        Me.lblAchievements1.Size = New System.Drawing.Size(57, 20)
         Me.lblAchievements1.TabIndex = 9
         Me.lblAchievements1.Text = "Label1"
         Me.lblAchievements1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements2
         '
+        Me.lblAchievements2.AutoSize = True
         Me.lblAchievements2.Location = New System.Drawing.Point(303, 155)
         Me.lblAchievements2.Name = "lblAchievements2"
-        Me.lblAchievements2.Size = New System.Drawing.Size(128, 29)
+        Me.lblAchievements2.Size = New System.Drawing.Size(57, 20)
         Me.lblAchievements2.TabIndex = 10
         Me.lblAchievements2.Text = "Label2"
         Me.lblAchievements2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements3
         '
+        Me.lblAchievements3.AutoSize = True
         Me.lblAchievements3.Location = New System.Drawing.Point(554, 155)
         Me.lblAchievements3.Name = "lblAchievements3"
-        Me.lblAchievements3.Size = New System.Drawing.Size(128, 29)
+        Me.lblAchievements3.Size = New System.Drawing.Size(57, 20)
         Me.lblAchievements3.TabIndex = 11
         Me.lblAchievements3.Text = "Label3"
         Me.lblAchievements3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements5
         '
+        Me.lblAchievements5.AutoSize = True
         Me.lblAchievements5.Location = New System.Drawing.Point(431, 366)
         Me.lblAchievements5.Name = "lblAchievements5"
-        Me.lblAchievements5.Size = New System.Drawing.Size(128, 29)
+        Me.lblAchievements5.Size = New System.Drawing.Size(57, 20)
         Me.lblAchievements5.TabIndex = 13
         Me.lblAchievements5.Text = "Label5"
         Me.lblAchievements5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements4
         '
+        Me.lblAchievements4.AutoSize = True
         Me.lblAchievements4.Location = New System.Drawing.Point(173, 366)
         Me.lblAchievements4.Name = "lblAchievements4"
-        Me.lblAchievements4.Size = New System.Drawing.Size(128, 29)
+        Me.lblAchievements4.Size = New System.Drawing.Size(57, 20)
         Me.lblAchievements4.TabIndex = 12
         Me.lblAchievements4.Text = "Label6"
         Me.lblAchievements4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -162,6 +167,7 @@ Partial Class frmAchievements
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.ClientSize = New System.Drawing.Size(800, 449)
         Me.Controls.Add(Me.btnBackAchievements)
@@ -185,6 +191,7 @@ Partial Class frmAchievements
         CType(Me.picAchievements2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picAchievements1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

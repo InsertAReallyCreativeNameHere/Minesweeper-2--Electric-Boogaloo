@@ -15,8 +15,8 @@
     Dim Ach3 As Integer = 0
     Dim Cons3 As Integer = 1
 
-    Dim Ach4 As Integer = 0
-    Dim Cons4 As String = "Difficulty Easy"
+    Dim Ach4 As String = "Incomplete"
+    Dim Cons4 As String = "Easy"
 
     Dim Ach5 As Integer = 0
     Dim Cons5 As Integer = 50000
@@ -45,14 +45,18 @@
             Cons3 *= 10
         End If
         lblAchievements4.Text = Ach4 & " / " & Cons4
-        If (Ach4 >= DifficultyEasyLocal) Then
-            Cons4 = "Difficulty Medium"
-            If (Ach4 >= DifficultyMediumLocal) Then
-                Cons4 = "Difficulty Hard"
-                If (Ach4 >= DifficultyHardLocal) Then
-                    Cons4 = "Difficulty Insane"
-                    If (Ach4 >= DifficultyInsaneLocal) Then
+        If (1 >= DifficultyEasyLocal) Then
+            Cons4 = "Medium"
+            Ach4 = "Easy"
+            If (2 >= DifficultyMediumLocal) Then
+                Cons4 = "Hard"
+                Ach4 = "Medium"
+                If (3 >= DifficultyHardLocal) Then
+                    Cons4 = "Insane"
+                    Ach4 = "Hard"
+                    If (4 >= DifficultyInsaneLocal) Then
                         Cons4 = "How"
+                        Ach4 = "Insane"
                     End If
                 End If
             End If
