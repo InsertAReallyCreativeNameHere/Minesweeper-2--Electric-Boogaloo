@@ -30,7 +30,7 @@ namespace MinesweeperAdvance.Behaviours
                 tiles = new Tile[100]
             };
             Game.mainForm.ClientSize = new Size { Width = Game.tileMap.size.Item1 * 36 + 10, Height = Game.tileMap.size.Item2 * 36 + 10 };
-            //Game.tileMap.InitBackdrop(ref Game.mainGraphics);
+
             for (ushort i = 0; i < tileMap.size.Item1; i++)
             {
                 for (ushort j = 0; j < tileMap.size.Item2; j++)
@@ -54,7 +54,7 @@ namespace MinesweeperAdvance.Behaviours
             // Graphics Update.
             Game.mainForm.Invalidate();
 
-            System.Threading.Thread.Sleep(80);
+            System.Threading.Thread.Sleep(120);
             Update();
         }
         public static void GraphicsUpdate(ref PaintEventArgs args)
@@ -75,6 +75,9 @@ namespace MinesweeperAdvance.Behaviours
         }
         public static void HandleMouseEvent(ref MouseEventArgs args)
         {
+            ushort x = (ushort)((args.X - 6) / 36);
+            ushort y = (ushort)((args.Y - 6) / 36);
+            var index = y * tileMap.size.Item2 + x;
             switch (args.Button)
             {
                 case MouseButtons.Left:
@@ -84,9 +87,6 @@ namespace MinesweeperAdvance.Behaviours
                     break;
                 case MouseButtons.Right:
                     {
-                        ushort x = (ushort)((args.X - 6) / 36);
-                        ushort y = (ushort)((args.Y - 6) / 36);
-                        var index = y * tileMap.size.Item2 + x;
                         if (x < Game.tileMap.size.Item1 && y < Game.tileMap.size.Item2)
                             Game.tileMap.tiles[index].drawFlag = !Game.tileMap.tiles[index].drawFlag;
                     }
