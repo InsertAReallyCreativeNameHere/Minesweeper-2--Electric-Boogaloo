@@ -18,8 +18,10 @@ namespace MinesweeperAdvance.Behaviours
         public static SolidBrush mainTileBrush;
         public static TileMap tileMap;
 
+        public static Font drawFont;
+
         /// <summary>
-        /// Don't put any graphics update stuff here. I will f*cking kill you.
+        /// Don't put any graphics update stuff here.
         /// </summary>
         public static void Start()
         {
@@ -31,6 +33,8 @@ namespace MinesweeperAdvance.Behaviours
             };
             Game.mainForm.ClientSize = new Size { Width = Game.tileMap.size.Item1 * 36 + 10, Height = Game.tileMap.size.Item2 * 36 + 10 };
 
+            Game.drawFont = new Font("Comic Sans", 26);
+
             for (ushort i = 0; i < tileMap.size.Item1; i++)
             {
                 for (ushort j = 0; j < tileMap.size.Item2; j++)
@@ -38,7 +42,8 @@ namespace MinesweeperAdvance.Behaviours
                     var index = j * tileMap.size.Item1 + i;
                     tileMap.tiles[index] = new Tile
                     {
-                        position = (i, j)
+                        position = (i, j),
+                        isMine = new Random().Next(100) <= 40
                     };
                 }
             }
@@ -69,6 +74,10 @@ namespace MinesweeperAdvance.Behaviours
                     tileMap.tiles[index].Clear();
                     if (tileMap.tiles[index].drawFlag)
                         tileMap.tiles[index].DrawFlag();
+                    else if (tileMap.tiles[index].drawMine)
+                        tileMap.tiles[index].DrawMine();
+                    else if (tileMap.tiles[index].drawNumber >= 0)
+                        tileMap.tiles[index].DrawNumber();
                     else tileMap.tiles[index].Clear();
                 }
             }
@@ -78,19 +87,24 @@ namespace MinesweeperAdvance.Behaviours
             ushort x = (ushort)((args.X - 6) / 36);
             ushort y = (ushort)((args.Y - 6) / 36);
             var index = y * tileMap.size.Item2 + x;
-            switch (args.Button)
-            {
-                case MouseButtons.Left:
-                    {
 
-                    }
-                    break;
-                case MouseButtons.Right:
-                    {
-                        if (x < Game.tileMap.size.Item1 && y < Game.tileMap.size.Item2)
+            if (x < Game.tileMap.size.Item1 && y < Game.tileMap.size.Item2)
+            {
+                switch (args.Button)
+                {
+                    case MouseButtons.Left:
+                        {
+                            if (Game.tileMap.tiles[index].isMine)
+                                Game.tileMap.tiles[index].drawMine = true;
+                            else Game.tileMap.tiles[index].drawNumber = 2;
+                        }
+                        break;
+                    case MouseButtons.Right:
+                        {
                             Game.tileMap.tiles[index].drawFlag = !Game.tileMap.tiles[index].drawFlag;
-                    }
-                    break;
+                        }
+                        break;
+                }
             }
         }
     }
@@ -98,7 +112,12 @@ namespace MinesweeperAdvance.Behaviours
     public class Tile : IDisposable
     {
         public (ushort, ushort) position;
+
+        public bool isMine;
+
         public bool drawFlag = false;
+        public bool drawMine = false;
+        public int drawNumber = -1;
 
         public void Clear()
         {
@@ -107,8 +126,20 @@ namespace MinesweeperAdvance.Behaviours
         public void DrawFlag()
         {
             // Temporary flag thing.
-            using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 220, 220, 220)))
+            using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 255, 0, 0)))
                 Game.mainGraphics.FillRectangle(brush, 10 + position.Item1 * 36, 10 + position.Item2 * 36, 26, 26);
+        }
+        public void DrawMine()
+        {
+            // Temporary flag thing.
+            using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 0, 0, 0)))
+                Game.mainGraphics.FillRectangle(brush, 10 + position.Item1 * 36, 10 + position.Item2 * 36, 26, 26);
+        }
+        public void DrawNumber()
+        {
+            // Temporary flag thing.
+            using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 0, 0, 255)))
+                Game.mainGraphics.DrawString(drawNumber.ToString(), Game.drawFont, brush, new RectangleF(10 + position.Item1 * 36, 10 + position.Item2 * 36, 26, 26));
         }
 
         #region Dispose
