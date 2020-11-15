@@ -3,6 +3,7 @@ Public Class frmStatistics
     Private Sub frmLeaderboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblDifficultyStats.Text = "Overall Stats"
         GenerateStats(True)
+
     End Sub
 
     Private Sub btnReturnFromLeaderboard_Click(sender As Object, e As EventArgs) Handles btnReturnFromLeaderboard.Click

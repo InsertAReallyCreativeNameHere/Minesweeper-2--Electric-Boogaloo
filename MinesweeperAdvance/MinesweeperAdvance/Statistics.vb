@@ -20,7 +20,7 @@ Public Class Statistics
         End Select
         Throw New ArgumentException("Unexpected difficulty:" + GameData.Difficulty)
     End Function
-    Public Function GetOverallStats()
+    Public Function GetOverallStats() As GameStatistics
         Dim OverallStats As GameStatistics = New GameStatistics
         Dim DifficultyArray As GameStatistics() = New GameStatistics(3) {Easy, Medium, Hard, Insane}
         For Each stat In DifficultyArray
