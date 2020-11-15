@@ -8,8 +8,6 @@
                 flag.BorderStyle = BorderStyle.None
             End If
         Next
-        Console.WriteLine(GameData.FlagSkin)
-        Console.ReadLine()
     End Sub
     Private Sub trbDifficulty_Scroll(sender As Object, e As EventArgs) Handles trbDifficulty.Scroll
         GameData.Difficulty = trbDifficulty.Value
@@ -26,7 +24,7 @@
     End Sub
 
     Private Sub frmGameSelection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        SelectFlagSkin(picFlag1)
     End Sub
 
     Private Sub picFlag1_Click(sender As Object, e As EventArgs) Handles picFlag1.Click
