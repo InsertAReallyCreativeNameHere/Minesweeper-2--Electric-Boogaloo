@@ -1,10 +1,11 @@
 ﻿Public Class frmAchievements
-    Dim TilesFlaggedLocal As Integer
-    Dim BarsFilledLocal As Integer
+    Dim TilesFlaggedLocal As Integer = My.Settings.Stats.GetOverallStats().FlagsPlaced
+    Dim BarsFilledLocal As Integer = My.Settings.Stats.GetOverallStats().BarsFilled
     Dim DifficultyEasyLocal As Integer
     Dim DifficultyMediumLocal As Integer
     Dim DifficultyHardLocal As Integer
     Dim DifficultyInsaneLocal As Integer
+
 
     Dim Ach1 As Integer = 0 + TilesFlaggedLocal
     Dim Cons1 As Integer = 10
@@ -74,28 +75,6 @@
 
     End Sub
 
-    Private Sub lblAchievements1_Click(sender As Object, e As EventArgs) Handles lblAchievements1.Click
 
-    End Sub
-
-    Private Sub picAchievements1_Click(sender As Object, e As EventArgs) Handles picAchievements1.Click
-
-    End Sub
-
-    Private Sub lblAchievements2_Click(sender As Object, e As EventArgs) Handles lblAchievements2.Click
-
-    End Sub
-
-    Private Sub picAchievements2_Click(sender As Object, e As EventArgs) Handles picAchievements2.Click
-
-    End Sub
-
-    Private Sub lblAchievements3_Click(sender As Object, e As EventArgs) Handles lblAchievements3.Click
-
-    End Sub
-
-    Private Sub picAchievements3_Click(sender As Object, e As EventArgs) Handles picAchievements3.Click
-
-    End Sub
 End Class
 
