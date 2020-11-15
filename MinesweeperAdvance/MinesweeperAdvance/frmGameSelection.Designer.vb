@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmGameSelection
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmGameSelection
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmGameSelection))
         Me.trbDifficulty = New System.Windows.Forms.TrackBar()
@@ -35,18 +35,18 @@ Partial Class frmGameSelection
         Me.btnStartGame = New System.Windows.Forms.Button()
         Me.btnBackToTitleScreen = New System.Windows.Forms.Button()
         Me.picMine1 = New System.Windows.Forms.PictureBox()
-        Me.picFlag3 = New System.Windows.Forms.PictureBox()
-        Me.picFlag2 = New System.Windows.Forms.PictureBox()
+        Me.pnlFlags = New System.Windows.Forms.Panel()
         Me.picFlag1 = New System.Windows.Forms.PictureBox()
         Me.picFlag4 = New System.Windows.Forms.PictureBox()
-        Me.pnlFlags = New System.Windows.Forms.Panel()
+        Me.picFlag2 = New System.Windows.Forms.PictureBox()
+        Me.picFlag3 = New System.Windows.Forms.PictureBox()
         CType(Me.trbDifficulty, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picMine1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picFlag3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picFlag2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlFlags.SuspendLayout()
         CType(Me.picFlag1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picFlag4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlFlags.SuspendLayout()
+        CType(Me.picFlag2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picFlag3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'trbDifficulty
@@ -154,53 +154,12 @@ Partial Class frmGameSelection
         '
         Me.picMine1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.picMine1.Image = CType(resources.GetObject("picMine1.Image"), System.Drawing.Image)
-        Me.picMine1.Location = New System.Drawing.Point(38, 224)
+        Me.picMine1.Location = New System.Drawing.Point(41, 224)
         Me.picMine1.Name = "picMine1"
         Me.picMine1.Size = New System.Drawing.Size(50, 50)
         Me.picMine1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picMine1.TabIndex = 14
         Me.picMine1.TabStop = False
-        '
-        'picFlag3
-        '
-        Me.picFlag3.Image = CType(resources.GetObject("picFlag3.Image"), System.Drawing.Image)
-        Me.picFlag3.Location = New System.Drawing.Point(115, 0)
-        Me.picFlag3.Name = "picFlag3"
-        Me.picFlag3.Size = New System.Drawing.Size(50, 50)
-        Me.picFlag3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picFlag3.TabIndex = 10
-        Me.picFlag3.TabStop = False
-        '
-        'picFlag2
-        '
-        Me.picFlag2.Image = CType(resources.GetObject("picFlag2.Image"), System.Drawing.Image)
-        Me.picFlag2.Location = New System.Drawing.Point(59, 0)
-        Me.picFlag2.Name = "picFlag2"
-        Me.picFlag2.Size = New System.Drawing.Size(50, 50)
-        Me.picFlag2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picFlag2.TabIndex = 9
-        Me.picFlag2.TabStop = False
-        '
-        'picFlag1
-        '
-        Me.picFlag1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picFlag1.Image = Global.MinesweeperAdvance.My.Resources.Resources.Flag_Red
-        Me.picFlag1.Location = New System.Drawing.Point(3, 0)
-        Me.picFlag1.Name = "picFlag1"
-        Me.picFlag1.Size = New System.Drawing.Size(50, 50)
-        Me.picFlag1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picFlag1.TabIndex = 8
-        Me.picFlag1.TabStop = False
-        '
-        'picFlag4
-        '
-        Me.picFlag4.Image = CType(resources.GetObject("picFlag4.Image"), System.Drawing.Image)
-        Me.picFlag4.Location = New System.Drawing.Point(171, 0)
-        Me.picFlag4.Name = "picFlag4"
-        Me.picFlag4.Size = New System.Drawing.Size(50, 50)
-        Me.picFlag4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picFlag4.TabIndex = 20
-        Me.picFlag4.TabStop = False
         '
         'pnlFlags
         '
@@ -212,6 +171,47 @@ Partial Class frmGameSelection
         Me.pnlFlags.Name = "pnlFlags"
         Me.pnlFlags.Size = New System.Drawing.Size(344, 51)
         Me.pnlFlags.TabIndex = 21
+        '
+        'picFlag1
+        '
+        Me.picFlag1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picFlag1.Image = Global.MinesweeperAdvance.My.Resources.Resources.Flag_Red
+        Me.picFlag1.Location = New System.Drawing.Point(3, 1)
+        Me.picFlag1.Name = "picFlag1"
+        Me.picFlag1.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picFlag1.TabIndex = 21
+        Me.picFlag1.TabStop = False
+        '
+        'picFlag4
+        '
+        Me.picFlag4.Image = CType(resources.GetObject("picFlag4.Image"), System.Drawing.Image)
+        Me.picFlag4.Location = New System.Drawing.Point(171, 1)
+        Me.picFlag4.Name = "picFlag4"
+        Me.picFlag4.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picFlag4.TabIndex = 24
+        Me.picFlag4.TabStop = False
+        '
+        'picFlag2
+        '
+        Me.picFlag2.Image = CType(resources.GetObject("picFlag2.Image"), System.Drawing.Image)
+        Me.picFlag2.Location = New System.Drawing.Point(59, 1)
+        Me.picFlag2.Name = "picFlag2"
+        Me.picFlag2.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picFlag2.TabIndex = 22
+        Me.picFlag2.TabStop = False
+        '
+        'picFlag3
+        '
+        Me.picFlag3.Image = CType(resources.GetObject("picFlag3.Image"), System.Drawing.Image)
+        Me.picFlag3.Location = New System.Drawing.Point(115, 1)
+        Me.picFlag3.Name = "picFlag3"
+        Me.picFlag3.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picFlag3.TabIndex = 23
+        Me.picFlag3.TabStop = False
         '
         'frmGameSelection
         '
@@ -236,11 +236,11 @@ Partial Class frmGameSelection
         Me.Text = "frmGameSelection"
         CType(Me.trbDifficulty, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picMine1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picFlag3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picFlag2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlFlags.ResumeLayout(False)
         CType(Me.picFlag1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picFlag4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlFlags.ResumeLayout(False)
+        CType(Me.picFlag2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picFlag3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -253,14 +253,14 @@ Partial Class frmGameSelection
     Friend WithEvents lblHard As Label
     Friend WithEvents lblInsane As Label
     Friend WithEvents lblSelectSkin As Label
-    Friend WithEvents picFlag1 As PictureBox
-    Friend WithEvents picFlag2 As PictureBox
-    Friend WithEvents picFlag3 As PictureBox
     Friend WithEvents picMine1 As PictureBox
     Friend WithEvents lblFlagSelect As Label
     Friend WithEvents lblMineSelect As Label
     Friend WithEvents btnStartGame As Button
     Friend WithEvents btnBackToTitleScreen As Button
-    Friend WithEvents picFlag4 As PictureBox
     Friend WithEvents pnlFlags As Panel
+    Friend WithEvents picFlag1 As PictureBox
+    Friend WithEvents picFlag4 As PictureBox
+    Friend WithEvents picFlag2 As PictureBox
+    Friend WithEvents picFlag3 As PictureBox
 End Class

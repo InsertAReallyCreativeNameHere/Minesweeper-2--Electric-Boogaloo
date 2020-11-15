@@ -46,5 +46,4 @@ End Class
 Friend NotInheritable Class GameData
     Public Shared Difficulty As GameDifficulty = GameDifficulty.Easy
     Public Shared FlagSkin As Image = Nothing
-
 End Class
