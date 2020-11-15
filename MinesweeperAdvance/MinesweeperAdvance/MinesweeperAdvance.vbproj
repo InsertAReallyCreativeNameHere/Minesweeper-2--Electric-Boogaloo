@@ -85,12 +85,13 @@
     <Compile Include="frmGameSelection.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLeaderboard.Designer.vb">
-      <DependentUpon>frmLeaderboard.vb</DependentUpon>
+    <Compile Include="frmStatistics.Designer.vb">
+      <DependentUpon>frmStatistics.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmLeaderboard.vb">
+    <Compile Include="frmStatistics.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GameDifficulty.vb" />
     <Compile Include="Minesweeper.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +121,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Statistics.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmAchievements.resx">
@@ -128,8 +130,8 @@
     <EmbeddedResource Include="frmGameSelection.resx">
       <DependentUpon>frmGameSelection.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLeaderboard.resx">
-      <DependentUpon>frmLeaderboard.vb</DependentUpon>
+    <EmbeddedResource Include="frmStatistics.resx">
+      <DependentUpon>frmStatistics.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTitleScreen.resx">
       <DependentUpon>frmTitleScreen.vb</DependentUpon>

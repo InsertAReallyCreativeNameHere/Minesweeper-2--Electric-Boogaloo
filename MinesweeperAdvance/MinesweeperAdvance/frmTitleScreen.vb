@@ -2,7 +2,9 @@
 Public Class frmTitleScreen
 
     Private Sub frmTitleScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        If My.Settings.Stats Is Nothing Then
+            My.Settings.Stats = New Statistics
+        End If
     End Sub
 
     Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
@@ -24,7 +26,7 @@ Public Class frmTitleScreen
     End Sub
 
     Private Sub btnLeaderboard_Click(sender As Object, e As EventArgs) Handles btnLeaderboard.Click
-        frmLeaderboard.Show()
+        frmStatistics.Show()
         Me.Hide()
     End Sub
 End Class
@@ -41,6 +43,6 @@ Friend NotInheritable Class C
     Public Shared DifficultyInsane As Integer = 0
 End Class
 
-Friend NotInheritable Class D
-    Public Shared Difficulty As Integer = 0
+Friend NotInheritable Class GameData
+    Public Shared Difficulty As GameDifficulty = GameDifficulty.Easy
 End Class

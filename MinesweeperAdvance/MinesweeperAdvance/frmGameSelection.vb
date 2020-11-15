@@ -22,9 +22,8 @@
     End Sub
 
     Private Sub trbDifficulty_Scroll(sender As Object, e As EventArgs) Handles trbDifficulty.Scroll
-        Dim difficulty As Integer = D.Difficulty
-        difficulty = trbDifficulty.Value
-        Console.WriteLine(difficulty)
+        GameData.Difficulty = trbDifficulty.Value
+        Console.WriteLine(GameData.Difficulty)
         Console.ReadLine()
     End Sub
 
