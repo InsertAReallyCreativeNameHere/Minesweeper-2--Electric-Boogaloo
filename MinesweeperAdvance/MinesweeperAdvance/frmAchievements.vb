@@ -1,11 +1,6 @@
 ﻿Public Class frmAchievements
     Dim TilesFlaggedLocal As Integer = My.Settings.Stats.GetOverallStats().FlagsPlaced
     Dim BarsFilledLocal As Integer = My.Settings.Stats.GetOverallStats().BarsFilled
-    Dim DifficultyEasyLocal As Integer
-    Dim DifficultyMediumLocal As Integer
-    Dim DifficultyHardLocal As Integer
-    Dim DifficultyInsaneLocal As Integer
-
 
     Dim Ach1 As Integer = 0 + TilesFlaggedLocal
     Dim Cons1 As Integer = 10
@@ -16,13 +11,23 @@
     Dim Ach3 As Integer = 0
     Dim Cons3 As Integer = 1
 
-    Dim Ach4 As String = "Incomplete"
-    Dim Cons4 As String = "Easy"
+    Dim Ach4 As Integer = 0 + TilesFlaggedLocal
+    Dim Cons4 As Integer = 100
 
-    Dim Ach5 As Integer = 0
-    Dim Cons5 As Integer = 50000
+    Dim Ach5 As Integer = 0 + BarsFilledLocal
+    Dim Cons5 As Integer = 10
 
+    Dim Ach6 As Integer = 0
+    Dim Cons6 As Integer = 10
 
+    Dim Ach7 As Integer = 0 + TilesFlaggedLocal
+    Dim Cons7 As Integer = 1000
+
+    Dim Ach8 As Integer = 0 + BarsFilledLocal
+    Dim Cons8 As Integer = 100
+
+    Dim Ach9 As Integer = 0
+    Dim Cons9 As Integer = 100
 
 
     Private Sub btnBackAchievements_Click(sender As Object, e As EventArgs) Handles btnBackAchievements.Click
@@ -35,46 +40,42 @@
 
         lblAchievements1.Text = Ach1 & " / " & Cons1
         If (Ach1 >= Cons1) Then
-            Cons1 *= 10
+
         End If
         lblAchievements2.Text = Ach2 & " / " & Cons2
         If (Ach2 >= Cons2) Then
-            Cons2 *= 10
+
         End If
         lblAchievements3.Text = Ach3 & " / " & Cons3
         If (Ach3 >= Cons3) Then
-            Cons3 *= 10
+
         End If
         lblAchievements4.Text = Ach4 & " / " & Cons4
-        If (1 >= DifficultyEasyLocal) Then
-            Cons4 = "Medium"
-            Ach4 = "Easy"
-            If (2 >= DifficultyMediumLocal) Then
-                Cons4 = "Hard"
-                Ach4 = "Medium"
-                If (3 >= DifficultyHardLocal) Then
-                    Cons4 = "Insane"
-                    Ach4 = "Hard"
-                    If (4 >= DifficultyInsaneLocal) Then
-                        Cons4 = "How"
-                        Ach4 = "Insane"
-                    End If
-                End If
-            End If
+        If (Ach4 >= Cons4) Then
+
         End If
         lblAchievements5.Text = Ach5 & " / " & Cons5
         If (Ach5 >= Cons5) Then
-            Cons5 = 100000
-            If (Ach5 >= Cons5) Then
-                Cons5 = 200000
-                If (Ach5 >= Cons5) Then
-                    Cons5 = 300000
-                End If
-            End If
+
+        End If
+        lblAchievements6.Text = Ach6 & " / " & Cons6
+        If (Ach6 >= Cons6) Then
+
+        End If
+        lblAchievements7.Text = Ach7 & " / " & Cons7
+        If (Ach7 >= Cons7) Then
+
+        End If
+        lblAchievements8.Text = Ach8 & " / " & Cons8
+        If (Ach8 >= Cons8) Then
+
+        End If
+        lblAchievements9.Text = Ach9 & " / " & Cons9
+        If (Ach9 >= Cons9) Then
+
         End If
 
     End Sub
-
 
 End Class
 
