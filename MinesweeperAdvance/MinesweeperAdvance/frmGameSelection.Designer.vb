@@ -40,6 +40,13 @@ Partial Class frmGameSelection
         Me.picFlag4 = New System.Windows.Forms.PictureBox()
         Me.picFlag2 = New System.Windows.Forms.PictureBox()
         Me.picFlag3 = New System.Windows.Forms.PictureBox()
+        Me.picFlag5 = New System.Windows.Forms.PictureBox()
+        Me.picFlag6 = New System.Windows.Forms.PictureBox()
+        Me.picFlag7 = New System.Windows.Forms.PictureBox()
+        Me.pnlMines = New System.Windows.Forms.Panel()
+        Me.picMine3 = New System.Windows.Forms.PictureBox()
+        Me.picMine4 = New System.Windows.Forms.PictureBox()
+        Me.picMine2 = New System.Windows.Forms.PictureBox()
         CType(Me.trbDifficulty, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picMine1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlFlags.SuspendLayout()
@@ -47,12 +54,19 @@ Partial Class frmGameSelection
         CType(Me.picFlag4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picFlag2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picFlag3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picFlag5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picFlag6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picFlag7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlMines.SuspendLayout()
+        CType(Me.picMine3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picMine4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picMine2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'trbDifficulty
         '
         Me.trbDifficulty.LargeChange = 3
-        Me.trbDifficulty.Location = New System.Drawing.Point(96, 50)
+        Me.trbDifficulty.Location = New System.Drawing.Point(153, 52)
         Me.trbDifficulty.Maximum = 3
         Me.trbDifficulty.Name = "trbDifficulty"
         Me.trbDifficulty.Size = New System.Drawing.Size(183, 45)
@@ -61,7 +75,7 @@ Partial Class frmGameSelection
         'lblDifficullty
         '
         Me.lblDifficullty.AutoSize = True
-        Me.lblDifficullty.Location = New System.Drawing.Point(144, 20)
+        Me.lblDifficullty.Location = New System.Drawing.Point(201, 22)
         Me.lblDifficullty.Name = "lblDifficullty"
         Me.lblDifficullty.Size = New System.Drawing.Size(80, 13)
         Me.lblDifficullty.TabIndex = 2
@@ -70,7 +84,7 @@ Partial Class frmGameSelection
         'lblEasy
         '
         Me.lblEasy.AutoSize = True
-        Me.lblEasy.Location = New System.Drawing.Point(91, 77)
+        Me.lblEasy.Location = New System.Drawing.Point(148, 79)
         Me.lblEasy.Name = "lblEasy"
         Me.lblEasy.Size = New System.Drawing.Size(30, 13)
         Me.lblEasy.TabIndex = 3
@@ -79,7 +93,7 @@ Partial Class frmGameSelection
         'lblMedium
         '
         Me.lblMedium.AutoSize = True
-        Me.lblMedium.Location = New System.Drawing.Point(144, 77)
+        Me.lblMedium.Location = New System.Drawing.Point(201, 79)
         Me.lblMedium.Name = "lblMedium"
         Me.lblMedium.Size = New System.Drawing.Size(44, 13)
         Me.lblMedium.TabIndex = 4
@@ -88,7 +102,7 @@ Partial Class frmGameSelection
         'lblHard
         '
         Me.lblHard.AutoSize = True
-        Me.lblHard.Location = New System.Drawing.Point(199, 77)
+        Me.lblHard.Location = New System.Drawing.Point(256, 79)
         Me.lblHard.Name = "lblHard"
         Me.lblHard.Size = New System.Drawing.Size(30, 13)
         Me.lblHard.TabIndex = 5
@@ -97,7 +111,7 @@ Partial Class frmGameSelection
         'lblInsane
         '
         Me.lblInsane.AutoSize = True
-        Me.lblInsane.Location = New System.Drawing.Point(249, 77)
+        Me.lblInsane.Location = New System.Drawing.Point(306, 79)
         Me.lblInsane.Name = "lblInsane"
         Me.lblInsane.Size = New System.Drawing.Size(39, 13)
         Me.lblInsane.TabIndex = 6
@@ -106,7 +120,7 @@ Partial Class frmGameSelection
         'lblSelectSkin
         '
         Me.lblSelectSkin.AutoSize = True
-        Me.lblSelectSkin.Location = New System.Drawing.Point(144, 124)
+        Me.lblSelectSkin.Location = New System.Drawing.Point(201, 126)
         Me.lblSelectSkin.Name = "lblSelectSkin"
         Me.lblSelectSkin.Size = New System.Drawing.Size(66, 13)
         Me.lblSelectSkin.TabIndex = 7
@@ -133,7 +147,7 @@ Partial Class frmGameSelection
         'btnStartGame
         '
         Me.btnStartGame.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.btnStartGame.Location = New System.Drawing.Point(194, 280)
+        Me.btnStartGame.Location = New System.Drawing.Point(247, 279)
         Me.btnStartGame.Name = "btnStartGame"
         Me.btnStartGame.Size = New System.Drawing.Size(124, 70)
         Me.btnStartGame.TabIndex = 18
@@ -143,7 +157,7 @@ Partial Class frmGameSelection
         'btnBackToTitleScreen
         '
         Me.btnBackToTitleScreen.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.btnBackToTitleScreen.Location = New System.Drawing.Point(64, 280)
+        Me.btnBackToTitleScreen.Location = New System.Drawing.Point(117, 279)
         Me.btnBackToTitleScreen.Name = "btnBackToTitleScreen"
         Me.btnBackToTitleScreen.Size = New System.Drawing.Size(124, 70)
         Me.btnBackToTitleScreen.TabIndex = 19
@@ -154,7 +168,7 @@ Partial Class frmGameSelection
         '
         Me.picMine1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.picMine1.Image = CType(resources.GetObject("picMine1.Image"), System.Drawing.Image)
-        Me.picMine1.Location = New System.Drawing.Point(41, 224)
+        Me.picMine1.Location = New System.Drawing.Point(3, 0)
         Me.picMine1.Name = "picMine1"
         Me.picMine1.Size = New System.Drawing.Size(50, 50)
         Me.picMine1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -163,13 +177,16 @@ Partial Class frmGameSelection
         '
         'pnlFlags
         '
+        Me.pnlFlags.Controls.Add(Me.picFlag5)
+        Me.pnlFlags.Controls.Add(Me.picFlag6)
+        Me.pnlFlags.Controls.Add(Me.picFlag7)
         Me.pnlFlags.Controls.Add(Me.picFlag1)
         Me.pnlFlags.Controls.Add(Me.picFlag4)
         Me.pnlFlags.Controls.Add(Me.picFlag2)
         Me.pnlFlags.Controls.Add(Me.picFlag3)
         Me.pnlFlags.Location = New System.Drawing.Point(38, 167)
         Me.pnlFlags.Name = "pnlFlags"
-        Me.pnlFlags.Size = New System.Drawing.Size(344, 51)
+        Me.pnlFlags.Size = New System.Drawing.Size(441, 51)
         Me.pnlFlags.TabIndex = 21
         '
         'picFlag1
@@ -213,17 +230,90 @@ Partial Class frmGameSelection
         Me.picFlag3.TabIndex = 23
         Me.picFlag3.TabStop = False
         '
+        'picFlag5
+        '
+        Me.picFlag5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picFlag5.Image = CType(resources.GetObject("picFlag5.Image"), System.Drawing.Image)
+        Me.picFlag5.Location = New System.Drawing.Point(227, 0)
+        Me.picFlag5.Name = "picFlag5"
+        Me.picFlag5.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picFlag5.TabIndex = 25
+        Me.picFlag5.TabStop = False
+        '
+        'picFlag6
+        '
+        Me.picFlag6.Image = CType(resources.GetObject("picFlag6.Image"), System.Drawing.Image)
+        Me.picFlag6.Location = New System.Drawing.Point(283, 0)
+        Me.picFlag6.Name = "picFlag6"
+        Me.picFlag6.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picFlag6.TabIndex = 26
+        Me.picFlag6.TabStop = False
+        '
+        'picFlag7
+        '
+        Me.picFlag7.Image = CType(resources.GetObject("picFlag7.Image"), System.Drawing.Image)
+        Me.picFlag7.Location = New System.Drawing.Point(339, 1)
+        Me.picFlag7.Name = "picFlag7"
+        Me.picFlag7.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picFlag7.TabIndex = 27
+        Me.picFlag7.TabStop = False
+        '
+        'pnlMines
+        '
+        Me.pnlMines.Controls.Add(Me.picMine2)
+        Me.pnlMines.Controls.Add(Me.picMine3)
+        Me.pnlMines.Controls.Add(Me.picMine4)
+        Me.pnlMines.Controls.Add(Me.picMine1)
+        Me.pnlMines.Location = New System.Drawing.Point(38, 224)
+        Me.pnlMines.Name = "pnlMines"
+        Me.pnlMines.Size = New System.Drawing.Size(441, 51)
+        Me.pnlMines.TabIndex = 28
+        '
+        'picMine3
+        '
+        Me.picMine3.Image = CType(resources.GetObject("picMine3.Image"), System.Drawing.Image)
+        Me.picMine3.Location = New System.Drawing.Point(115, 0)
+        Me.picMine3.Name = "picMine3"
+        Me.picMine3.Size = New System.Drawing.Size(50, 50)
+        Me.picMine3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picMine3.TabIndex = 22
+        Me.picMine3.TabStop = False
+        '
+        'picMine4
+        '
+        Me.picMine4.Image = CType(resources.GetObject("picMine4.Image"), System.Drawing.Image)
+        Me.picMine4.Location = New System.Drawing.Point(171, 0)
+        Me.picMine4.Name = "picMine4"
+        Me.picMine4.Size = New System.Drawing.Size(50, 50)
+        Me.picMine4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picMine4.TabIndex = 23
+        Me.picMine4.TabStop = False
+        '
+        'picMine2
+        '
+        Me.picMine2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picMine2.Image = CType(resources.GetObject("picMine2.Image"), System.Drawing.Image)
+        Me.picMine2.Location = New System.Drawing.Point(59, 0)
+        Me.picMine2.Name = "picMine2"
+        Me.picMine2.Size = New System.Drawing.Size(50, 50)
+        Me.picMine2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picMine2.TabIndex = 24
+        Me.picMine2.TabStop = False
+        '
         'frmGameSelection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(384, 361)
+        Me.ClientSize = New System.Drawing.Size(484, 361)
+        Me.Controls.Add(Me.pnlMines)
         Me.Controls.Add(Me.pnlFlags)
         Me.Controls.Add(Me.btnBackToTitleScreen)
         Me.Controls.Add(Me.btnStartGame)
         Me.Controls.Add(Me.lblMineSelect)
         Me.Controls.Add(Me.lblFlagSelect)
-        Me.Controls.Add(Me.picMine1)
         Me.Controls.Add(Me.lblSelectSkin)
         Me.Controls.Add(Me.lblInsane)
         Me.Controls.Add(Me.lblHard)
@@ -241,6 +331,13 @@ Partial Class frmGameSelection
         CType(Me.picFlag4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picFlag2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picFlag3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picFlag5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picFlag6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picFlag7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlMines.ResumeLayout(False)
+        CType(Me.picMine3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picMine4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picMine2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -263,4 +360,11 @@ Partial Class frmGameSelection
     Friend WithEvents picFlag4 As PictureBox
     Friend WithEvents picFlag2 As PictureBox
     Friend WithEvents picFlag3 As PictureBox
+    Friend WithEvents picFlag5 As PictureBox
+    Friend WithEvents picFlag6 As PictureBox
+    Friend WithEvents picFlag7 As PictureBox
+    Friend WithEvents pnlMines As Panel
+    Friend WithEvents picMine2 As PictureBox
+    Friend WithEvents picMine3 As PictureBox
+    Friend WithEvents picMine4 As PictureBox
 End Class

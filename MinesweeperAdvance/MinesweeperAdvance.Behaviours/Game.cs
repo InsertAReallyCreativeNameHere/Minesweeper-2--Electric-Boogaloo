@@ -22,6 +22,7 @@ namespace MinesweeperAdvance.Behaviours
     {
         public static GameDifficulty Difficulty { get; set; } = GameDifficulty.Easy;
         public static Image FlagSkin { get; set; } = null;
+        public static Image MineSkin { get; set; } = null;
     }
     public static class Game
     {
