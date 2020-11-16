@@ -10,6 +10,19 @@ namespace MinesweeperAdvance.Behaviours
     {
 
     }
+
+    public enum GameDifficulty : ushort
+    {
+        Easy = 0,
+        Medium = 1,
+        Hard = 2,
+        Insane = 3
+    }
+    public static class GameData
+    {
+        public static GameDifficulty Difficulty { get; set; } = GameDifficulty.Easy;
+        public static Image FlagSkin { get; set; } = null;
+    }
     public static class Game
     {
         public static Form mainForm;
@@ -33,7 +46,7 @@ namespace MinesweeperAdvance.Behaviours
             };
             Game.mainForm.ClientSize = new Size { Width = Game.tileMap.size.Item1 * 36 + 10, Height = Game.tileMap.size.Item2 * 36 + 10 };
 
-            Game.drawFont = new Font("Comic Sans", 26);
+            Game.drawFont = new Font("Comic Sans", 20);
 
             for (ushort i = 0; i < tileMap.size.Item1; i++)
             {
@@ -96,7 +109,23 @@ namespace MinesweeperAdvance.Behaviours
                         {
                             if (Game.tileMap.tiles[index].isMine)
                                 Game.tileMap.tiles[index].drawMine = true;
-                            else Game.tileMap.tiles[index].drawNumber = 2;
+                            else
+                            {
+                                int num = 0;
+                                for (int i = -1; i <= 1; ++i)
+                                {
+                                    for (int j = -1; j <= 1; ++j)
+                                    {
+                                        if (Game.tileMap.tiles[index].position.Item1 + i >= 0 ||
+                                            Game.tileMap.tiles[index].position.Item1 + i < Game.tileMap.size.Item1 ||
+                                            Game.tileMap.tiles[index].position.Item2 + j >= 0 ||
+                                            Game.tileMap.tiles[index].position.Item2 + j < Game.tileMap.size.Item2)
+                                            if (Game.tileMap.tiles[index].isMine)
+                                                num++;
+                                    }
+                                }
+                                Game.tileMap.tiles[index].drawNumber = num;
+                            }
                         }
                         break;
                     case MouseButtons.Right:
@@ -127,7 +156,7 @@ namespace MinesweeperAdvance.Behaviours
         {
             // Temporary flag thing.
             using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 255, 0, 0)))
-                Game.mainGraphics.FillRectangle(brush, 10 + position.Item1 * 36, 10 + position.Item2 * 36, 26, 26);
+                Game.mainGraphics.DrawImage(GameData.FlagSkin, 10 + position.Item1 * 36, 10 + position.Item2 * 36, 26, 26);
         }
         public void DrawMine()
         {

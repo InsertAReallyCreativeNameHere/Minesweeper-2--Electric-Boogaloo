@@ -1,4 +1,6 @@
-﻿<Serializable>
+﻿Imports MinesweeperAdvance.Behaviours
+
+<Serializable>
 Public Class Statistics
     Public Property Easy As GameStatistics = New GameStatistics
     Public Property Medium As GameStatistics = New GameStatistics

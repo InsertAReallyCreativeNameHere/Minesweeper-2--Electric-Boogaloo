@@ -42,8 +42,3 @@ Friend NotInheritable Class C
     Public Shared DifficultyHard As Integer = 0
     Public Shared DifficultyInsane As Integer = 0
 End Class
-
-Friend NotInheritable Class GameData
-    Public Shared Difficulty As GameDifficulty = GameDifficulty.Easy
-    Public Shared FlagSkin As Image = Nothing
-End Class

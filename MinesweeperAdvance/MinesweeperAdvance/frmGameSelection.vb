@@ -1,4 +1,6 @@
-﻿Public Class frmGameSelection
+﻿Imports MinesweeperAdvance.Behaviours
+
+Public Class frmGameSelection
     Private Sub SelectFlagSkin(currentFlag As PictureBox)
         GameData.FlagSkin = currentFlag.Image
         For Each flag As PictureBox In pnlFlags.Controls
