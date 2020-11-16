@@ -6,11 +6,6 @@ using System.Windows.Forms;
 
 namespace MinesweeperAdvance.Behaviours
 {
-    enum InputType
-    {
-
-    }
-
     public enum GameDifficulty : ushort
     {
         Easy = 0,
@@ -49,15 +44,17 @@ namespace MinesweeperAdvance.Behaviours
 
             Game.drawFont = new Font("Comic Sans", 20);
 
+            Random rng = new Random();
             for (ushort i = 0; i < tileMap.size.Item1; i++)
             {
                 for (ushort j = 0; j < tileMap.size.Item2; j++)
                 {
                     var index = j * tileMap.size.Item1 + i;
+                    var tileIsMine = rng.Next(100) < 10;
                     tileMap.tiles[index] = new Tile
                     {
                         position = (i, j),
-                        isMine = new Random().Next(100) <= 40
+                        isMine = tileIsMine
                     };
                 }
             }
@@ -73,7 +70,7 @@ namespace MinesweeperAdvance.Behaviours
             // Graphics Update.
             Game.mainForm.Invalidate();
 
-            System.Threading.Thread.Sleep(120);
+            System.Threading.Thread.Sleep(250);
             Update();
         }
         public static void GraphicsUpdate(ref PaintEventArgs args)
@@ -117,12 +114,12 @@ namespace MinesweeperAdvance.Behaviours
                                 {
                                     for (int j = -1; j <= 1; ++j)
                                     {
-                                        if (Game.tileMap.tiles[index].position.Item1 + i >= 0 ||
-                                            Game.tileMap.tiles[index].position.Item1 + i < Game.tileMap.size.Item1 ||
-                                            Game.tileMap.tiles[index].position.Item2 + j >= 0 ||
-                                            Game.tileMap.tiles[index].position.Item2 + j < Game.tileMap.size.Item2)
-                                            if (Game.tileMap.tiles[index].isMine)
-                                                num++;
+                                        if (Game.tileMap.tiles[index].position.Item1 + i >= 0 &&
+                                            Game.tileMap.tiles[index].position.Item1 + i < Game.tileMap.size.Item1 &&
+                                            Game.tileMap.tiles[index].position.Item2 + j >= 0 &&
+                                            Game.tileMap.tiles[index].position.Item2 + j < Game.tileMap.size.Item2 &&
+                                            Game.tileMap.tiles[(Game.tileMap.tiles[index].position.Item2 + j) * tileMap.size.Item1 + Game.tileMap.tiles[index].position.Item1 + i].isMine)
+                                            num++;
                                     }
                                 }
                                 Game.tileMap.tiles[index].drawNumber = num;
