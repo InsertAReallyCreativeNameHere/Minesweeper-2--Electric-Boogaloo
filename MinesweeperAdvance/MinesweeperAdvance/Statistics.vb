@@ -20,7 +20,7 @@ Public Class Statistics
             Case GameDifficulty.Insane
                 Return Insane
         End Select
-        Throw New ArgumentException("Unexpected difficulty:" + GameData.Difficulty)
+        Throw New ArgumentException($"Unexpected difficulty: {NameOf(GameData.Difficulty)} ({GameData.Difficulty})")
     End Function
     Public Function GetOverallStats() As GameStatistics
         Dim OverallStats As GameStatistics = New GameStatistics
@@ -62,4 +62,15 @@ Public Class GameStatistics
     Public Property TimePlayed As Integer = 0
     Public Property FlagsPlaced As Integer = 0
     Public Property BarsFilled As Integer = 0
+End Class
+
+' Class here to annoy experienced programmers.
+Public Class weed
+    Shared Sub HandleExit()
+        Minesweeper.Dispose()
+        frmGameSelection.Dispose()
+        frmStatistics.Dispose()
+        frmAchievements.Dispose()
+        frmTitleScreen.Dispose()
+    End Sub
 End Class

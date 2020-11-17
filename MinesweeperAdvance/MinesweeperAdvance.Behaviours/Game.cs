@@ -29,6 +29,8 @@ namespace MinesweeperAdvance.Behaviours
 
         public static Font drawFont;
 
+        public static bool gameFinished = false;
+
         /// <summary>
         /// Don't put any graphics update stuff here.
         /// </summary>
@@ -83,13 +85,12 @@ namespace MinesweeperAdvance.Behaviours
                 {
                     var index = j * tileMap.size.Item1 + i;
                     tileMap.tiles[index].Clear();
-                    if (tileMap.tiles[index].drawFlag)
-                        tileMap.tiles[index].DrawFlag();
-                    else if (tileMap.tiles[index].drawMine)
+                    if (tileMap.tiles[index].drawMine)
                         tileMap.tiles[index].DrawMine();
                     else if (tileMap.tiles[index].drawNumber >= 0)
                         tileMap.tiles[index].DrawNumber();
-                    else tileMap.tiles[index].Clear();
+                    else if (tileMap.tiles[index].drawFlag)
+                        tileMap.tiles[index].DrawFlag();
                 }
             }
         }
@@ -140,6 +141,7 @@ namespace MinesweeperAdvance.Behaviours
     {
         public (ushort, ushort) position;
 
+        public bool drawable = true;
         public bool isMine;
 
         public bool drawFlag = false;
@@ -148,23 +150,22 @@ namespace MinesweeperAdvance.Behaviours
 
         public void Clear()
         {
+            drawable = true;
             Game.mainGraphics.FillRectangle(Game.mainTileBrush, 6 + position.Item1 * 36, 6 + position.Item2 * 36, 34, 34);
         }
         public void DrawFlag()
         {
-            // Temporary flag thing.
-            using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 255, 0, 0)))
-                Game.mainGraphics.DrawImage(GameData.FlagSkin, 10 + position.Item1 * 36, 10 + position.Item2 * 36, 26, 26);
+            drawable = false;
+            Game.mainGraphics.DrawImage(GameData.FlagSkin, 10 + position.Item1 * 36, 10 + position.Item2 * 36, 26, 26);
         }
         public void DrawMine()
         {
-            // Temporary flag thing.
-            using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 0, 0, 0)))
-                Game.mainGraphics.FillRectangle(brush, 10 + position.Item1 * 36, 10 + position.Item2 * 36, 26, 26);
+            drawable = false;
+            Game.mainGraphics.DrawImage(GameData.MineSkin, 10 + position.Item1 * 36, 10 + position.Item2 * 36, 26, 26);
         }
         public void DrawNumber()
         {
-            // Temporary flag thing.
+            drawable = false;
             using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 0, 0, 255)))
                 Game.mainGraphics.DrawString(drawNumber.ToString(), Game.drawFont, brush, new RectangleF(10 + position.Item1 * 36, 10 + position.Item2 * 36, 26, 26));
         }
@@ -177,7 +178,7 @@ namespace MinesweeperAdvance.Behaviours
             {
                 if (disposing)
                 {
-                    // Undraw stuff here.
+
                 }
 
                 disposedValue = true;
@@ -205,13 +206,15 @@ namespace MinesweeperAdvance.Behaviours
 
         #region Dispose
         private bool disposedValue;
-        protected virtual void Dispose(bool disposing) // I'm a C++ programmer, we do RAII here.
+        protected virtual void Dispose(bool disposing)
         {
             if (!disposedValue)
             {
                 if (disposing)
                 {
-                    // Destroy all tiles here.
+                    for (ushort i = 0; i < size.Item1; i++)
+                        for (ushort j = 0; j < size.Item2; j++)
+                            tiles[j * size.Item1 + i].Dispose();
                 }
 
                 disposedValue = true;
