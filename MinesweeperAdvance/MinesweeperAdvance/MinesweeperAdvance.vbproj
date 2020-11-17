@@ -93,6 +93,7 @@
       <SubType>Form</SubType>
     </Compile>
   
+
     <Compile Include="Minesweeper.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +134,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStatistics.resx">
       <DependentUpon>frmStatistics.vb</DependentUpon>
+
+ 
     </EmbeddedResource>
     <EmbeddedResource Include="frmTitleScreen.resx">
       <DependentUpon>frmTitleScreen.vb</DependentUpon>

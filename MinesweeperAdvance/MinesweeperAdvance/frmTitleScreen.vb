@@ -27,6 +27,7 @@ Public Class frmTitleScreen
 
     Private Sub btnLeaderboard_Click(sender As Object, e As EventArgs) Handles btnLeaderboard.Click
         frmStatistics.Show()
+ 
         Me.Hide()
     End Sub
 End Class
@@ -42,5 +43,6 @@ Friend NotInheritable Class C
     Public Shared DifficultyMedium As Integer = 0
     Public Shared DifficultyHard As Integer = 0
     Public Shared DifficultyInsane As Integer = 0
-
 End Class
+
+
