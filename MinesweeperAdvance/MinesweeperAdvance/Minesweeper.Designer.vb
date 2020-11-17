@@ -26,6 +26,7 @@ Partial Class Minesweeper
         Me.lblTimeElapsedHeading = New System.Windows.Forms.Label()
         Me.tmrGameTime = New System.Windows.Forms.Timer(Me.components)
         Me.lblTimeElapsed = New System.Windows.Forms.Label()
+        Me.btnQuitGame = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblTimeElapsedHeading
@@ -55,11 +56,21 @@ Partial Class Minesweeper
         Me.lblTimeElapsed.TabIndex = 1
         Me.lblTimeElapsed.Text = "Label1"
         '
+        'btnQuitGame
+        '
+        Me.btnQuitGame.Location = New System.Drawing.Point(375, 277)
+        Me.btnQuitGame.Name = "btnQuitGame"
+        Me.btnQuitGame.Size = New System.Drawing.Size(75, 50)
+        Me.btnQuitGame.TabIndex = 2
+        Me.btnQuitGame.Text = "Quit"
+        Me.btnQuitGame.UseVisualStyleBackColor = True
+        '
         'Minesweeper
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(454, 331)
+        Me.ClientSize = New System.Drawing.Size(454, 371)
+        Me.Controls.Add(Me.btnQuitGame)
         Me.Controls.Add(Me.lblTimeElapsed)
         Me.Controls.Add(Me.lblTimeElapsedHeading)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -76,4 +87,5 @@ Partial Class Minesweeper
     Friend WithEvents lblTimeElapsedHeading As Label
     Friend WithEvents tmrGameTime As Timer
     Friend WithEvents lblTimeElapsed As Label
+    Friend WithEvents btnQuitGame As Button
 End Class

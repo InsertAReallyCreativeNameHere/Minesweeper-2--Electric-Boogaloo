@@ -8,6 +8,7 @@ Public Class frmTitleScreen
     End Sub
 
     Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
+        weed.HandleExit()
         End
     End Sub
 

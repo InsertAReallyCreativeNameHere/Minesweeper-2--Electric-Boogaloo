@@ -42,7 +42,7 @@ namespace MinesweeperAdvance.Behaviours
                 size = (10, 10),
                 tiles = new Tile[100]
             };
-            Game.mainForm.ClientSize = new Size { Width = Game.tileMap.size.Item1 * 36 + 10 + 100, Height = Game.tileMap.size.Item2 * 36 + 10 };
+           
 
             Game.drawFont = new Font("Comic Sans", 20);
 
@@ -72,7 +72,7 @@ namespace MinesweeperAdvance.Behaviours
             // Graphics Update.
             Game.mainForm.Invalidate();
 
-            System.Threading.Thread.Sleep(250);
+            await Task.Delay(250);
             Update();
         }
         public static void GraphicsUpdate(ref PaintEventArgs args)
