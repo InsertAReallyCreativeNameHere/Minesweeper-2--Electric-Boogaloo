@@ -85,13 +85,14 @@
     <Compile Include="frmGameSelection.vb">
       <SubType>Form</SubType>
     </Compile>
+  
     <Compile Include="frmStatistics.Designer.vb">
       <DependentUpon>frmStatistics.vb</DependentUpon>
     </Compile>
     <Compile Include="frmStatistics.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameDifficulty.vb" />
+  
     <Compile Include="Minesweeper.vb">
       <SubType>Form</SubType>
     </Compile>

@@ -51,10 +51,10 @@ Public Class frmGameSelection
     Private Sub picFlag3_Click(sender As Object, e As EventArgs) Handles picFlag3.Click
         SelectFlagSkin(sender)
     End Sub
+
     Private Sub picFlag4_Click(sender As Object, e As EventArgs) Handles picFlag4.Click
         SelectFlagSkin(sender)
     End Sub
-
 
     Private Sub picMine1_Click(sender As Object, e As EventArgs) Handles picMine1.Click
         SelectMineSkin(sender)
@@ -83,5 +83,4 @@ Public Class frmGameSelection
     Private Sub picFlag7_Click(sender As Object, e As EventArgs) Handles picFlag7.Click
         SelectFlagSkin(sender)
     End Sub
-
 End Class
