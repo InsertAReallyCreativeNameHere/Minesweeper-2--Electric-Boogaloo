@@ -85,6 +85,7 @@
     <Compile Include="frmGameSelection.vb">
       <SubType>Form</SubType>
     </Compile>
+  
     <Compile Include="frmStatistics.Designer.vb">
       <DependentUpon>frmStatistics.vb</DependentUpon>
     </Compile>
@@ -131,6 +132,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStatistics.resx">
       <DependentUpon>frmStatistics.vb</DependentUpon>
+
+ 
     </EmbeddedResource>
     <EmbeddedResource Include="frmTitleScreen.resx">
       <DependentUpon>frmTitleScreen.vb</DependentUpon>

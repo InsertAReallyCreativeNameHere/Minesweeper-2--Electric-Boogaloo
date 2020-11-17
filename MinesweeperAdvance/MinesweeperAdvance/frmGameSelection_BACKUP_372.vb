@@ -51,16 +51,22 @@ Public Class frmGameSelection
     Private Sub picFlag3_Click(sender As Object, e As EventArgs) Handles picFlag3.Click
         SelectFlagSkin(sender)
     End Sub
+
+<<<<<<< Updated upstream
     Private Sub picFlag4_Click(sender As Object, e As EventArgs) Handles picFlag4.Click
         SelectFlagSkin(sender)
+=======
+    Private Sub trbDifficulty_Scroll(sender As Object, e As EventArgs) Handles trbDifficulty.Scroll
+        Dim difficulty As Integer = D.Difficulty
+        difficulty = trbDifficulty.Value
+        Console.WriteLine(difficulty)
+        Console.ReadLine()
+>>>>>>> Stashed changes
     End Sub
-
-
 
     Private Sub picMine1_Click(sender As Object, e As EventArgs) Handles picMine1.Click
         SelectMineSkin(sender)
     End Sub
-
 
     Private Sub picMine2_Click(sender As Object, e As EventArgs) Handles picMine2.Click
         SelectMineSkin(sender)
@@ -86,5 +92,7 @@ Public Class frmGameSelection
         SelectFlagSkin(sender)
     End Sub
 
+    Private Sub frmGameSelection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class
