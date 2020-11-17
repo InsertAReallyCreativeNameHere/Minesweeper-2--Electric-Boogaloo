@@ -33,6 +33,7 @@ Partial Class Minesweeper
         Me.lblScanBar = New System.Windows.Forms.Label()
         Me.lblFlagsLeft = New System.Windows.Forms.Label()
         Me.picFlagsLeft = New System.Windows.Forms.PictureBox()
+        Me.pgbScanBar = New System.Windows.Forms.ProgressBar()
         CType(Me.picFlagsLeft, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -66,7 +67,7 @@ Partial Class Minesweeper
         '
         'btnQuitGame
         '
-        Me.btnQuitGame.Location = New System.Drawing.Point(370, 309)
+        Me.btnQuitGame.Location = New System.Drawing.Point(375, 309)
         Me.btnQuitGame.Name = "btnQuitGame"
         Me.btnQuitGame.Size = New System.Drawing.Size(75, 50)
         Me.btnQuitGame.TabIndex = 2
@@ -137,11 +138,20 @@ Partial Class Minesweeper
         Me.picFlagsLeft.TabIndex = 8
         Me.picFlagsLeft.TabStop = False
         '
+        'pgbScanBar
+        '
+        Me.pgbScanBar.Location = New System.Drawing.Point(375, 265)
+        Me.pgbScanBar.Name = "pgbScanBar"
+        Me.pgbScanBar.Size = New System.Drawing.Size(75, 25)
+        Me.pgbScanBar.Step = -1
+        Me.pgbScanBar.TabIndex = 9
+        '
         'Minesweeper
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(454, 371)
+        Me.Controls.Add(Me.pgbScanBar)
         Me.Controls.Add(Me.picFlagsLeft)
         Me.Controls.Add(Me.lblFlagsLeft)
         Me.Controls.Add(Me.lblScanBar)
@@ -173,4 +183,5 @@ Partial Class Minesweeper
     Friend WithEvents lblScanBar As Label
     Friend WithEvents lblFlagsLeft As Label
     Friend WithEvents picFlagsLeft As PictureBox
+    Friend WithEvents pgbScanBar As ProgressBar
 End Class

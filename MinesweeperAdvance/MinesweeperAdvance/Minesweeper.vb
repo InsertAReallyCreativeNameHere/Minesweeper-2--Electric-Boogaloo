@@ -5,7 +5,16 @@ Imports System.Threading.Tasks
 Partial Public Class Minesweeper
     Inherits Form
     Dim _totalFlagsNeeded As Integer = 0
-
+    Dim _DecayRate As Integer = 0
+    Async Sub DecayScanBar()
+        Await System.Threading.Tasks.Task.Yield()
+        While Game.gameFinished = False
+            If pgbScanBar.Value > 0 Then
+            pgbScanBar.Value -= 1
+        End If
+            Await Task.Delay(_DecayRate)
+        End While
+    End Sub
     Async Sub RunTimer()
         Await System.Threading.Tasks.Task.Yield()
         tmrGameTime.Enabled = True
@@ -33,17 +42,22 @@ Partial Public Class Minesweeper
             Case 0
                 lblDisplayCurrentDifficulty.Text = "Easy"
                 _totalFlagsNeeded = 10
+                _DecayRate = 500
             Case 1
                 lblDisplayCurrentDifficulty.Text = "Medium"
                 _totalFlagsNeeded = 15
+                _DecayRate = 250
             Case 2
                 lblDisplayCurrentDifficulty.Text = "Hard"
                 _totalFlagsNeeded = 20
+                _DecayRate = 167
             Case 3
                 lblDisplayCurrentDifficulty.Text = "Insane"
                 _totalFlagsNeeded = 25
+                _DecayRate = 125
         End Select
         lblFlagsLeft.Text = _totalFlagsNeeded - GameData.FlagsPlaced
+        DecayScanBar()
     End Sub
 
     Private Sub Minesweeper_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
@@ -63,6 +77,14 @@ Partial Public Class Minesweeper
     End Sub
 
     Private Sub Minesweeper_Click(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles MyBase.Click
+        If GameData.ScanBar > 89 Then
+            pgbScanBar.Value = 100
+            GameData.ScanBarsFilled += 1
+            pgbScanBar.Value = 0
+            GameData.ScanBar = 0
+        Else pgbScanBar.Value = GameData.ScanBar
+        End If
+
         If e.Button = MouseButtons.Right Then
             lblFlagsLeft.Text = _totalFlagsNeeded - GameData.FlagsPlaced
         End If
