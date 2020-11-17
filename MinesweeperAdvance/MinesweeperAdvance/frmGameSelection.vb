@@ -38,6 +38,7 @@ Public Class frmGameSelection
     Private Sub frmGameSelection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SelectFlagSkin(picFlag1)
         SelectMineSkin(picMine1)
+        GameData.Difficulty = 0
     End Sub
 
     Private Sub picFlag1_Click(sender As Object, e As EventArgs) Handles picFlag1.Click

@@ -18,6 +18,7 @@ namespace MinesweeperAdvance.Behaviours
         public static GameDifficulty Difficulty { get; set; } = GameDifficulty.Easy;
         public static Image FlagSkin { get; set; } = null;
         public static Image MineSkin { get; set; } = null;
+        public static Int32 FlagsPlaced { get; set; } = 0;
     }
     public static class Game
     {
@@ -133,6 +134,12 @@ namespace MinesweeperAdvance.Behaviours
                     case MouseButtons.Right:
                         {
                             Game.tileMap.tiles[index].drawFlag = !Game.tileMap.tiles[index].drawFlag;
+                            if (Game.tileMap.tiles[index].drawFlag) {
+                                GameData.FlagsPlaced++;
+                            } else {
+                                GameData.FlagsPlaced--;
+                            }
+                    
                         }
                         break;
                 }
