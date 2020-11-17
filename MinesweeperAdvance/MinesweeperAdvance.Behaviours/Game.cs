@@ -86,7 +86,10 @@ namespace MinesweeperAdvance.Behaviours
                     var index = j * tileMap.size.Item1 + i;
                     tileMap.tiles[index].Clear();
                     if (tileMap.tiles[index].drawMine)
+                    {
                         tileMap.tiles[index].DrawMine();
+                        System.Threading.Thread.Sleep(4321);
+                    }
                     else if (tileMap.tiles[index].drawNumber >= 0)
                         tileMap.tiles[index].DrawNumber();
                     else if (tileMap.tiles[index].drawFlag)
