@@ -92,8 +92,6 @@
     <Compile Include="frmStatistics.vb">
       <SubType>Form</SubType>
     </Compile>
-  
-
     <Compile Include="Minesweeper.vb">
       <SubType>Form</SubType>
     </Compile>
