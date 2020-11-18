@@ -92,6 +92,7 @@ namespace MinesweeperAdvance.Behaviours
                     {
                         tileMap.tiles[index].DrawMine();
                         System.Threading.Thread.Sleep(4321);
+                        Game.gameFinished = true;
                     }
                     else if (tileMap.tiles[index].drawNumber >= 0)
                         tileMap.tiles[index].DrawNumber();
@@ -121,12 +122,15 @@ namespace MinesweeperAdvance.Behaviours
                                 {
                                     for (int j = -1; j <= 1; ++j)
                                     {
-                                        if (Game.tileMap.tiles[index].position.Item1 + i >= 0 &&
+                                        if
+                                        (
+                                            Game.tileMap.tiles[index].position.Item1 + i >= 0 &&
                                             Game.tileMap.tiles[index].position.Item1 + i < Game.tileMap.size.Item1 &&
                                             Game.tileMap.tiles[index].position.Item2 + j >= 0 &&
                                             Game.tileMap.tiles[index].position.Item2 + j < Game.tileMap.size.Item2 &&
-                                            Game.tileMap.tiles[(Game.tileMap.tiles[index].position.Item2 + j) * tileMap.size.Item1 + Game.tileMap.tiles[index].position.Item1 + i].isMine)
-                                            num++;
+                                            Game.tileMap.tiles[(Game.tileMap.tiles[index].position.Item2 + j) * tileMap.size.Item1 + Game.tileMap.tiles[index].position.Item1 + i].isMine
+                                        )
+                                        num++;
                                     }
                                 }
                                 Game.tileMap.tiles[index].drawNumber = num;
@@ -149,6 +153,10 @@ namespace MinesweeperAdvance.Behaviours
                         break;
                 }
             }
+        }
+        public static void ClearZeroedTile(ref Tile tile)
+        {
+
         }
     }
 
