@@ -14,10 +14,12 @@ namespace MinesweeperAdvance.Behaviours
     }
     public static class GameData
     {
+        // Used properties because the other psychopaths working decided to name with capitals.
+        // C# programmers follow the naming standards. VB programmers are psychopaths.
         public static GameDifficulty Difficulty { get; set; } = GameDifficulty.Easy;
         public static Image FlagSkin { get; set; } = null;
         public static Image MineSkin { get; set; } = null;
-        public static Int32 Score { get; set; } = 0;
+        public static Int32 Score { get; set; } = 0; // Andrew's dad would not approve. Int32 is for psychopaths, use int.
         public static Int32 FlagsPlaced { get; set; } = 0;
         public static Int32 ScanBar { get; set; } = 0;
         public static Int32 ScanBarsFilled { get; set; } = 0;
@@ -33,7 +35,17 @@ namespace MinesweeperAdvance.Behaviours
         public static Font drawFont;
 
         public static bool gameFinished = false;
-        public static bool gameWon = false;
+        public static bool gameWon = false; // Bruh why not use a GameState enum?
+        // i.e.:
+        // enum GameState : short // GameState here might not work though just implementation example.
+        // {
+        //     Unknown = -1,
+        //     Playing = 0,
+        //     Lost = 1,
+        //     Won = 2
+        // }
+        // public static GameState gameState = GameState.Unknown;
+
         /// <summary>
         /// Don't put any graphics update stuff here.
         /// </summary>
@@ -45,7 +57,6 @@ namespace MinesweeperAdvance.Behaviours
                 size = (10, 10),
                 tiles = new Tile[100]
             };
-
 
             Game.drawFont = new Font("Comic Sans", 20);
 
@@ -68,15 +79,13 @@ namespace MinesweeperAdvance.Behaviours
         }
         public static async void Update()
         {
-            await Task.Yield();
+            if (!gameFinished)
+            {
+                Game.mainForm.Invalidate();
 
-            // Logic
-
-            // Graphics Update.
-            Game.mainForm.Invalidate();
-
-            await Task.Delay(250);
-            Update();
+                await Task.Delay(250);
+                Update();
+            }
         }
         public static void GraphicsUpdate(ref PaintEventArgs args)
         {
@@ -118,22 +127,7 @@ namespace MinesweeperAdvance.Behaviours
                                 Game.tileMap.tiles[index].drawMine = true;
                             else
                             {
-                                int num = 0;
-                                for (int i = -1; i <= 1; ++i)
-                                {
-                                    for (int j = -1; j <= 1; ++j)
-                                    {
-                                        if
-                                        (
-                                            Game.tileMap.tiles[index].position.Item1 + i >= 0 &&
-                                            Game.tileMap.tiles[index].position.Item1 + i < Game.tileMap.size.Item1 &&
-                                            Game.tileMap.tiles[index].position.Item2 + j >= 0 &&
-                                            Game.tileMap.tiles[index].position.Item2 + j < Game.tileMap.size.Item2 &&
-                                            Game.tileMap.tiles[(Game.tileMap.tiles[index].position.Item2 + j) * tileMap.size.Item1 + Game.tileMap.tiles[index].position.Item1 + i].isMine
-                                        )
-                                            num++;
-                                    }
-                                }
+                                ushort num = FindMinesAround(x, y);
                                 Game.tileMap.tiles[index].drawNumber = num;
                                 if (num == 0)
                                     ClearZeroedTile(x, y);
@@ -149,20 +143,15 @@ namespace MinesweeperAdvance.Behaviours
                                 GameData.FlagsPlaced++;
                                 GameData.ScanBar += 10;
                             }
-                            else
-                            {
-                                GameData.FlagsPlaced--;
-                            }
-
+                            else GameData.FlagsPlaced--;
                         }
-
                         break;
                 }
             }
         }
-        public static void ClearZeroedTile(int tx, int ty)
+        public static ushort FindMinesAround(int tx, int ty)
         {
-            int num = 0;
+            ushort num = 0;
             for (int i = -1; i <= 1; ++i)
             {
                 for (int j = -1; j <= 1; ++j)
@@ -173,26 +162,34 @@ namespace MinesweeperAdvance.Behaviours
                         tx + i < Game.tileMap.size.Item1 &&
                         ty + j >= 0 &&
                         ty + j < Game.tileMap.size.Item2 &&
-                        Game.tileMap.tiles[(Game.tileMap.tiles[tx].position.Item2 + j) * tileMap.size.Item1 + Game.tileMap.tiles[tileIndex].position.Item1 + i].isMine
+                        Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].isMine
                     )
                     num++;
                 }
             }
-            if (num == 0)
+            return num;
+        }
+        public static void ClearZeroedTile(int tx, int ty)
+        {
+            for (int i = -1; i <= 1; ++i)
             {
-                for (int i = -1; i <= 1; ++i)
+                for (int j = -1; j <= 1; ++j)
                 {
-                    for (int j = -1; j <= 1; ++j)
+                    if
+                    (
+                        tx + i >= 0 &&
+                        tx + i < Game.tileMap.size.Item1 &&
+                        ty + j >= 0 &&
+                        ty + j < Game.tileMap.size.Item2 &&
+                        !Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].isMine
+                    )
                     {
-                        Game.tileMap.tiles[tileIndex].drawNumber = num; // This is broken, fix this.
-                        if
-                        (
-                            Game.tileMap.tiles[tileIndex].position.Item1 + i >= 0 &&
-                            Game.tileMap.tiles[tileIndex].position.Item1 + i < Game.tileMap.size.Item1 &&
-                            Game.tileMap.tiles[tileIndex].position.Item2 + j >= 0 &&
-                            Game.tileMap.tiles[tileIndex].position.Item2 + j < Game.tileMap.size.Item2
-                        )
-                        ClearZeroedTile();
+                        if (i != 0 && j != 0 && Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].drawable && !Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].isMine)
+                        {
+                            Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].drawNumber = FindMinesAround(tx + i, ty + j);
+                            if (Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].drawNumber == 0)
+                                ClearZeroedTile(tx + i, ty + j);
+                        }
                     }
                 }
             }
