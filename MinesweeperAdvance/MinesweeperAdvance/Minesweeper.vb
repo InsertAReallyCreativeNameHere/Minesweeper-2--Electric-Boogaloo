@@ -24,6 +24,8 @@ Partial Public Class Minesweeper
             lblTimeElapsed.Text = Math.Round(i)
             Await Task.Delay(1000)
         End While
+        Me.Hide()
+        frmEndScreen.Show()
     End Sub
     Private Sub Minesweeper_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblTimeElapsed.BackColor = Color.FromArgb(40, 40, 40)

@@ -79,13 +79,18 @@
     <Compile Include="frmAchievements.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmEndScreen.Designer.vb">
+      <DependentUpon>frmEndScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEndScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmGameSelection.Designer.vb">
       <DependentUpon>frmGameSelection.vb</DependentUpon>
     </Compile>
     <Compile Include="frmGameSelection.vb">
       <SubType>Form</SubType>
     </Compile>
-  
     <Compile Include="frmStatistics.Designer.vb">
       <DependentUpon>frmStatistics.vb</DependentUpon>
     </Compile>
@@ -127,13 +132,14 @@
     <EmbeddedResource Include="frmAchievements.resx">
       <DependentUpon>frmAchievements.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEndScreen.resx">
+      <DependentUpon>frmEndScreen.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGameSelection.resx">
       <DependentUpon>frmGameSelection.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStatistics.resx">
       <DependentUpon>frmStatistics.vb</DependentUpon>
-
- 
     </EmbeddedResource>
     <EmbeddedResource Include="frmTitleScreen.resx">
       <DependentUpon>frmTitleScreen.vb</DependentUpon>

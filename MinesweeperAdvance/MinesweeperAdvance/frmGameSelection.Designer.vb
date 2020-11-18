@@ -36,31 +36,49 @@ Partial Class frmGameSelection
         Me.btnBackToTitleScreen = New System.Windows.Forms.Button()
         Me.picMine1 = New System.Windows.Forms.PictureBox()
         Me.pnlFlags = New System.Windows.Forms.Panel()
+        Me.picFlag5 = New System.Windows.Forms.PictureBox()
+        Me.picFlag6 = New System.Windows.Forms.PictureBox()
+        Me.picFlag7 = New System.Windows.Forms.PictureBox()
         Me.picFlag1 = New System.Windows.Forms.PictureBox()
         Me.picFlag4 = New System.Windows.Forms.PictureBox()
         Me.picFlag2 = New System.Windows.Forms.PictureBox()
         Me.picFlag3 = New System.Windows.Forms.PictureBox()
-        Me.picFlag5 = New System.Windows.Forms.PictureBox()
-        Me.picFlag6 = New System.Windows.Forms.PictureBox()
-        Me.picFlag7 = New System.Windows.Forms.PictureBox()
         Me.pnlMines = New System.Windows.Forms.Panel()
+        Me.picMine2 = New System.Windows.Forms.PictureBox()
         Me.picMine3 = New System.Windows.Forms.PictureBox()
         Me.picMine4 = New System.Windows.Forms.PictureBox()
-        Me.picMine2 = New System.Windows.Forms.PictureBox()
+        Me.picQ1 = New System.Windows.Forms.PictureBox()
+        Me.picQ2 = New System.Windows.Forms.PictureBox()
+        Me.picQ4 = New System.Windows.Forms.PictureBox()
+        Me.picQ3 = New System.Windows.Forms.PictureBox()
+        Me.picQ6 = New System.Windows.Forms.PictureBox()
+        Me.picQ5 = New System.Windows.Forms.PictureBox()
+        Me.picQ9 = New System.Windows.Forms.PictureBox()
+        Me.picQ8 = New System.Windows.Forms.PictureBox()
+        Me.picQ7 = New System.Windows.Forms.PictureBox()
         CType(Me.trbDifficulty, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picMine1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlFlags.SuspendLayout()
+        CType(Me.picFlag5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picFlag6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picFlag7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picFlag1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picFlag4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picFlag2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picFlag3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picFlag5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picFlag6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picFlag7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlMines.SuspendLayout()
+        CType(Me.picMine2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picMine3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picMine4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picMine2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'trbDifficulty
@@ -177,6 +195,12 @@ Partial Class frmGameSelection
         '
         'pnlFlags
         '
+        Me.pnlFlags.Controls.Add(Me.picQ6)
+        Me.pnlFlags.Controls.Add(Me.picQ5)
+        Me.pnlFlags.Controls.Add(Me.picQ4)
+        Me.pnlFlags.Controls.Add(Me.picQ3)
+        Me.pnlFlags.Controls.Add(Me.picQ2)
+        Me.pnlFlags.Controls.Add(Me.picQ1)
         Me.pnlFlags.Controls.Add(Me.picFlag5)
         Me.pnlFlags.Controls.Add(Me.picFlag6)
         Me.pnlFlags.Controls.Add(Me.picFlag7)
@@ -188,6 +212,37 @@ Partial Class frmGameSelection
         Me.pnlFlags.Name = "pnlFlags"
         Me.pnlFlags.Size = New System.Drawing.Size(441, 51)
         Me.pnlFlags.TabIndex = 21
+        '
+        'picFlag5
+        '
+        Me.picFlag5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picFlag5.Image = CType(resources.GetObject("picFlag5.Image"), System.Drawing.Image)
+        Me.picFlag5.Location = New System.Drawing.Point(227, 0)
+        Me.picFlag5.Name = "picFlag5"
+        Me.picFlag5.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picFlag5.TabIndex = 25
+        Me.picFlag5.TabStop = False
+        '
+        'picFlag6
+        '
+        Me.picFlag6.Image = CType(resources.GetObject("picFlag6.Image"), System.Drawing.Image)
+        Me.picFlag6.Location = New System.Drawing.Point(283, 0)
+        Me.picFlag6.Name = "picFlag6"
+        Me.picFlag6.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picFlag6.TabIndex = 26
+        Me.picFlag6.TabStop = False
+        '
+        'picFlag7
+        '
+        Me.picFlag7.Image = CType(resources.GetObject("picFlag7.Image"), System.Drawing.Image)
+        Me.picFlag7.Location = New System.Drawing.Point(339, 1)
+        Me.picFlag7.Name = "picFlag7"
+        Me.picFlag7.Size = New System.Drawing.Size(50, 50)
+        Me.picFlag7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picFlag7.TabIndex = 27
+        Me.picFlag7.TabStop = False
         '
         'picFlag1
         '
@@ -230,67 +285,19 @@ Partial Class frmGameSelection
         Me.picFlag3.TabIndex = 23
         Me.picFlag3.TabStop = False
         '
-        'picFlag5
-        '
-        Me.picFlag5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picFlag5.Image = CType(resources.GetObject("picFlag5.Image"), System.Drawing.Image)
-        Me.picFlag5.Location = New System.Drawing.Point(227, 0)
-        Me.picFlag5.Name = "picFlag5"
-        Me.picFlag5.Size = New System.Drawing.Size(50, 50)
-        Me.picFlag5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picFlag5.TabIndex = 25
-        Me.picFlag5.TabStop = False
-        '
-        'picFlag6
-        '
-        Me.picFlag6.Image = CType(resources.GetObject("picFlag6.Image"), System.Drawing.Image)
-        Me.picFlag6.Location = New System.Drawing.Point(283, 0)
-        Me.picFlag6.Name = "picFlag6"
-        Me.picFlag6.Size = New System.Drawing.Size(50, 50)
-        Me.picFlag6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picFlag6.TabIndex = 26
-        Me.picFlag6.TabStop = False
-        '
-        'picFlag7
-        '
-        Me.picFlag7.Image = CType(resources.GetObject("picFlag7.Image"), System.Drawing.Image)
-        Me.picFlag7.Location = New System.Drawing.Point(339, 1)
-        Me.picFlag7.Name = "picFlag7"
-        Me.picFlag7.Size = New System.Drawing.Size(50, 50)
-        Me.picFlag7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picFlag7.TabIndex = 27
-        Me.picFlag7.TabStop = False
-        '
         'pnlMines
         '
+        Me.pnlMines.Controls.Add(Me.picQ9)
         Me.pnlMines.Controls.Add(Me.picMine2)
         Me.pnlMines.Controls.Add(Me.picMine3)
         Me.pnlMines.Controls.Add(Me.picMine4)
+        Me.pnlMines.Controls.Add(Me.picQ8)
         Me.pnlMines.Controls.Add(Me.picMine1)
+        Me.pnlMines.Controls.Add(Me.picQ7)
         Me.pnlMines.Location = New System.Drawing.Point(38, 224)
         Me.pnlMines.Name = "pnlMines"
         Me.pnlMines.Size = New System.Drawing.Size(441, 51)
         Me.pnlMines.TabIndex = 28
-        '
-        'picMine3
-        '
-        Me.picMine3.Image = CType(resources.GetObject("picMine3.Image"), System.Drawing.Image)
-        Me.picMine3.Location = New System.Drawing.Point(115, 0)
-        Me.picMine3.Name = "picMine3"
-        Me.picMine3.Size = New System.Drawing.Size(50, 50)
-        Me.picMine3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picMine3.TabIndex = 22
-        Me.picMine3.TabStop = False
-        '
-        'picMine4
-        '
-        Me.picMine4.Image = CType(resources.GetObject("picMine4.Image"), System.Drawing.Image)
-        Me.picMine4.Location = New System.Drawing.Point(171, 0)
-        Me.picMine4.Name = "picMine4"
-        Me.picMine4.Size = New System.Drawing.Size(50, 50)
-        Me.picMine4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picMine4.TabIndex = 23
-        Me.picMine4.TabStop = False
         '
         'picMine2
         '
@@ -302,6 +309,125 @@ Partial Class frmGameSelection
         Me.picMine2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picMine2.TabIndex = 24
         Me.picMine2.TabStop = False
+        '
+        'picMine3
+        '
+        Me.picMine3.Image = CType(resources.GetObject("picMine3.Image"), System.Drawing.Image)
+        Me.picMine3.Location = New System.Drawing.Point(115, 1)
+        Me.picMine3.Name = "picMine3"
+        Me.picMine3.Size = New System.Drawing.Size(50, 50)
+        Me.picMine3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picMine3.TabIndex = 22
+        Me.picMine3.TabStop = False
+        '
+        'picMine4
+        '
+        Me.picMine4.Image = CType(resources.GetObject("picMine4.Image"), System.Drawing.Image)
+        Me.picMine4.Location = New System.Drawing.Point(167, 0)
+        Me.picMine4.Name = "picMine4"
+        Me.picMine4.Size = New System.Drawing.Size(50, 50)
+        Me.picMine4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picMine4.TabIndex = 23
+        Me.picMine4.TabStop = False
+        '
+        'picQ1
+        '
+        Me.picQ1.Image = CType(resources.GetObject("picQ1.Image"), System.Drawing.Image)
+        Me.picQ1.InitialImage = Nothing
+        Me.picQ1.Location = New System.Drawing.Point(59, 1)
+        Me.picQ1.Name = "picQ1"
+        Me.picQ1.Size = New System.Drawing.Size(50, 50)
+        Me.picQ1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ1.TabIndex = 29
+        Me.picQ1.TabStop = False
+        '
+        'picQ2
+        '
+        Me.picQ2.Image = CType(resources.GetObject("picQ2.Image"), System.Drawing.Image)
+        Me.picQ2.InitialImage = Nothing
+        Me.picQ2.Location = New System.Drawing.Point(115, 1)
+        Me.picQ2.Name = "picQ2"
+        Me.picQ2.Size = New System.Drawing.Size(50, 50)
+        Me.picQ2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ2.TabIndex = 30
+        Me.picQ2.TabStop = False
+        '
+        'picQ4
+        '
+        Me.picQ4.Image = CType(resources.GetObject("picQ4.Image"), System.Drawing.Image)
+        Me.picQ4.InitialImage = Nothing
+        Me.picQ4.Location = New System.Drawing.Point(227, 1)
+        Me.picQ4.Name = "picQ4"
+        Me.picQ4.Size = New System.Drawing.Size(50, 50)
+        Me.picQ4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ4.TabIndex = 32
+        Me.picQ4.TabStop = False
+        '
+        'picQ3
+        '
+        Me.picQ3.Image = CType(resources.GetObject("picQ3.Image"), System.Drawing.Image)
+        Me.picQ3.InitialImage = Nothing
+        Me.picQ3.Location = New System.Drawing.Point(171, 0)
+        Me.picQ3.Name = "picQ3"
+        Me.picQ3.Size = New System.Drawing.Size(50, 50)
+        Me.picQ3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ3.TabIndex = 31
+        Me.picQ3.TabStop = False
+        '
+        'picQ6
+        '
+        Me.picQ6.Image = CType(resources.GetObject("picQ6.Image"), System.Drawing.Image)
+        Me.picQ6.InitialImage = Nothing
+        Me.picQ6.Location = New System.Drawing.Point(339, 0)
+        Me.picQ6.Name = "picQ6"
+        Me.picQ6.Size = New System.Drawing.Size(50, 50)
+        Me.picQ6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ6.TabIndex = 34
+        Me.picQ6.TabStop = False
+        '
+        'picQ5
+        '
+        Me.picQ5.Image = CType(resources.GetObject("picQ5.Image"), System.Drawing.Image)
+        Me.picQ5.InitialImage = Nothing
+        Me.picQ5.Location = New System.Drawing.Point(283, 0)
+        Me.picQ5.Name = "picQ5"
+        Me.picQ5.Size = New System.Drawing.Size(50, 50)
+        Me.picQ5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ5.TabIndex = 33
+        Me.picQ5.TabStop = False
+        '
+        'picQ9
+        '
+        Me.picQ9.Image = CType(resources.GetObject("picQ9.Image"), System.Drawing.Image)
+        Me.picQ9.InitialImage = Nothing
+        Me.picQ9.Location = New System.Drawing.Point(166, 1)
+        Me.picQ9.Name = "picQ9"
+        Me.picQ9.Size = New System.Drawing.Size(50, 50)
+        Me.picQ9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ9.TabIndex = 37
+        Me.picQ9.TabStop = False
+        '
+        'picQ8
+        '
+        Me.picQ8.Image = CType(resources.GetObject("picQ8.Image"), System.Drawing.Image)
+        Me.picQ8.InitialImage = Nothing
+        Me.picQ8.Location = New System.Drawing.Point(115, 0)
+        Me.picQ8.Name = "picQ8"
+        Me.picQ8.Size = New System.Drawing.Size(50, 50)
+        Me.picQ8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ8.TabIndex = 36
+        Me.picQ8.TabStop = False
+        '
+        'picQ7
+        '
+        Me.picQ7.Image = CType(resources.GetObject("picQ7.Image"), System.Drawing.Image)
+        Me.picQ7.InitialImage = Nothing
+        Me.picQ7.Location = New System.Drawing.Point(59, -1)
+        Me.picQ7.Name = "picQ7"
+        Me.picQ7.Size = New System.Drawing.Size(50, 50)
+        Me.picQ7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ7.TabIndex = 35
+        Me.picQ7.TabStop = False
         '
         'frmGameSelection
         '
@@ -327,17 +453,26 @@ Partial Class frmGameSelection
         CType(Me.trbDifficulty, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picMine1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlFlags.ResumeLayout(False)
+        CType(Me.picFlag5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picFlag6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picFlag7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picFlag1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picFlag4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picFlag2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picFlag3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picFlag5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picFlag6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picFlag7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlMines.ResumeLayout(False)
+        CType(Me.picMine2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picMine3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picMine4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picMine2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -367,4 +502,13 @@ Partial Class frmGameSelection
     Friend WithEvents picMine2 As PictureBox
     Friend WithEvents picMine3 As PictureBox
     Friend WithEvents picMine4 As PictureBox
+    Friend WithEvents picQ1 As PictureBox
+    Friend WithEvents picQ6 As PictureBox
+    Friend WithEvents picQ5 As PictureBox
+    Friend WithEvents picQ4 As PictureBox
+    Friend WithEvents picQ3 As PictureBox
+    Friend WithEvents picQ2 As PictureBox
+    Friend WithEvents picQ9 As PictureBox
+    Friend WithEvents picQ8 As PictureBox
+    Friend WithEvents picQ7 As PictureBox
 End Class

@@ -1,33 +1,5 @@
 ﻿Public Class frmAchievements
-    Dim TilesFlaggedLocal As Integer = My.Settings.Stats.GetOverallStats().FlagsPlaced
-    Dim BarsFilledLocal As Integer = My.Settings.Stats.GetOverallStats().BarsFilled
 
-    Dim Ach1 As Integer = 0 + TilesFlaggedLocal
-    Dim Cons1 As Integer = 10
-
-    Dim Ach2 As Integer = 0 + BarsFilledLocal
-    Dim Cons2 As Integer = 1
-
-    Dim Ach3 As Integer = 0
-    Dim Cons3 As Integer = 1
-
-    Dim Ach4 As Integer = 0 + TilesFlaggedLocal
-    Dim Cons4 As Integer = 100
-
-    Dim Ach5 As Integer = 0 + BarsFilledLocal
-    Dim Cons5 As Integer = 10
-
-    Dim Ach6 As Integer = 0
-    Dim Cons6 As Integer = 10
-
-    Dim Ach7 As Integer = 0 + TilesFlaggedLocal
-    Dim Cons7 As Integer = 1000
-
-    Dim Ach8 As Integer = 0 + BarsFilledLocal
-    Dim Cons8 As Integer = 100
-
-    Dim Ach9 As Integer = 0
-    Dim Cons9 As Integer = 100
 
 
     Private Sub btnBackAchievements_Click(sender As Object, e As EventArgs) Handles btnBackAchievements.Click
@@ -37,45 +9,139 @@
     End Sub
 
     Private Sub frmAchievements_Load(sender As Object, e As EventArgs) Handles Me.Load
-
-        lblAchievements1.Text = Ach1 & " / " & Cons1
-        If (Ach1 >= Cons1) Then
-
+        Dim TilesFlaggedLocal As Integer = My.Settings.Stats.GetOverallStats().FlagsPlaced
+        Dim BarsFilledLocal As Integer = My.Settings.Stats.GetOverallStats().BarsFilled
+        Dim GamesWonLocal As Integer = My.Settings.Stats.GetOverallStats().GamesWon
+        DetectAchievements()
+        lblAchievements1.Text = TilesFlaggedLocal & " / " & 10
+        lblAchievements2.Text = BarsFilledLocal & " / " & 1
+        lblAchievements3.Text = GamesWonLocal & " / " & 1
+        lblAchievements4.Text = TilesFlaggedLocal & " / " & 100
+        lblAchievements5.Text = BarsFilledLocal & " / " & 10
+        lblAchievements6.Text = GamesWonLocal & " / " & 10
+        lblAchievements7.Text = TilesFlaggedLocal & " / " & 1000
+        lblAchievements8.Text = BarsFilledLocal & " / " & 100
+        lblAchievements9.Text = GamesWonLocal & " / " & 100
+        If AchievementsUnlocked.A1 = True Then
+            picAchievements1.Visible = True
+            picQ1.Visible = False
+        Else
+            picAchievements1.Visible = False
+            picQ1.Visible = True
         End If
-        lblAchievements2.Text = Ach2 & " / " & Cons2
-        If (Ach2 >= Cons2) Then
-
+        If AchievementsUnlocked.A2 = True Then
+            picAchievements2.Visible = True
+            picQ2.Visible = False
+        Else
+            picAchievements2.Visible = False
+            picQ2.Visible = True
         End If
-        lblAchievements3.Text = Ach3 & " / " & Cons3
-        If (Ach3 >= Cons3) Then
-
+        If AchievementsUnlocked.A3 = True Then
+            picAchievements3.Visible = True
+            picQ3.Visible = False
+        Else
+            picAchievements3.Visible = False
+            picQ3.Visible = True
         End If
-        lblAchievements4.Text = Ach4 & " / " & Cons4
-        If (Ach4 >= Cons4) Then
-
+        If AchievementsUnlocked.A4 = True Then
+            picAchievements4.Visible = True
+            picQ4.Visible = False
+        Else
+            picAchievements4.Visible = False
+            picQ4.Visible = True
         End If
-        lblAchievements5.Text = Ach5 & " / " & Cons5
-        If (Ach5 >= Cons5) Then
-
+        If AchievementsUnlocked.A5 = True Then
+            picAchievements5.Visible = True
+            picQ5.Visible = False
+        Else
+            picAchievements5.Visible = False
+            picQ5.Visible = True
         End If
-        lblAchievements6.Text = Ach6 & " / " & Cons6
-        If (Ach6 >= Cons6) Then
-
+        If AchievementsUnlocked.A6 = True Then
+            picAchievements6.Visible = True
+            picQ6.Visible = False
+        Else
+            picAchievements6.Visible = False
+            picQ6.Visible = True
         End If
-        lblAchievements7.Text = Ach7 & " / " & Cons7
-        If (Ach7 >= Cons7) Then
-
+        If AchievementsUnlocked.A7 = True Then
+            picAchievements7.Visible = True
+            picQ7.Visible = False
+        Else
+            picAchievements7.Visible = False
+            picQ7.Visible = True
         End If
-        lblAchievements8.Text = Ach8 & " / " & Cons8
-        If (Ach8 >= Cons8) Then
-
+        If AchievementsUnlocked.A8 = True Then
+            picAchievements8.Visible = True
+            picQ8.Visible = False
+        Else
+            picAchievements8.Visible = False
+            picQ8.Visible = True
         End If
-        lblAchievements9.Text = Ach9 & " / " & Cons9
-        If (Ach9 >= Cons9) Then
-
+        If AchievementsUnlocked.A9 = True Then
+            picAchievements9.Visible = True
+            picQ9.Visible = False
+        Else
+            picAchievements9.Visible = False
+            picQ9.Visible = True
         End If
 
     End Sub
 
+    Public Shared Sub DetectAchievements()
+        Dim TilesFlaggedLocal As Integer = My.Settings.Stats.GetOverallStats().FlagsPlaced
+        Dim BarsFilledLocal As Integer = My.Settings.Stats.GetOverallStats().BarsFilled
+        Dim GamesWonLocal As Integer = My.Settings.Stats.GetOverallStats().GamesWon
+        Dim Ach1 As Integer = TilesFlaggedLocal
+        Dim Ach2 As Integer = BarsFilledLocal
+        Dim Ach3 As Integer = GamesWonLocal
+        Dim Ach4 As Integer = TilesFlaggedLocal
+        Dim Ach5 As Integer = BarsFilledLocal
+        Dim Ach6 As Integer = GamesWonLocal
+        Dim Ach7 As Integer = TilesFlaggedLocal
+        Dim Ach8 As Integer = BarsFilledLocal
+        Dim Ach9 As Integer = GamesWonLocal
+
+        If (TilesFlaggedLocal >= 10) Then
+            AchievementsUnlocked.A1 = True
+        End If
+        If (BarsFilledLocal >= 1) Then
+            AchievementsUnlocked.A2 = True
+        End If
+        If (GamesWonLocal >= 1) Then
+            AchievementsUnlocked.A3 = True
+        End If
+        If (TilesFlaggedLocal >= 100) Then
+            AchievementsUnlocked.A4 = True
+        End If
+        If (BarsFilledLocal >= 10) Then
+            AchievementsUnlocked.A5 = True
+        End If
+        If (GamesWonLocal >= 10) Then
+            AchievementsUnlocked.A6 = True
+        End If
+        If (TilesFlaggedLocal >= 1000) Then
+            AchievementsUnlocked.A7 = True
+        End If
+        If (BarsFilledLocal >= 100) Then
+            AchievementsUnlocked.A8 = True
+        End If
+        If (GamesWonLocal >= 100) Then
+            AchievementsUnlocked.A9 = True
+        End If
+    End Sub
+
 End Class
 
+Public Class AchievementsUnlocked
+    Public Shared Property A1 As Boolean = False
+    Public Shared Property A2 As Boolean = False
+    Public Shared Property A3 As Boolean = False
+    Public Shared Property A4 As Boolean = False
+    Public Shared Property A5 As Boolean = False
+    Public Shared Property A6 As Boolean = False
+    Public Shared Property A7 As Boolean = False
+    Public Shared Property A8 As Boolean = False
+    Public Shared Property A9 As Boolean = False
+
+End Class

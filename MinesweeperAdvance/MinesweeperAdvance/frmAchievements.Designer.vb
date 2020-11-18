@@ -46,6 +46,15 @@ Partial Class frmAchievements
         Me.lblTitle3 = New System.Windows.Forms.Label()
         Me.lblTitle2 = New System.Windows.Forms.Label()
         Me.lblTitle1 = New System.Windows.Forms.Label()
+        Me.picQ1 = New System.Windows.Forms.PictureBox()
+        Me.picQ2 = New System.Windows.Forms.PictureBox()
+        Me.picQ3 = New System.Windows.Forms.PictureBox()
+        Me.picQ6 = New System.Windows.Forms.PictureBox()
+        Me.picQ5 = New System.Windows.Forms.PictureBox()
+        Me.picQ4 = New System.Windows.Forms.PictureBox()
+        Me.picQ9 = New System.Windows.Forms.PictureBox()
+        Me.picQ8 = New System.Windows.Forms.PictureBox()
+        Me.picQ7 = New System.Windows.Forms.PictureBox()
         CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picAchievements3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picAchievements2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +65,15 @@ Partial Class frmAchievements
         CType(Me.picAchievements9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picAchievements8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picAchievements7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picQ7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'FileSystemWatcher1
@@ -65,33 +83,30 @@ Partial Class frmAchievements
         '
         'lblAchievements1
         '
-        Me.lblAchievements1.AutoSize = True
         Me.lblAchievements1.Location = New System.Drawing.Point(35, 101)
         Me.lblAchievements1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAchievements1.Name = "lblAchievements1"
-        Me.lblAchievements1.Size = New System.Drawing.Size(39, 13)
+        Me.lblAchievements1.Size = New System.Drawing.Size(66, 13)
         Me.lblAchievements1.TabIndex = 9
         Me.lblAchievements1.Text = "Label1"
         Me.lblAchievements1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements2
         '
-        Me.lblAchievements2.AutoSize = True
         Me.lblAchievements2.Location = New System.Drawing.Point(202, 101)
         Me.lblAchievements2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAchievements2.Name = "lblAchievements2"
-        Me.lblAchievements2.Size = New System.Drawing.Size(39, 13)
+        Me.lblAchievements2.Size = New System.Drawing.Size(66, 13)
         Me.lblAchievements2.TabIndex = 10
         Me.lblAchievements2.Text = "Label2"
         Me.lblAchievements2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements3
         '
-        Me.lblAchievements3.AutoSize = True
         Me.lblAchievements3.Location = New System.Drawing.Point(369, 101)
         Me.lblAchievements3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAchievements3.Name = "lblAchievements3"
-        Me.lblAchievements3.Size = New System.Drawing.Size(39, 13)
+        Me.lblAchievements3.Size = New System.Drawing.Size(66, 13)
         Me.lblAchievements3.TabIndex = 11
         Me.lblAchievements3.Text = "Label3"
         Me.lblAchievements3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -145,33 +160,30 @@ Partial Class frmAchievements
         '
         'lblAchievements6
         '
-        Me.lblAchievements6.AutoSize = True
         Me.lblAchievements6.Location = New System.Drawing.Point(369, 186)
         Me.lblAchievements6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAchievements6.Name = "lblAchievements6"
-        Me.lblAchievements6.Size = New System.Drawing.Size(39, 13)
+        Me.lblAchievements6.Size = New System.Drawing.Size(66, 13)
         Me.lblAchievements6.TabIndex = 24
         Me.lblAchievements6.Text = "Label3"
         Me.lblAchievements6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements5
         '
-        Me.lblAchievements5.AutoSize = True
         Me.lblAchievements5.Location = New System.Drawing.Point(202, 186)
         Me.lblAchievements5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAchievements5.Name = "lblAchievements5"
-        Me.lblAchievements5.Size = New System.Drawing.Size(39, 13)
+        Me.lblAchievements5.Size = New System.Drawing.Size(66, 13)
         Me.lblAchievements5.TabIndex = 23
         Me.lblAchievements5.Text = "Label2"
         Me.lblAchievements5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements4
         '
-        Me.lblAchievements4.AutoSize = True
         Me.lblAchievements4.Location = New System.Drawing.Point(35, 186)
         Me.lblAchievements4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAchievements4.Name = "lblAchievements4"
-        Me.lblAchievements4.Size = New System.Drawing.Size(39, 13)
+        Me.lblAchievements4.Size = New System.Drawing.Size(66, 13)
         Me.lblAchievements4.TabIndex = 22
         Me.lblAchievements4.Text = "Label1"
         Me.lblAchievements4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -215,33 +227,30 @@ Partial Class frmAchievements
         '
         'lblAchievements9
         '
-        Me.lblAchievements9.AutoSize = True
         Me.lblAchievements9.Location = New System.Drawing.Point(369, 271)
         Me.lblAchievements9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAchievements9.Name = "lblAchievements9"
-        Me.lblAchievements9.Size = New System.Drawing.Size(39, 13)
+        Me.lblAchievements9.Size = New System.Drawing.Size(66, 13)
         Me.lblAchievements9.TabIndex = 30
         Me.lblAchievements9.Text = "Label3"
         Me.lblAchievements9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements8
         '
-        Me.lblAchievements8.AutoSize = True
         Me.lblAchievements8.Location = New System.Drawing.Point(202, 271)
         Me.lblAchievements8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAchievements8.Name = "lblAchievements8"
-        Me.lblAchievements8.Size = New System.Drawing.Size(39, 13)
+        Me.lblAchievements8.Size = New System.Drawing.Size(66, 13)
         Me.lblAchievements8.TabIndex = 29
         Me.lblAchievements8.Text = "Label2"
         Me.lblAchievements8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAchievements7
         '
-        Me.lblAchievements7.AutoSize = True
         Me.lblAchievements7.Location = New System.Drawing.Point(35, 271)
         Me.lblAchievements7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAchievements7.Name = "lblAchievements7"
-        Me.lblAchievements7.Size = New System.Drawing.Size(39, 13)
+        Me.lblAchievements7.Size = New System.Drawing.Size(66, 13)
         Me.lblAchievements7.TabIndex = 28
         Me.lblAchievements7.Text = "Label1"
         Me.lblAchievements7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -299,7 +308,7 @@ Partial Class frmAchievements
         '
         Me.lblTitle2.AutoSize = True
         Me.lblTitle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle2.Location = New System.Drawing.Point(202, 16)
+        Me.lblTitle2.Location = New System.Drawing.Point(195, 16)
         Me.lblTitle2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTitle2.Name = "lblTitle2"
         Me.lblTitle2.Size = New System.Drawing.Size(87, 13)
@@ -312,13 +321,112 @@ Partial Class frmAchievements
         Me.lblTitle1.AutoSize = True
         Me.lblTitle1.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.lblTitle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle1.Location = New System.Drawing.Point(35, 16)
+        Me.lblTitle1.Location = New System.Drawing.Point(28, 16)
         Me.lblTitle1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTitle1.Name = "lblTitle1"
         Me.lblTitle1.Size = New System.Drawing.Size(80, 13)
         Me.lblTitle1.TabIndex = 31
         Me.lblTitle1.Text = "Tiles Marked"
         Me.lblTitle1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'picQ1
+        '
+        Me.picQ1.Image = CType(resources.GetObject("picQ1.Image"), System.Drawing.Image)
+        Me.picQ1.InitialImage = Nothing
+        Me.picQ1.Location = New System.Drawing.Point(35, 31)
+        Me.picQ1.Name = "picQ1"
+        Me.picQ1.Size = New System.Drawing.Size(65, 65)
+        Me.picQ1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ1.TabIndex = 34
+        Me.picQ1.TabStop = False
+        '
+        'picQ2
+        '
+        Me.picQ2.Image = CType(resources.GetObject("picQ2.Image"), System.Drawing.Image)
+        Me.picQ2.InitialImage = Nothing
+        Me.picQ2.Location = New System.Drawing.Point(202, 31)
+        Me.picQ2.Name = "picQ2"
+        Me.picQ2.Size = New System.Drawing.Size(65, 65)
+        Me.picQ2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ2.TabIndex = 35
+        Me.picQ2.TabStop = False
+        '
+        'picQ3
+        '
+        Me.picQ3.Image = CType(resources.GetObject("picQ3.Image"), System.Drawing.Image)
+        Me.picQ3.InitialImage = Nothing
+        Me.picQ3.Location = New System.Drawing.Point(369, 31)
+        Me.picQ3.Name = "picQ3"
+        Me.picQ3.Size = New System.Drawing.Size(65, 65)
+        Me.picQ3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ3.TabIndex = 36
+        Me.picQ3.TabStop = False
+        '
+        'picQ6
+        '
+        Me.picQ6.Image = CType(resources.GetObject("picQ6.Image"), System.Drawing.Image)
+        Me.picQ6.InitialImage = Nothing
+        Me.picQ6.Location = New System.Drawing.Point(369, 116)
+        Me.picQ6.Name = "picQ6"
+        Me.picQ6.Size = New System.Drawing.Size(65, 65)
+        Me.picQ6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ6.TabIndex = 39
+        Me.picQ6.TabStop = False
+        '
+        'picQ5
+        '
+        Me.picQ5.Image = CType(resources.GetObject("picQ5.Image"), System.Drawing.Image)
+        Me.picQ5.InitialImage = Nothing
+        Me.picQ5.Location = New System.Drawing.Point(202, 116)
+        Me.picQ5.Name = "picQ5"
+        Me.picQ5.Size = New System.Drawing.Size(65, 65)
+        Me.picQ5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ5.TabIndex = 38
+        Me.picQ5.TabStop = False
+        '
+        'picQ4
+        '
+        Me.picQ4.Image = CType(resources.GetObject("picQ4.Image"), System.Drawing.Image)
+        Me.picQ4.InitialImage = Nothing
+        Me.picQ4.Location = New System.Drawing.Point(35, 116)
+        Me.picQ4.Name = "picQ4"
+        Me.picQ4.Size = New System.Drawing.Size(65, 65)
+        Me.picQ4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ4.TabIndex = 37
+        Me.picQ4.TabStop = False
+        '
+        'picQ9
+        '
+        Me.picQ9.Image = CType(resources.GetObject("picQ9.Image"), System.Drawing.Image)
+        Me.picQ9.InitialImage = Nothing
+        Me.picQ9.Location = New System.Drawing.Point(369, 201)
+        Me.picQ9.Name = "picQ9"
+        Me.picQ9.Size = New System.Drawing.Size(65, 65)
+        Me.picQ9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ9.TabIndex = 42
+        Me.picQ9.TabStop = False
+        '
+        'picQ8
+        '
+        Me.picQ8.Image = CType(resources.GetObject("picQ8.Image"), System.Drawing.Image)
+        Me.picQ8.InitialImage = Nothing
+        Me.picQ8.Location = New System.Drawing.Point(202, 201)
+        Me.picQ8.Name = "picQ8"
+        Me.picQ8.Size = New System.Drawing.Size(65, 65)
+        Me.picQ8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ8.TabIndex = 41
+        Me.picQ8.TabStop = False
+        '
+        'picQ7
+        '
+        Me.picQ7.Image = CType(resources.GetObject("picQ7.Image"), System.Drawing.Image)
+        Me.picQ7.InitialImage = Nothing
+        Me.picQ7.Location = New System.Drawing.Point(35, 201)
+        Me.picQ7.Name = "picQ7"
+        Me.picQ7.Size = New System.Drawing.Size(65, 65)
+        Me.picQ7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQ7.TabIndex = 40
+        Me.picQ7.TabStop = False
         '
         'frmAchievements
         '
@@ -327,6 +435,15 @@ Partial Class frmAchievements
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.ClientSize = New System.Drawing.Size(533, 292)
+        Me.Controls.Add(Me.picQ9)
+        Me.Controls.Add(Me.picQ8)
+        Me.Controls.Add(Me.picQ7)
+        Me.Controls.Add(Me.picQ6)
+        Me.Controls.Add(Me.picQ5)
+        Me.Controls.Add(Me.picQ4)
+        Me.Controls.Add(Me.picQ3)
+        Me.Controls.Add(Me.picQ2)
+        Me.Controls.Add(Me.picQ1)
         Me.Controls.Add(Me.lblTitle3)
         Me.Controls.Add(Me.lblTitle2)
         Me.Controls.Add(Me.lblTitle1)
@@ -363,6 +480,15 @@ Partial Class frmAchievements
         CType(Me.picAchievements9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picAchievements8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picAchievements7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picQ7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -391,4 +517,13 @@ Partial Class frmAchievements
     Friend WithEvents lblTitle3 As Label
     Friend WithEvents lblTitle2 As Label
     Friend WithEvents lblTitle1 As Label
+    Friend WithEvents picQ9 As PictureBox
+    Friend WithEvents picQ8 As PictureBox
+    Friend WithEvents picQ7 As PictureBox
+    Friend WithEvents picQ6 As PictureBox
+    Friend WithEvents picQ5 As PictureBox
+    Friend WithEvents picQ4 As PictureBox
+    Friend WithEvents picQ3 As PictureBox
+    Friend WithEvents picQ2 As PictureBox
+    Friend WithEvents picQ1 As PictureBox
 End Class

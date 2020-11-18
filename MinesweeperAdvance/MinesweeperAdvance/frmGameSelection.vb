@@ -39,6 +39,70 @@ Public Class frmGameSelection
         SelectFlagSkin(picFlag1)
         SelectMineSkin(picMine1)
         GameData.Difficulty = 0
+        frmAchievements.DetectAchievements()
+        If AchievementsUnlocked.A1 = True Then
+            picFlag4.Visible = True
+            picQ3.Visible = False
+        Else
+            picFlag4.Visible = False
+            picQ3.Visible = True
+        End If
+        If AchievementsUnlocked.A2 = True Then
+            picFlag2.Visible = True
+            picQ1.Visible = False
+        Else
+            picFlag2.Visible = False
+            picQ1.Visible = True
+        End If
+        If AchievementsUnlocked.A3 = True Then
+            picFlag3.Visible = True
+            picQ2.Visible = False
+        Else
+            picFlag3.Visible = False
+            picQ2.Visible = True
+        End If
+        If AchievementsUnlocked.A4 = True Then
+            picFlag6.Visible = True
+            picQ5.Visible = False
+        Else
+            picFlag6.Visible = False
+            picQ5.Visible = True
+        End If
+        If AchievementsUnlocked.A5 = True Then
+            picFlag7.Visible = True
+            picQ6.Visible = False
+        Else
+            picFlag7.Visible = False
+            picQ6.Visible = True
+        End If
+        If AchievementsUnlocked.A6 = True Then
+            picFlag5.Visible = True
+            picQ4.Visible = False
+        Else
+            picFlag5.Visible = False
+            picQ4.Visible = True
+        End If
+        If AchievementsUnlocked.A7 = True Then
+            picMine2.Visible = True
+            picQ7.Visible = False
+        Else
+            picMine2.Visible = False
+            picQ7.Visible = True
+        End If
+        If AchievementsUnlocked.A8 = True Then
+            picMine4.Visible = True
+            picQ9.Visible = False
+        Else
+            picMine4.Visible = False
+            picQ9.Visible = True
+        End If
+        If AchievementsUnlocked.A9 = True Then
+            picMine3.Visible = True
+            picQ8.Visible = False
+        Else
+            picMine3.Visible = False
+            picQ8.Visible = True
+        End If
     End Sub
 
     Private Sub picFlag1_Click(sender As Object, e As EventArgs) Handles picFlag1.Click
