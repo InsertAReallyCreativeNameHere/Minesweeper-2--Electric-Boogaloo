@@ -39,8 +39,11 @@ Public Class frmGameSelection
         SelectFlagSkin(picFlag1)
         SelectMineSkin(picMine1)
         GameData.Difficulty = 0
-        DetectAchievements()
-
+        frmAchievements.DetectAchievements()
+        If AchievementsUnlocked.A1 = True Then
+            picFlag4.Visible = True
+        Else picFlag4.Visible = False
+        End If
     End Sub
 
     Private Sub picFlag1_Click(sender As Object, e As EventArgs) Handles picFlag1.Click
