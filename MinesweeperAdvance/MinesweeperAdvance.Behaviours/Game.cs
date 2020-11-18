@@ -134,6 +134,8 @@ namespace MinesweeperAdvance.Behaviours
                                     }
                                 }
                                 Game.tileMap.tiles[index].drawNumber = num;
+                                if (num == 0)
+                                    ClearZeroedTile(x, y);
                             }
                             GameData.ScanBar += 10;
                         }
@@ -154,9 +156,42 @@ namespace MinesweeperAdvance.Behaviours
                 }
             }
         }
-        public static void ClearZeroedTile(ref Tile tile)
+        public static void ClearZeroedTile(int tx, int ty)
         {
-
+            int num = 0;
+            for (int i = -1; i <= 1; ++i)
+            {
+                for (int j = -1; j <= 1; ++j)
+                {
+                    if
+                    (
+                        tx + i >= 0 &&
+                        tx + i < Game.tileMap.size.Item1 &&
+                        ty + j >= 0 &&
+                        ty + j < Game.tileMap.size.Item2 &&
+                        Game.tileMap.tiles[(Game.tileMap.tiles[tx].position.Item2 + j) * tileMap.size.Item1 + Game.tileMap.tiles[tileIndex].position.Item1 + i].isMine
+                    )
+                    num++;
+                }
+            }
+            if (num == 0)
+            {
+                for (int i = -1; i <= 1; ++i)
+                {
+                    for (int j = -1; j <= 1; ++j)
+                    {
+                        Game.tileMap.tiles[tileIndex].drawNumber = num; // This is broken, fix this.
+                        if
+                        (
+                            Game.tileMap.tiles[tileIndex].position.Item1 + i >= 0 &&
+                            Game.tileMap.tiles[tileIndex].position.Item1 + i < Game.tileMap.size.Item1 &&
+                            Game.tileMap.tiles[tileIndex].position.Item2 + j >= 0 &&
+                            Game.tileMap.tiles[tileIndex].position.Item2 + j < Game.tileMap.size.Item2
+                        )
+                        ClearZeroedTile();
+                    }
+                }
+            }
         }
     }
 
