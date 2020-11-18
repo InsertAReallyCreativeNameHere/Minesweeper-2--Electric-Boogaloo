@@ -12,7 +12,7 @@
         Dim TilesFlaggedLocal As Integer = My.Settings.Stats.GetOverallStats().FlagsPlaced
         Dim BarsFilledLocal As Integer = My.Settings.Stats.GetOverallStats().BarsFilled
         Dim GamesWonLocal As Integer = My.Settings.Stats.GetOverallStats().GamesWon
-
+        DetectAchievements()
 
         lblAchievements1.Text = TilesFlaggedLocal & " / " & 10
 

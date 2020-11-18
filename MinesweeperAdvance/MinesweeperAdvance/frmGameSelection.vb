@@ -39,6 +39,7 @@ Public Class frmGameSelection
         SelectFlagSkin(picFlag1)
         SelectMineSkin(picMine1)
         GameData.Difficulty = 0
+        DetectAchievements()
     End Sub
 
     Private Sub picFlag1_Click(sender As Object, e As EventArgs) Handles picFlag1.Click
