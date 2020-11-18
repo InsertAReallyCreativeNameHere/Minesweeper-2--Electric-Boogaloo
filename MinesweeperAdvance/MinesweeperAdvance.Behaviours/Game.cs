@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +17,7 @@ namespace MinesweeperAdvance.Behaviours
         public static GameDifficulty Difficulty { get; set; } = GameDifficulty.Easy;
         public static Image FlagSkin { get; set; } = null;
         public static Image MineSkin { get; set; } = null;
+        public static Int32 Score { get; set; } = 0;
         public static Int32 FlagsPlaced { get; set; } = 0;
         public static Int32 ScanBar { get; set; } = 0;
         public static Int32 ScanBarsFilled { get; set; } = 0;
@@ -33,7 +33,7 @@ namespace MinesweeperAdvance.Behaviours
         public static Font drawFont;
 
         public static bool gameFinished = false;
-
+        public static bool gameWon = false;
         /// <summary>
         /// Don't put any graphics update stuff here.
         /// </summary>
@@ -45,7 +45,7 @@ namespace MinesweeperAdvance.Behaviours
                 size = (10, 10),
                 tiles = new Tile[100]
             };
-           
+
 
             Game.drawFont = new Font("Comic Sans", 20);
 
@@ -91,8 +91,9 @@ namespace MinesweeperAdvance.Behaviours
                     if (tileMap.tiles[index].drawMine)
                     {
                         tileMap.tiles[index].DrawMine();
-                        System.Threading.Thread.Sleep(4321);
+                        System.Threading.Thread.Sleep(100);
                         Game.gameFinished = true;
+                        Game.gameWon = false;
                     }
                     else if (tileMap.tiles[index].drawNumber >= 0)
                         tileMap.tiles[index].DrawNumber();
@@ -130,7 +131,7 @@ namespace MinesweeperAdvance.Behaviours
                                             Game.tileMap.tiles[index].position.Item2 + j < Game.tileMap.size.Item2 &&
                                             Game.tileMap.tiles[(Game.tileMap.tiles[index].position.Item2 + j) * tileMap.size.Item1 + Game.tileMap.tiles[index].position.Item1 + i].isMine
                                         )
-                                        num++;
+                                            num++;
                                     }
                                 }
                                 Game.tileMap.tiles[index].drawNumber = num;
@@ -141,13 +142,16 @@ namespace MinesweeperAdvance.Behaviours
                     case MouseButtons.Right:
                         {
                             Game.tileMap.tiles[index].drawFlag = !Game.tileMap.tiles[index].drawFlag;
-                            if (Game.tileMap.tiles[index].drawFlag) {
+                            if (Game.tileMap.tiles[index].drawFlag)
+                            {
                                 GameData.FlagsPlaced++;
                                 GameData.ScanBar += 10;
-                            } else {
+                            }
+                            else
+                            {
                                 GameData.FlagsPlaced--;
                             }
-                    
+
                         }
 
                         break;
