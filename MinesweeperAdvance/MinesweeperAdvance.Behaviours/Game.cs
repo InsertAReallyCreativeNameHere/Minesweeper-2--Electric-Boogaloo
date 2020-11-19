@@ -23,6 +23,7 @@ namespace MinesweeperAdvance.Behaviours
         public static Int32 FlagsPlaced { get; set; } = 0;
         public static Int32 ScanBar { get; set; } = 0;
         public static Int32 ScanBarsFilled { get; set; } = 0;
+        public static Int32 TimeElapsed { get; set; } = 0;
     }
     public static class Game
     {
