@@ -15,7 +15,7 @@ Partial Public Class Minesweeper
             Await Task.Delay(_DecayRate)
         End While
     End Sub
-    Async Sub RunTimer()
+    Async Function RunTimer() As Task
         Await System.Threading.Tasks.Task.Yield()
         tmrGameTime.Enabled = True
         Dim i As Single = 0
@@ -24,9 +24,11 @@ Partial Public Class Minesweeper
             lblTimeElapsed.Text = Math.Round(i)
             Await Task.Delay(1000)
         End While
+        tmrGameTime.Enabled = False
+        GameData.TimeElapsed = tmrGameTime.Interval
         Me.Hide()
         frmEndScreen.Show()
-    End Sub
+    End Function
     Private Sub Minesweeper_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblTimeElapsed.BackColor = Color.FromArgb(40, 40, 40)
         lblTimeElapsedHeading.BackColor = Color.FromArgb(40, 40, 40)

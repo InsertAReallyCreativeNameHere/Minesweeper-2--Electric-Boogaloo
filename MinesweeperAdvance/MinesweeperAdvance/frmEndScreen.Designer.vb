@@ -23,10 +23,10 @@ Partial Class frmEndScreen
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.lblEndTitle = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblScoreTitle = New System.Windows.Forms.Label()
         Me.btnRetry = New System.Windows.Forms.Button()
         Me.btnQuit = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblScore = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblEndTitle
@@ -39,15 +39,15 @@ Partial Class frmEndScreen
         Me.lblEndTitle.Text = "Label1"
         Me.lblEndTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label1
+        'lblScoreTitle
         '
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(6, 106)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(138, 52)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Score:"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblScoreTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblScoreTitle.Location = New System.Drawing.Point(6, 106)
+        Me.lblScoreTitle.Name = "lblScoreTitle"
+        Me.lblScoreTitle.Size = New System.Drawing.Size(138, 52)
+        Me.lblScoreTitle.TabIndex = 1
+        Me.lblScoreTitle.Text = "Score:"
+        Me.lblScoreTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnRetry
         '
@@ -69,15 +69,15 @@ Partial Class frmEndScreen
         Me.btnQuit.Text = "Back to Title Screen"
         Me.btnQuit.UseVisualStyleBackColor = True
         '
-        'Label2
+        'lblScore
         '
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(133, 106)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(209, 52)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "000000"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblScore.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblScore.Location = New System.Drawing.Point(133, 106)
+        Me.lblScore.Name = "lblScore"
+        Me.lblScore.Size = New System.Drawing.Size(209, 52)
+        Me.lblScore.TabIndex = 2
+        Me.lblScore.Text = "000000"
+        Me.lblScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'frmEndScreen
         '
@@ -86,8 +86,8 @@ Partial Class frmEndScreen
         Me.ClientSize = New System.Drawing.Size(334, 311)
         Me.Controls.Add(Me.btnQuit)
         Me.Controls.Add(Me.btnRetry)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblScore)
+        Me.Controls.Add(Me.lblScoreTitle)
         Me.Controls.Add(Me.lblEndTitle)
         Me.Name = "frmEndScreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -97,8 +97,8 @@ Partial Class frmEndScreen
     End Sub
 
     Friend WithEvents lblEndTitle As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblScoreTitle As Label
     Friend WithEvents btnRetry As Button
     Friend WithEvents btnQuit As Button
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblScore As Label
 End Class
