@@ -130,7 +130,12 @@ namespace MinesweeperAdvance.Behaviours
                                 ushort num = FindMinesAround(x, y);
                                 Game.tileMap.tiles[index].drawNumber = num;
                                 if (num == 0)
-                                    ClearZeroedTile(x, y);
+                                {
+                                    try
+                                    { ClearZeroedTile(x, y); }
+                                    catch (StackOverflowException)
+                                    { }
+                                }
                             }
                             GameData.ScanBar += 10;
                         }
@@ -169,8 +174,10 @@ namespace MinesweeperAdvance.Behaviours
             }
             return num;
         }
-        public static void ClearZeroedTile(int tx, int ty)
+        public static void ClearZeroedTile(int tx, int ty, int recuseCount = -1)
         {
+            recuseCount++;
+            if (recuseCount < 2)
             for (int i = -1; i <= 1; ++i)
             {
                 for (int j = -1; j <= 1; ++j)
@@ -184,11 +191,11 @@ namespace MinesweeperAdvance.Behaviours
                         !Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].isMine
                     )
                     {
-                        if (i != 0 && j != 0 && Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].drawable && !Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].isMine)
+                        if (Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].drawable && !Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].isMine)
                         {
                             Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].drawNumber = FindMinesAround(tx + i, ty + j);
                             if (Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].drawNumber == 0)
-                                ClearZeroedTile(tx + i, ty + j);
+                                ClearZeroedTile(tx + i, ty + j, recuseCount);
                         }
                     }
                 }
