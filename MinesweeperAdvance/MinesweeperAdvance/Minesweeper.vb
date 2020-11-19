@@ -92,6 +92,5 @@ Partial Public Class Minesweeper
         If e.Button = MouseButtons.Right Then
             lblFlagsLeft.Text = GameData.TotalFlagsNeeded - GameData.FlagsPlaced
         End If
-        lblScanBar.Text = GameData.FlagsCorrectlyPlaced
     End Sub
 End Class
