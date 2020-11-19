@@ -4,7 +4,7 @@ Imports System.Threading.Tasks
 
 Partial Public Class Minesweeper
     Inherits Form
-    Dim _totalFlagsNeeded As Integer = 0
+
     Dim _DecayRate As Integer = 0
     Async Sub DecayScanBar()
         Await System.Threading.Tasks.Task.Yield()
@@ -45,22 +45,22 @@ Partial Public Class Minesweeper
         Select Case GameData.Difficulty
             Case 0
                 lblDisplayCurrentDifficulty.Text = "Easy"
-                _totalFlagsNeeded = 10
+                GameData.TotalFlagsNeeded = 10
                 _DecayRate = 500
             Case 1
                 lblDisplayCurrentDifficulty.Text = "Medium"
-                _totalFlagsNeeded = 15
+                GameData.TotalFlagsNeeded = 15
                 _DecayRate = 250
             Case 2
                 lblDisplayCurrentDifficulty.Text = "Hard"
-                _totalFlagsNeeded = 20
+                GameData.TotalFlagsNeeded = 20
                 _DecayRate = 167
             Case 3
                 lblDisplayCurrentDifficulty.Text = "Insane"
-                _totalFlagsNeeded = 25
+                GameData.TotalFlagsNeeded = 25
                 _DecayRate = 125
         End Select
-        lblFlagsLeft.Text = _totalFlagsNeeded - GameData.FlagsPlaced
+        lblFlagsLeft.Text = GameData.TotalFlagsNeeded - GameData.FlagsPlaced
         DecayScanBar()
     End Sub
 
@@ -90,7 +90,8 @@ Partial Public Class Minesweeper
         End If
 
         If e.Button = MouseButtons.Right Then
-            lblFlagsLeft.Text = _totalFlagsNeeded - GameData.FlagsPlaced
+            lblFlagsLeft.Text = GameData.TotalFlagsNeeded - GameData.FlagsPlaced
         End If
+        lblScanBar.Text = GameData.FlagsCorrectlyPlaced
     End Sub
 End Class

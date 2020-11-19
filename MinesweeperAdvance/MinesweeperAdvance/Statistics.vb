@@ -50,7 +50,6 @@ Public Class Statistics
         stats.TimePlayed = stats.TimePlayed + time
         stats.FlagsPlaced = stats.FlagsPlaced = flags
         stats.BarsFilled = stats.BarsFilled + bars
-        My.Settings.Save()
     End Sub
 End Class
 
