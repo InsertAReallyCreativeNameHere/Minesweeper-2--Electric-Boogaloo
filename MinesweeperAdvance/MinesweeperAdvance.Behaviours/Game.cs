@@ -25,6 +25,8 @@ namespace MinesweeperAdvance.Behaviours
         public static Int32 ScanBar { get; set; } = 0;
         public static Int32 ScanBarsFilled { get; set; } = 0;
         public static Int32 TimeElapsed { get; set; } = 0;
+        public static Int32 TotalFlagsNeeded { get; set; } = 0;
+        public static Int32 FlagsCorrectlyPlaced { get; set; } = 0;
     }
     public static class Game
     {
@@ -152,10 +154,22 @@ namespace MinesweeperAdvance.Behaviours
                             Game.tileMap.tiles[index].drawFlag = !Game.tileMap.tiles[index].drawFlag;
                             if (Game.tileMap.tiles[index].drawFlag)
                             {
+                               if (Game.tileMap.tiles[index].isMine)
+                                {
+                                    GameData.FlagsCorrectlyPlaced++;
+                                }
+
                                 GameData.FlagsPlaced++;
                                 GameData.ScanBar += 10;
                             }
-                            else GameData.FlagsPlaced--;
+                            else {
+                                if (Game.tileMap.tiles[index].isMine)
+                                {
+                                    GameData.FlagsCorrectlyPlaced--;
+                                }
+                                GameData.FlagsPlaced--;
+                            }
+                                
                         }
                         break;
                 }

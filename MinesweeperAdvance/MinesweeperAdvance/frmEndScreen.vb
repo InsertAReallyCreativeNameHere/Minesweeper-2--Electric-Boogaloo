@@ -16,12 +16,22 @@ Public Class frmEndScreen
     End Sub
 
     Private Sub frmEndScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim GameWon As Boolean = Nothing
         If Game.gameWon Then
             lblEndTitle.Text = "You Win!"
-        Else lblendTitle.Text = "You Lose"
+        Else lblEndTitle.Text = "You Lose"
         End If
-        lblScore.Text = CalculateScore(0, GameData.Difficulty + 1, GameData.ScanBarsFilled + GameData.ScanBar / 100, GameData.TimeElapsed)
+        Dim Score As Integer = CalculateScore(GameData.TotalFlagsNeeded - GameData.FlagsCorrectlyPlaced, GameData.Difficulty + 1, GameData.ScanBarsFilled + GameData.ScanBar / 100, GameData.TimeElapsed)
+        lblScore.Text = Score
+        If GameData.TotalFlagsNeeded = GameData.FlagsCorrectlyPlaced Then
+            GameWon = True
+        Else GameWon = False
+        End If
+        'I commented the below line since it will permentaley start changing stats, so until the game if fully functional, it shouldn't run
+        'My.Settings.Stats.AddGameStats(GameWon, Score, GameData.TimeElapsed, GameData.FlagsPlaced, GameData.ScanBarsFilled)
+        'My.Settings.Save()
     End Sub
+
 
 
 End Class
