@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,10 +31,14 @@ namespace MinesweeperAdvance.Behaviours
         public static Form mainForm;
         public static Graphics mainGraphics;
 
-        public static SolidBrush mainTileBrush;
-        public static TileMap tileMap;
+        public static SolidBrush mainTileBrush = new SolidBrush(Color.FromArgb(255, 80, 80, 80));
+        public static TileMap tileMap = new TileMap
+        {
+            size = (10, 10),
+            tiles = new Tile[100]
+        };
 
-        public static Font drawFont;
+        public static Font drawFont = new Font("Comic Sans", 20);
 
         public static bool gameFinished = false;
         public static bool gameWon = false; // Bruh why not use a GameState enum?
@@ -47,20 +52,29 @@ namespace MinesweeperAdvance.Behaviours
         // }
         // public static GameState gameState = GameState.Unknown;
 
+        static Game()
+        {
+            for (ushort i = 0; i < tileMap.size.Item1; i++)
+            {
+                for (ushort j = 0; j < tileMap.size.Item2; j++)
+                {
+                    var index = j * tileMap.size.Item1 + i;
+                    tileMap.tiles[index] = new Tile
+                    {
+                        position = (i, j),
+                        isMine = false
+                    };
+                }
+            }
+        }
+
         /// <summary>
         /// Don't put any graphics update stuff here.
         /// </summary>
         public static void Start()
         {
-            Game.mainTileBrush = new SolidBrush(Color.FromArgb(255, 80, 80, 80));
-            Game.tileMap = new TileMap
-            {
-                size = (10, 10),
-                tiles = new Tile[100]
-            };
-
-            Game.drawFont = new Font("Comic Sans", 20);
-
+            Game.gameFinished = false;
+            Game.gameFinished = true;
             Random rng = new Random();
             for (ushort i = 0; i < tileMap.size.Item1; i++)
             {
@@ -68,14 +82,9 @@ namespace MinesweeperAdvance.Behaviours
                 {
                     var index = j * tileMap.size.Item1 + i;
                     var tileIsMine = rng.Next(100) < 10;
-                    tileMap.tiles[index] = new Tile
-                    {
-                        position = (i, j),
-                        isMine = tileIsMine
-                    };
-                }
+                    tileMap.tiles[index].isMine = tileIsMine;
+                };
             }
-
             Task.Run(Update);
         }
         public static async void Update()
@@ -132,10 +141,7 @@ namespace MinesweeperAdvance.Behaviours
                                 Game.tileMap.tiles[index].drawNumber = num;
                                 if (num == 0)
                                 {
-                                    try
-                                    { ClearZeroedTile(x, y); }
-                                    catch (StackOverflowException)
-                                    { }
+                                    //ClearZeroedTile(x, y, ClearDirection.Left | ClearDirection.Right | ClearDirection.Up | ClearDirection.Down);
                                 }
                             }
                             GameData.ScanBar += 10;
@@ -175,32 +181,87 @@ namespace MinesweeperAdvance.Behaviours
             }
             return num;
         }
-        public static void ClearZeroedTile(int tx, int ty, int recuseCount = -1)
+        [Flags] public enum ClearDirection : short
         {
-            recuseCount++;
-            if (recuseCount < 2)
-            for (int i = -1; i <= 1; ++i)
+            Left = 0,
+            Up = 1,
+            Right = 2,
+            Down = 3,
+            TopLeft = 4,
+            TopRight = 5,
+            BottomLeft = 6,
+            BottomRight = 7
+        }
+        public static void ClearZeroedTile(int tx, int ty, ClearDirection direction)
+        {
+            try
+            {
+                ushort minesAround = 0;
+                for (int i = -1; i <= 1; ++i)
+                {
+                    for (int j = -1; j <= 1; ++j)
+                    {
+                        if
+                        (
+                            tx + i >= 0 &&
+                            tx + i < Game.tileMap.size.Item1 &&
+                            ty + j >= 0 &&
+                            ty + j < Game.tileMap.size.Item2 &&
+                            Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].isMine
+                        )
+                        minesAround++;
+                    }
+                }
+                Game.tileMap.tiles[ty * tileMap.size.Item2 + tx].drawNumber = minesAround;
+                if (minesAround > 0)
+                {
+                    if (direction.HasFlag(ClearDirection.Left) && tx - 1 >= 0 && !Game.tileMap.tiles[ty * tileMap.size.Item2 + tx].isMine)
+                        ClearZeroedTile(tx - 1, ty, ClearDirection.Left);
+                    if (direction.HasFlag(ClearDirection.Right) && tx + 1 < Game.tileMap.size.Item1 && !Game.tileMap.tiles[ty * tileMap.size.Item2 + tx].isMine)
+                        ClearZeroedTile(tx + 1, ty, ClearDirection.Right);
+                    if (direction.HasFlag(ClearDirection.Down) && ty - 1 >= 0 && !Game.tileMap.tiles[ty * tileMap.size.Item2 + tx].isMine)
+                        ClearZeroedTile(tx, ty - 1, ClearDirection.Down);
+                    if (direction.HasFlag(ClearDirection.Up) && ty + 1 < Game.tileMap.size.Item2 && !Game.tileMap.tiles[ty * tileMap.size.Item2 + tx].isMine)
+                        ClearZeroedTile(tx, ty + 1, ClearDirection.Up);
+                    if (direction.HasFlag(ClearDirection.BottomLeft) && tx - 1 >= 0 && ty - 1 >= 0 && !Game.tileMap.tiles[ty * tileMap.size.Item2 + tx].isMine)
+                        ClearZeroedTile(tx - 1, ty - 1, ClearDirection.BottomLeft | ClearDirection.Left | ClearDirection.Down);
+                    if (direction.HasFlag(ClearDirection.BottomRight) && tx + 1 < Game.tileMap.size.Item1 && ty - 1 >= 0 && !Game.tileMap.tiles[ty * tileMap.size.Item2 + tx].isMine)
+                        ClearZeroedTile(tx + 1, ty - 1, ClearDirection.BottomRight | ClearDirection.Right | ClearDirection.Down);
+                    if (direction.HasFlag(ClearDirection.TopLeft) && tx - 1 >= 0 && ty + 1 < Game.tileMap.size.Item2 && !Game.tileMap.tiles[ty * tileMap.size.Item2 + tx].isMine)
+                        ClearZeroedTile(tx - 1, ty + 1, ClearDirection.TopLeft | ClearDirection.Left | ClearDirection.Up);
+                    if (direction.HasFlag(ClearDirection.TopRight) && tx + 1 < Game.tileMap.size.Item1 && ty + 1 < Game.tileMap.size.Item2 && !Game.tileMap.tiles[ty * tileMap.size.Item2 + tx].isMine)
+                        ClearZeroedTile(tx + 1, ty + 1, ClearDirection.TopRight | ClearDirection.Right | ClearDirection.Up);
+                }
+            }
+            catch { }
+            /*for (int i = -1; i <= 1; ++i)
             {
                 for (int j = -1; j <= 1; ++j)
                 {
                     if
                     (
-                        tx + i >= 0 &&
-                        tx + i < Game.tileMap.size.Item1 &&
-                        ty + j >= 0 &&
-                        ty + j < Game.tileMap.size.Item2 &&
-                        !Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].isMine
+                        current.Item1 + i >= 0 &&
+                        current.Item1 + i < Game.tileMap.size.Item1 &&
+                        current.Item2 + j >= 0 &&
+                        current.Item2 + j < Game.tileMap.size.Item2 &&
+                        !Game.tileMap.tiles[(current.Item2 + j) * tileMap.size.Item2 + current.Item1 + i].isMine
                     )
                     {
-                        if (Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].drawable && !Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].isMine)
+                        if (Game.tileMap.tiles[(current.Item2 + j) * tileMap.size.Item2 + current.Item1 + i].drawable && !Game.tileMap.tiles[(current.Item2 + j) * tileMap.size.Item2 + current.Item1 + i].isMine)
                         {
-                            Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].drawNumber = FindMinesAround(tx + i, ty + j);
-                            if (Game.tileMap.tiles[(ty + j) * tileMap.size.Item2 + tx + i].drawNumber == 0)
-                                ClearZeroedTile(tx + i, ty + j, recuseCount);
+                            Game.tileMap.tiles[(current.Item2 + j) * tileMap.size.Item2 + current.Item1 + i].drawNumber = FindMinesAround(current.Item1 + i, current.Item2 + j);
+                            if (Game.tileMap.tiles[(current.Item2 + j) * tileMap.size.Item2 + current.Item1 + i].drawNumber == 0)
+                            {
+                            Retry:
+                                try
+                                { stack.Add((current.Item1 + i, current.Item2 + j)); }
+                                catch (StackOverflowException)
+                                { goto Retry; }
+                            }
                         }
                     }
                 }
-            }
+            }*/
         }
     }
 

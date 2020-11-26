@@ -2,8 +2,7 @@
 
 Public Class frmEndScreen
     Public Function CalculateScore(m As Integer, d As Integer, b As Integer, t As Integer)
-        Dim Score As Integer = 0
-        Score = Math.Round(1000 / (m + 0.5) * d * (b + 1) ^ 2 * (5 - Math.Log(t ^ 0.5, 5)))
+        Dim Score As Integer = Math.Round(1000 / (m + 0.5) * d * (b + 1) ^ 2 * (5 - Math.Log(t ^ 0.5, 5)))
         Return Score
     End Function
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
@@ -14,7 +13,6 @@ Public Class frmEndScreen
     Private Sub btnRetry_Click(sender As Object, e As EventArgs) Handles btnRetry.Click
         Me.Hide()
         frmGameSelection.Show()
-
     End Sub
 
     Private Sub frmEndScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load

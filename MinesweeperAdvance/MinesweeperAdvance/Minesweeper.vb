@@ -29,7 +29,7 @@ Partial Public Class Minesweeper
         Me.Hide()
         frmEndScreen.Show()
     End Function
-    Private Sub Minesweeper_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Async Sub Minesweeper_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblTimeElapsed.BackColor = Color.FromArgb(40, 40, 40)
         lblTimeElapsedHeading.BackColor = Color.FromArgb(40, 40, 40)
         lblDisplayCurrentDifficulty.BackColor = Color.FromArgb(40, 40, 40)
@@ -39,9 +39,7 @@ Partial Public Class Minesweeper
         picFlagsLeft.BackColor = Color.FromArgb(40, 40, 40)
         lblScanBar.BackColor = Color.FromArgb(40, 40, 40)
         picFlagsLeft.Image = GameData.FlagSkin
-        Game.mainForm = Me
-        Game.Start()
-        RunTimer()
+        Await RunTimer()
         Select Case GameData.Difficulty
             Case 0
                 lblDisplayCurrentDifficulty.Text = "Easy"
@@ -65,6 +63,8 @@ Partial Public Class Minesweeper
     End Sub
 
     Private Sub Minesweeper_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        Game.mainForm = Me
+        Game.Start()
     End Sub
     Private Sub Minesweeper_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         Game.GraphicsUpdate(e)
@@ -73,6 +73,7 @@ Partial Public Class Minesweeper
         Game.HandleMouseEvent(e)
     End Sub
     Private Sub Minesweeper_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
+        Game.gameFinished = True
     End Sub
 
     Private Sub btnQuitGame_Click(sender As Object, e As EventArgs) Handles btnQuitGame.Click
