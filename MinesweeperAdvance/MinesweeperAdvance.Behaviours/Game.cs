@@ -75,6 +75,7 @@ namespace MinesweeperAdvance.Behaviours
         /// </summary>
         public static void Start()
         {
+            MessageBox.Show("The wingdi functions re-render everytime something is drawn. This is dumb. But I'm not figuring how to use SDL2 with C#. So epilepsy warning. You are warned...");
             Game.gameFinished = false;
             Random rng = new Random();
             for (ushort i = 0; i < tileMap.size.Item1; i++)
