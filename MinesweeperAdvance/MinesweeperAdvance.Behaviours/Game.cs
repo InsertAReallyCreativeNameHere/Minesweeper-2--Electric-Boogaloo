@@ -76,7 +76,6 @@ namespace MinesweeperAdvance.Behaviours
         public static void Start()
         {
             Game.gameFinished = false;
-            Game.gameFinished = true;
             Random rng = new Random();
             for (ushort i = 0; i < tileMap.size.Item1; i++)
             {

@@ -27,7 +27,7 @@ Public Class frmEndScreen
             GameWon = True
         Else GameWon = False
         End If
-        'I commented the below line since it will permentaley start changing stats, so until the game if fully functional, it shouldn't run
+        'I commented the below line since it will permenantley start changing stats, so until the game if fully functional, it shouldn't run
         'My.Settings.Stats.AddGameStats(GameWon, Score, GameData.TimeElapsed, GameData.FlagsPlaced, GameData.ScanBarsFilled)
         'My.Settings.Save()
     End Sub
