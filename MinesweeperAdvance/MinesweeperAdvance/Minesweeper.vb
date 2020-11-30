@@ -39,7 +39,6 @@ Partial Public Class Minesweeper
         picFlagsLeft.BackColor = Color.FromArgb(40, 40, 40)
         lblScanBar.BackColor = Color.FromArgb(40, 40, 40)
         picFlagsLeft.Image = GameData.FlagSkin
-        Await RunTimer()
         Select Case GameData.Difficulty
             Case 0
                 lblDisplayCurrentDifficulty.Text = "Easy"
@@ -59,6 +58,7 @@ Partial Public Class Minesweeper
                 _DecayRate = 125
         End Select
         lblFlagsLeft.Text = GameData.TotalFlagsNeeded - GameData.FlagsPlaced
+        RunTimer()
         DecayScanBar()
     End Sub
 
@@ -89,9 +89,12 @@ Partial Public Class Minesweeper
             GameData.ScanBar = 0
         Else pgbScanBar.Value = GameData.ScanBar
         End If
-
-        If e.Button = MouseButtons.Right Then
-            lblFlagsLeft.Text = GameData.TotalFlagsNeeded - GameData.FlagsPlaced
+        If GameData.TilesCleared >= 100 - GameData.FlagsPlaced Then
+            Game.gameWon = True
+            GameData.TimeElapsed = tmrGameTime.Interval
+            Me.Hide()
+            frmEndScreen.Show()
         End If
+        lblFlagsLeft.Text = GameData.TotalFlagsNeeded - GameData.FlagsPlaced
     End Sub
 End Class

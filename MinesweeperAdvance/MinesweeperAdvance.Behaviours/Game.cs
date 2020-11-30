@@ -27,6 +27,7 @@ namespace MinesweeperAdvance.Behaviours
         public static Int32 TimeElapsed { get; set; } = 0;
         public static Int32 TotalFlagsNeeded { get; set; } = 0;
         public static Int32 FlagsCorrectlyPlaced { get; set; } = 0;
+        public static Int32 TilesCleared { get; set; } = 0;
     }
     public static class Game
     {
@@ -139,8 +140,14 @@ namespace MinesweeperAdvance.Behaviours
                                 Game.tileMap.tiles[index].drawMine = true;
                             else
                             {
-                                ushort num = FindMinesAround(x, y);
+                                if (Game.tileMap.tiles[index].drawFlag)
+                                {
+                                    GameData.FlagsPlaced -= 1;
+                                }
+
+                                ushort num = FindMinesAround(x, y);                                
                                 Game.tileMap.tiles[index].drawNumber = num;
+                                GameData.TilesCleared += 1;
                                 if (num == 0)
                                 {
                                     //ClearZeroedTile(x, y, ClearDirection.Left | ClearDirection.Right | ClearDirection.Up | ClearDirection.Down);

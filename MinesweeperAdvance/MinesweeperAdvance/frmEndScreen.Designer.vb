@@ -24,7 +24,6 @@ Partial Class frmEndScreen
     Private Sub InitializeComponent()
         Me.lblEndTitle = New System.Windows.Forms.Label()
         Me.lblScoreTitle = New System.Windows.Forms.Label()
-        Me.btnRetry = New System.Windows.Forms.Button()
         Me.btnQuit = New System.Windows.Forms.Button()
         Me.lblScore = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -49,19 +48,9 @@ Partial Class frmEndScreen
         Me.lblScoreTitle.Text = "Score:"
         Me.lblScoreTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'btnRetry
-        '
-        Me.btnRetry.Location = New System.Drawing.Point(13, 208)
-        Me.btnRetry.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnRetry.Name = "btnRetry"
-        Me.btnRetry.Size = New System.Drawing.Size(151, 84)
-        Me.btnRetry.TabIndex = 3
-        Me.btnRetry.Text = "Play Again"
-        Me.btnRetry.UseVisualStyleBackColor = True
-        '
         'btnQuit
         '
-        Me.btnQuit.Location = New System.Drawing.Point(168, 208)
+        Me.btnQuit.Location = New System.Drawing.Point(92, 216)
         Me.btnQuit.Margin = New System.Windows.Forms.Padding(2)
         Me.btnQuit.Name = "btnQuit"
         Me.btnQuit.Size = New System.Drawing.Size(151, 84)
@@ -85,7 +74,6 @@ Partial Class frmEndScreen
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(334, 311)
         Me.Controls.Add(Me.btnQuit)
-        Me.Controls.Add(Me.btnRetry)
         Me.Controls.Add(Me.lblScore)
         Me.Controls.Add(Me.lblScoreTitle)
         Me.Controls.Add(Me.lblEndTitle)
@@ -98,7 +86,6 @@ Partial Class frmEndScreen
 
     Friend WithEvents lblEndTitle As Label
     Friend WithEvents lblScoreTitle As Label
-    Friend WithEvents btnRetry As Button
     Friend WithEvents btnQuit As Button
     Friend WithEvents lblScore As Label
 End Class
