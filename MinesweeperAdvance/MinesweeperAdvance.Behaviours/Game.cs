@@ -28,6 +28,7 @@ namespace MinesweeperAdvance.Behaviours
         public static Int32 TotalFlagsNeeded { get; set; } = 0;
         public static Int32 FlagsCorrectlyPlaced { get; set; } = 0;
         public static Int32 TilesCleared { get; set; } = 0;
+        public static Int32 barsDone { get; set; } = 0;
     }
     public static class Game
     {
@@ -104,6 +105,8 @@ namespace MinesweeperAdvance.Behaviours
         {
             Game.mainGraphics = args.Graphics;
             Game.tileMap.InitBackdrop();
+            var randomTile = 0;
+            Random rnd = new Random();
             for (ushort i = 0; i < tileMap.size.Item1; i++)
             {
                 for (ushort j = 0; j < tileMap.size.Item2; j++)
@@ -117,11 +120,20 @@ namespace MinesweeperAdvance.Behaviours
                         Game.gameFinished = true;
                         Game.gameWon = false;
                     }
-                    else if (tileMap.tiles[index].drawNumber >= 0)
-                        tileMap.tiles[index].DrawNumber();
+
                     else if (tileMap.tiles[index].drawFlag)
                         tileMap.tiles[index].DrawFlag();
-                }
+                    else if (GameData.barsDone < GameData.ScanBarsFilled & randomTile >= rnd.Next(20, 100) & tileMap.tiles[index].drawNumber <= -1)
+                    {
+                        ushort num = FindMinesAround(tileMap.tiles[index].position.Item1, tileMap.tiles[index].position.Item2);
+                        Game.tileMap.tiles[index].drawNumber = num;
+                        randomTile = 0;
+                        GameData.barsDone += 1;
+                    }
+                    else if (tileMap.tiles[index].drawNumber >= 0)
+                        tileMap.tiles[index].DrawNumber();
+                    randomTile += 1;
+                };
             }
         }
         public static void HandleMouseEvent(ref MouseEventArgs args)
