@@ -75,6 +75,7 @@ namespace MinesweeperAdvance.Behaviours
         /// <summary>
         /// Don't put any graphics update stuff here.
         /// </summary>
+     
         public static void Start()
         {
             MessageBox.Show("The wingdi functions re-render everytime something is drawn. This is dumb. But I'm not figuring how to use SDL2 with C#. So epilepsy warning. You are warned...");
@@ -103,10 +104,12 @@ namespace MinesweeperAdvance.Behaviours
         }
         public static void GraphicsUpdate(ref PaintEventArgs args)
         {
+            GameData.TilesCleared = 0;
             Game.mainGraphics = args.Graphics;
             Game.tileMap.InitBackdrop();
             var randomTile = 0;
             Random rnd = new Random();
+            var localTilesCleared = 0;
             for (ushort i = 0; i < tileMap.size.Item1; i++)
             {
                 for (ushort j = 0; j < tileMap.size.Item2; j++)
@@ -123,17 +126,116 @@ namespace MinesweeperAdvance.Behaviours
 
                     else if (tileMap.tiles[index].drawFlag)
                         tileMap.tiles[index].DrawFlag();
-                    else if (GameData.barsDone < GameData.ScanBarsFilled & randomTile >= rnd.Next(20, 100) & tileMap.tiles[index].drawNumber <= -1)
+                    else if (tileMap.tiles[index].drawNumber >= 0)
+                        tileMap.tiles[index].DrawNumber();
+                    /*else if (GameData.barsDone < GameData.ScanBarsFilled & randomTile >= rnd.Next(20, 100) & tileMap.tiles[index].drawNumber <= -1)
                     {
                         ushort num = FindMinesAround(tileMap.tiles[index].position.Item1, tileMap.tiles[index].position.Item2);
                         Game.tileMap.tiles[index].drawNumber = num;
                         randomTile = 0;
                         GameData.barsDone += 1;
-                    }
-                    else if (tileMap.tiles[index].drawNumber >= 0)
+                    }*/
+                    /*else if (
+                        tileMap.tiles[index + 1].drawNumber == 0 ||
+                        tileMap.tiles[index + 10].drawNumber == 0 ||
+                        tileMap.tiles[index - 1].drawNumber == 0 ||
+                        tileMap.tiles[index - 10].drawNumber == 0 ||
+                        tileMap.tiles[index + 9].drawNumber == 0 ||
+                        tileMap.tiles[index + 11].drawNumber == 0 ||
+                        tileMap.tiles[index - 9].drawNumber == 0 ||
+                        tileMap.tiles[index - 11].drawNumber == 0 
+                        )
+                    {
+                        ushort num = FindMinesAround(tileMap.tiles[index].position.Item1, tileMap.tiles[index].position.Item2);
                         tileMap.tiles[index].DrawNumber();
+                    }*/
+                    if (tileMap.tiles[index].drawNumber <= -1)
+                    {
+                        if (index + 1 < 100)
+                        {
+                            if ((index + 1) % 10 != 0 && tileMap.tiles[index + 1].drawNumber == 0)
+                            {
+                                ushort num = FindMinesAround(tileMap.tiles[index].position.Item1, tileMap.tiles[index].position.Item2);
+                                Game.tileMap.tiles[index].drawNumber = num;
+                                localTilesCleared += 1;
+                            }
+                        }
+                        if (index + 9 < 100)
+                        {
+                            if (index % 10 != 0 && tileMap.tiles[index + 9].drawNumber == 0)
+                            {
+                                ushort num = FindMinesAround(tileMap.tiles[index].position.Item1, tileMap.tiles[index].position.Item2);
+                                Game.tileMap.tiles[index].drawNumber = num;
+                                localTilesCleared += 1;
+                            }
+                        }
+                        if (index + 10 < 100)
+                        {
+                            if (tileMap.tiles[index + 10].drawNumber == 0)
+                            {
+                                ushort num = FindMinesAround(tileMap.tiles[index].position.Item1, tileMap.tiles[index].position.Item2);
+                                Game.tileMap.tiles[index].drawNumber = num;
+                                localTilesCleared += 1;
+                            }
+                        }
+                        if ((index + 1) % 10 != 0 && index + 11 < 100)
+                        {
+                            if (tileMap.tiles[index + 11].drawNumber == 0)
+                            {
+                                ushort num = FindMinesAround(tileMap.tiles[index].position.Item1, tileMap.tiles[index].position.Item2);
+                                Game.tileMap.tiles[index].drawNumber = num;
+                                localTilesCleared += 1;
+                            }
+                        }
+                        if (index % 10 != 0 && index - 1 >= 0)
+                        {
+                            if (tileMap.tiles[index - 1].drawNumber == 0)
+                            {
+                                ushort num = FindMinesAround(tileMap.tiles[index].position.Item1, tileMap.tiles[index].position.Item2);
+                                Game.tileMap.tiles[index].drawNumber = num;
+                                localTilesCleared += 1;
+                            }
+                        }
+                        if (index - 9 >= 0)
+                        {
+                            if ((index + 1) % 10 != 0 && tileMap.tiles[index - 9].drawNumber == 0)
+                            {
+                                ushort num = FindMinesAround(tileMap.tiles[index].position.Item1, tileMap.tiles[index].position.Item2);
+                                Game.tileMap.tiles[index].drawNumber = num;
+                                localTilesCleared += 1;
+                            }
+                        }
+                        if (index - 10 >= 0)
+                        {
+                            if (tileMap.tiles[index - 10].drawNumber == 0)
+                            {
+                                ushort num = FindMinesAround(tileMap.tiles[index].position.Item1, tileMap.tiles[index].position.Item2);
+                                Game.tileMap.tiles[index].drawNumber = num;
+                                localTilesCleared += 1;
+                            }
+                        }
+                        if (index - 11 >= 0)
+                        {
+                            if (index % 10 != 0 && tileMap.tiles[index - 11].drawNumber == 0)
+                            {
+                                ushort num = FindMinesAround(tileMap.tiles[index].position.Item1, tileMap.tiles[index].position.Item2);
+                                Game.tileMap.tiles[index].drawNumber = num;
+                                localTilesCleared += 1;
+                            }
+                        }
+                    }
                     randomTile += 1;
+                    if (tileMap.tiles[index].drawNumber >= 0)
+                    {
+                        GameData.TilesCleared += 1;
+                    }
                 };
+
+                
+            }
+            if (localTilesCleared > GameData.TilesCleared)
+            {
+                GameData.TilesCleared += localTilesCleared - GameData.TilesCleared;
             }
         }
         public static void HandleMouseEvent(ref MouseEventArgs args)
@@ -352,6 +454,7 @@ namespace MinesweeperAdvance.Behaviours
         }
         #endregion
     }
+  
     public class TileMap : IDisposable
     {
         public (ushort, ushort) size;

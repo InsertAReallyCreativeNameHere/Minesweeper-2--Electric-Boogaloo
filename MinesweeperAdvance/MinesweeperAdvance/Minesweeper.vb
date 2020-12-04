@@ -89,7 +89,7 @@ Partial Public Class Minesweeper
             GameData.ScanBar = 0
         Else pgbScanBar.Value = GameData.ScanBar
         End If
-        If GameData.TilesCleared >= 100 - GameData.FlagsPlaced Then
+        If GameData.FlagsCorrectlyPlaced >= GameData.TotalFlagsNeeded Then
             Game.gameWon = True
             GameData.TimeElapsed = tmrGameTime.Interval
             Me.Hide()
